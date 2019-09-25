@@ -251,7 +251,8 @@ img.post-image, img.page-img {
   font-weight: bold;
 }
 .time-line img{
-  width: 800px;
+  width: auto;
+  max-width: 800px;
   height: 400px;
   margin-left: 50px;
   object-fit: cover;
