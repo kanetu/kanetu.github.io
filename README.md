@@ -1,1 +1,0 @@
-# kanetu.github.io
