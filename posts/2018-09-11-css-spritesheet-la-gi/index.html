@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="vi_vn">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> CSS Spritesheet là gì?  | Kane&#39;s Blog</title>
+  <link rel = 'canonical' href = 'https://kanetu.github.io/posts/2018-09-11-css-spritesheet-la-gi/'>
+  <meta name="description" content="Hi I&#39;m Kane - a Front-End developer, I&#39;m currently working in Nashtech. In addition, writing blog helps me keep the stories and rearrange my knowledge in the technical journey. Thanks for all.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="CSS Spritesheet là gì? " />
+<meta property="og:description" content="Thêm 1 câu hỏi khi interview FrontEnd, Sẽ có vài lần các bạn sẽ được hỏi là css spritesheet là gì? Tại sao lại." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanetu.github.io/posts/2018-09-11-css-spritesheet-la-gi/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-09-11T01:45:40+00:00" />
+<meta property="article:modified_time" content="2018-09-11T01:45:40+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CSS Spritesheet là gì? "/>
+<meta name="twitter:description" content="Thêm 1 câu hỏi khi interview FrontEnd, Sẽ có vài lần các bạn sẽ được hỏi là css spritesheet là gì? Tại sao lại."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://kanetu.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://kanetu.github.io/posts/2018-09-09-array-khong-chi-la-array/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://kanetu.github.io/posts/2018-09-28-trusthy-va-falsy/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&text=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&title=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&is_video=false&description=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&title=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&title=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&name=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20&description=Th%c3%aam%201%20c%c3%a2u%20h%e1%bb%8fi%20khi%20interview%20FrontEnd%2c%20S%e1%ba%bd%20c%c3%b3%20v%c3%a0i%20l%e1%ba%a7n%20c%c3%a1c%20b%e1%ba%a1n%20s%e1%ba%bd%20%c4%91%c6%b0%e1%bb%a3c%20h%e1%bb%8fi%20l%c3%a0%20css%20spritesheet%20l%c3%a0%20g%c3%ac%3f%20T%e1%ba%a1i%20sao%20l%e1%ba%a1i." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&t=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-css-spritesheet-là-gì">1. CSS Spritesheet là gì?</a></li>
+        <li><a href="#2-tại-sao-lai-dùng-chúng">2. Tại sao lai dùng chúng?</a></li>
+        <li><a href="#3-cách-tạo-spritesheet">3. Cách tạo Spritesheet.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        CSS Spritesheet là gì? 
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2018-09-11 01:45:40 &#43;0000 UTC" itemprop="datePublished">2018-09-11</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          2 minute read
+        </div>
+        
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>Thêm 1 câu hỏi khi interview FrontEnd, Sẽ có vài lần các bạn sẽ được hỏi là css spritesheet là gì? Tại sao lại dùng chúng? Bạn dùng cách gì để tạo ra 1 hình spritesheet.</p>
+<h3 id="1-css-spritesheet-là-gì">1. CSS Spritesheet là gì?</h3>
+<p>CSS spritesheet là 1 kỹ thuật gom nhiều hình thành 1 tấm hình và dùng css background-image để hiển thị chúng ngoài browse.</p>
+<h3 id="2-tại-sao-lai-dùng-chúng">2. Tại sao lai dùng chúng?</h3>
+<ul>
+<li>
+<p>Chúng sẽ làm tăng perfomance khi load web.</p>
+</li>
+<li>
+<p>Thông thường server sẽ trả về từ 4-6 request 1 lần. Chúng ta hãy tưởng tượng nếu load 30 tấm hình thì server sẽ phải gửi request nhiều lần làm giảm tốc độ load web. Nếu ta gom chúng thành 1 tấm, thì server chỉ cần tốn 1 lần request đã có thể load tất cả hình mà ta mong muốn.</p>
+</li>
+<li>
+<p>Nhược điểm: khi bạn ko dùng spritesheet là khi ta muốn hover vào hình A chuyển trạng thái thành active. Khi bạn hover như vậy, thì buộc browse phải gửi request để tải 1 hình active mà bạn muốn, sẽ có 1 khung trắng vài giây xuất hiện tùy theo internet lúc đó nhanh hay chậm. Nó sẽ gây ko tốt về UX phía user. Bạn có thể xem video để hình dung.</p>
+</li>
+</ul>
+<h3 id="3-cách-tạo-spritesheet">3. Cách tạo Spritesheet.</h3>
+<p>3/ Hiện tại có 1 vài cách để tạo ra 1 hình spritesheets (theo cá nhân mình)</p>
+<ul>
+<li>
+<p>Tạo bằng thủ công: chúng ta sẽ vào photoshop để cắt hình rùi ghép chúng lại 
+=&gt; cách này thì cực vô cùng, khi bạn phải css canh chỉnh từ tọa độ hình. (mới bắt đầu làm FE, mình dùng cách này suốt -,-).</p>
+</li>
+<li>
+<p>Tạo bằng tools online or cài đặt: cách này hiệu quả hơn cách trên 1 chút là bạn chỉ việc kéo hình vào tools, nó sẽ tự tạo ra hình spritesheet + code css sẵn cho bạn.
+=&gt; cách này gặp khó khăn khi client của bạn không cho bạn cài phần mềm, sợ bị dính bản quyền&hellip;</p>
+</li>
+<li>
+<p>CUỐI CÙNG TA SẼ DÙNG TỚI SPRITESMITH: spritesmith sẽ giúp ta tạo 1 hình spritesheet + code sass có sẵn. Và khi ta apply hình vào, ta chỉ việc viết tên hình là xong :D. Vd: @include(&lsquo;ten hinh&quot;). Bạn có thể tham khảo. Cái này ko phải là tools setup, mà là chúng ta sẽ viết đoạn script cho nó chạy sinh ra file spritesheet.
+<a href="https://github.com/twolfson/spritesmith">https://github.com/twolfson/spritesmith</a></p>
+</li>
+</ul>
+<p>Trước khi làm về spritesmith. Các bạn phải biết về gulp, sass.</p>
+<p>Nguồn: Front End Land VN</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-css-spritesheet-là-gì">1. CSS Spritesheet là gì?</a></li>
+        <li><a href="#2-tại-sao-lai-dùng-chúng">2. Tại sao lai dùng chúng?</a></li>
+        <li><a href="#3-cách-tạo-spritesheet">3. Cách tạo Spritesheet.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&text=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&title=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&is_video=false&description=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&title=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&title=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&name=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20&description=Th%c3%aam%201%20c%c3%a2u%20h%e1%bb%8fi%20khi%20interview%20FrontEnd%2c%20S%e1%ba%bd%20c%c3%b3%20v%c3%a0i%20l%e1%ba%a7n%20c%c3%a1c%20b%e1%ba%a1n%20s%e1%ba%bd%20%c4%91%c6%b0%e1%bb%a3c%20h%e1%bb%8fi%20l%c3%a0%20css%20spritesheet%20l%c3%a0%20g%c3%ac%3f%20T%e1%ba%a1i%20sao%20l%e1%ba%a1i." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2f2018-09-11-css-spritesheet-la-gi%2f&t=CSS%20Spritesheet%20l%c3%a0%20g%c3%ac%3f%20" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Kane Tu 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+<script src=/js/code-copy.js></script>
+
+
+
+</html>
