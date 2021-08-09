@@ -158,16 +158,12 @@
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#1-file-organization">1. FILE ORGANIZATION</a></li>
-        <li><a href="#2-comment">2. COMMENT</a></li>
-        <li><a href="#3-indentation">3. INDENTATION</a></li>
-        <li><a href="#4-declarations">4. DECLARATIONS</a></li>
-        <li><a href="#4-naming-conventions">4. NAMING CONVENTIONS</a></li>
-        <li><a href="#5-format-code-tool">5 FORMAT CODE TOOL</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-file-organization">1. FILE ORGANIZATION</a></li>
+    <li><a href="#2-comment">2. COMMENT</a></li>
+    <li><a href="#3-indentation">3. INDENTATION</a></li>
+    <li><a href="#4-declarations">4. DECLARATIONS</a></li>
+    <li><a href="#5-naming-conventions">5. NAMING CONVENTIONS</a></li>
+    <li><a href="#6-format-code-tool">6 FORMAT CODE TOOL</a></li>
   </ul>
 </nav>
     </div>
@@ -211,48 +207,41 @@
 <li>Mã nguồn dễ bảo trì chỉnh sửa hơn.</li>
 <li>Tạo sự tôn trọng dành cho người đến sau.</li>
 </ul>
-<h3 id="1-file-organization">1. FILE ORGANIZATION</h3>
+<h2 id="1-file-organization">1. FILE ORGANIZATION</h2>
 <p>Việc tổ chức file này rất quan trọng và theo mình nó được coi là cột sống của dự án, những việc này thường được những người có kinh nghiệm đảm nhiệm.  Các thư mục được tổ chức phân theo từng chức năng như: route, components, container, assets,&hellip;</p>
 <p>Đối với những dự án vừa và nhỏ người ta thường chia dự án theo MVC tức model, view, controller, với những dự án lớn người ta sẽ có cách chia khác nhau nữa là chia theo từng chức năng của hệ thống để dễ dàng chỉnh sửa như: post, payment, product&hellip;</p>
 <p>Những cài đặt liên quan đến triển khai hệ thống: docker, webpack,.. phân chia môi trường: development, staging, production, cài đặt database,&hellip;  Để hiểu và làm được những thứ này bạn đã đủ lên trình senior rồi</p>
-<h3 id="2-comment">2. COMMENT</h3>
+<h2 id="2-comment">2. COMMENT</h2>
 <p>Đối với lập trình mà nói việc code mà không để lại comment là trash code nhất là đối với những bạn làm BE, những xử lý logic phức tạp bạn phải loay hoay cả buổi mà không biết mình đang làm gì vì lỡ quay sang thằng bạn kế bên, điều này thật kinh khủng, Thói quen comment trước khi làm là một kỹ năng và kỹ năng đó sẽ mang lại nhiều lợi ích hơn bạn tưởng</p>
-<p>{% highlight javascript %}
-// Feature: 
-callAPI function callAPI(){<br>
-// List what you handler here<br>
-iUsingThisPackageToGetAPI();<br>
-// It is better when comment each line<br>
-}
-{% endhighlight %}</p>
-<p>Và một cảnh giới của giới lập trình là: <strong>Good code is self-documenting</strong> nghĩa là không cần comment người khác nhìn vào cũng biết code mình làm gì, mình ghét nhất code kiểu đánh đố nhau, cực kỳ ghét.</p>
-<h3 id="3-indentation">3. INDENTATION</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4">// Feature: 
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span>callAPI <span style="color:#8be9fd;font-style:italic">function</span> callAPI(){   
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>   <span style="color:#6272a4">// List what you handler here   
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4"></span>   iUsingThisPackageToGetAPI();   
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>   <span style="color:#6272a4">// It is better when comment each line   
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#6272a4"></span>}
+</code></pre></div><p>Và một cảnh giới của giới lập trình là: <strong>Good code is self-documenting</strong> nghĩa là không cần comment người khác nhìn vào cũng biết code mình làm gì, mình ghét nhất code kiểu đánh đố nhau, cực kỳ ghét.</p>
+<h2 id="3-indentation">3. INDENTATION</h2>
 <p>Luôn thục đầu dòng 1 tab trước cha mẹ của nó cũng như học sinh phải biết lễ phép với thầy cô, điều này giúp code sáng sủa hơn nhìn vào phát là kết ngay và quan trọng hơn tính chất này còn là sự bắt buộc ở những ngôn ngữ dạng Hyper text như Jade/Pug (thử đi để thấy độ khó chịu).</p>
 <p><a href="https://pugjs.org/api/getting-started.html">Pug</a>.</p>
-<p><em>Ex1: Bad practice</em>
-{% highlight javascript %}
-function IAmYourFather(){ 
-//the children say 
-noIAmYourChildrenOK() 
-}
-{% endhighlight %}</p>
-<p><em>Ex2: Good practice</em>
-{% highlight javascript %}
-function IAmYourFather(){<br>
-// the children say<br>
-YesDaddy();<br>
-}
-{% endhighlight %}</p>
-<h3 id="4-declarations">4. DECLARATIONS</h3>
+<p><em>Ex1: Bad practice</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">function</span> IAmYourFather(){ 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4">//the children say 
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>noIAmYourChildrenOK() 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+</code></pre></div><p><em>Ex2: Good practice</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">function</span> IAmYourFather(){   
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#6272a4">// the children say   
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>  YesDaddy();   
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+</code></pre></div><h2 id="4-declarations">4. DECLARATIONS</h2>
 <p>Việc khai báo biến thì phải khai báo ngay ở đầu file, khai báo thuộc tính phải ở sau tên class Đối với những ngôn ngữ lập trình cho phép khai báo tên hàm thì hãy làm điều đó trước khi định nghĩa hàm để khi lướt qua ta có thể biết nó có những hàm nào, định nghĩa ra sao, input, output&hellip;</p>
-<p>{% highlight javascript %}
-// Find max number 
-int max(int a, int b);</p>
-<p>int max(int a, int b){<br>
-// define here 
-}
-{% endhighlight %}</p>
-<h3 id="4-naming-conventions">4. NAMING CONVENTIONS</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4">// Find max number 
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span><span style="color:#ff79c6">int</span> max(<span style="color:#ff79c6">int</span> a, <span style="color:#ff79c6">int</span> b);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#ff79c6">int</span> max(<span style="color:#ff79c6">int</span> a, <span style="color:#ff79c6">int</span> b){   
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  <span style="color:#6272a4">// define here 
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#6272a4"></span>}
+</code></pre></div><h2 id="5-naming-conventions">5. NAMING CONVENTIONS</h2>
 <p>Hiện nay ta có một số qui ước để đặt tên cho biến, hàm tuy nhiên nó sẽ được điều chỉnh linh hoạt trong khi làm việc nhóm, nhưng thông thường sẽ như thế này:</p>
 <ol>
 <li>Tên Biến sẽ dùng chữ in thường, gạch dưới &ldquo;_&rdquo; giữa những chữ in thường: <code>int firstname = &quot;Kane&quot;</code></li>
@@ -262,7 +251,7 @@ int max(int a, int b);</p>
 </ol>
 <p>Hãy dành thời gian để xem cái này để hiểu gõ hơn:
 <a href="http://bit.ly/2mA3crH">Qui tắt đặt tên biến - Code style (PHP code style, Database naming convention. Mastering Git - {Be} Solution)</a>.</p>
-<h3 id="5-format-code-tool">5 FORMAT CODE TOOL</h3>
+<h2 id="6-format-code-tool">6 FORMAT CODE TOOL</h2>
 <p>Nếu bạn đang code JavaScript hãy sử dụng ESLint trên VSCode nó sẽ giúp bạn format lại code theo đúng chuẩn ES6</p>
 
     </div>
@@ -295,16 +284,12 @@ int max(int a, int b);</p>
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#1-file-organization">1. FILE ORGANIZATION</a></li>
-        <li><a href="#2-comment">2. COMMENT</a></li>
-        <li><a href="#3-indentation">3. INDENTATION</a></li>
-        <li><a href="#4-declarations">4. DECLARATIONS</a></li>
-        <li><a href="#4-naming-conventions">4. NAMING CONVENTIONS</a></li>
-        <li><a href="#5-format-code-tool">5 FORMAT CODE TOOL</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-file-organization">1. FILE ORGANIZATION</a></li>
+    <li><a href="#2-comment">2. COMMENT</a></li>
+    <li><a href="#3-indentation">3. INDENTATION</a></li>
+    <li><a href="#4-declarations">4. DECLARATIONS</a></li>
+    <li><a href="#5-naming-conventions">5. NAMING CONVENTIONS</a></li>
+    <li><a href="#6-format-code-tool">6 FORMAT CODE TOOL</a></li>
   </ul>
 </nav>
     </div>

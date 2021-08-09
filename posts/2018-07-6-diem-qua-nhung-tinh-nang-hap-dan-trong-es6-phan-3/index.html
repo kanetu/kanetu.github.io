@@ -17,8 +17,8 @@
 <meta property="og:description" content="Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanetu.github.io/posts/2018-07-6-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/" /><meta property="article:section" content="posts" />
-
-
+<meta property="article:published_time" content="2018-07-06T09:18:40+00:00" />
+<meta property="article:modified_time" content="2018-07-06T09:18:40+00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -75,9 +75,15 @@
     <span id="actions">
       <ul>
         
+        <li>
+          <a class="icon" href=" https://kanetu.github.io/posts/2018-07-5-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
         
         <li>
-          <a class="icon" href="https://kanetu.github.io/posts/2018-07-5-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/" aria-label="Next">
+          <a class="icon" href="https://kanetu.github.io/posts/2018-07-12-mot-thang-tai-be-solution/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -177,7 +183,7 @@
         
         <div class="postdate">
           
-          <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+          <time datetime="2018-07-06 09:18:40 &#43;0000 UTC" itemprop="datePublished">2018-07-06</time>
           
         </div>
         
@@ -198,122 +204,125 @@
       <h2 id="6arrow-function-in-es6">6.Arrow Function in ES6</h2>
 <p>Hmm..Tính năng này rất thường xuất hiện trong ReactJS. <code>arrow</code> dịch ra là mũi tên, vâng chúng ta sẽ làm việc với mũi tên :).</p>
 <p>Thông thường khi tạo một <code>function</code> trong Javascript thì ta sử dụng những cách sau:</p>
-<p>{% highlight javascript %}</p>
-<p>//cách 1
-function nameFunction(var1,var2){
-&hellip;
-}</p>
-<p>// cách 2
-var nameFunction = function(var1, var2){
-&hellip;.
-}
-{% endhighlight %}</p>
-<p>Trong ES6 ta tạo đơn giản hơn bằng cách sử dụng mũi tên như sau:</p>
-<p>{% highlight javascript %}</p>
-<p>var nameFunction = (var1,var2) =&gt; { //dosomething&hellip;};</p>
-<p>var echoName = (name) =&gt; { 
-alert(name)
-};</p>
-<p>echoName(&ldquo;kane&rdquo;); // nó sẽ alert ra kane</p>
-<p>{% endhighlight %}</p>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4">//cách 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">function</span> nameFunction(var1,var2){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#6272a4">// cách 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">var</span> nameFunction <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>(var1, var2){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>  ....
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>}
+</code></pre></div><p>Trong ES6 ta tạo đơn giản hơn bằng cách sử dụng mũi tên như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> nameFunction <span style="color:#ff79c6">=</span> (var1,var2) =&gt; { <span style="color:#6272a4">//dosomething...};
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#8be9fd;font-style:italic">var</span> echoName <span style="color:#ff79c6">=</span> (name) =&gt; { 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  alert(name)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>echoName(<span style="color:#f1fa8c">&#34;kane&#34;</span>); <span style="color:#6272a4">// nó sẽ alert ra kane
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span style="color:#6272a4"></span>
+</code></pre></div><ul>
 <li>Khi <code>funciton</code> chỉ có <code>một dòng lệnh</code>, ta có thể viết như thế này cho gọn hơn.</li>
 </ul>
-<p>{% highlight javascript %}</p>
-<p>var echoName = (name) =&gt; alert(name);</p>
-<p>echoName(&ldquo;kane&rdquo;) // alert ra kane</p>
-<p>{% endhighlight %}</p>
-<p>Nghĩa là bạn có thể bỏ đi cặp dấu {}, điều này tuân thủ theo nguyên tắc &ldquo;nếu bên thân cặp {} chỉ là một câu lệnh thì bạn có thể bỏ cặp {}&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> echoName <span style="color:#ff79c6">=</span> (name) =&gt; alert(name);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>echoName(<span style="color:#f1fa8c">&#34;kane&#34;</span>) <span style="color:#6272a4">// alert ra kane
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4"></span>
+</code></pre></div><p>Nghĩa là bạn có thể bỏ đi cặp dấu {}, điều này tuân thủ theo nguyên tắc &ldquo;nếu bên thân cặp {} chỉ là một câu lệnh thì bạn có thể bỏ cặp {}&rdquo;.</p>
 <ul>
 <li>Khi <code>function</code> chỉ có <code>một tham tham số</code>, ta có thể viết ngắn gọn lại là:</li>
 </ul>
-<p>{% highlight javascript %}</p>
-<p>var echoName = name =&gt; {
-alert(name);
-}</p>
-<p>echoName(&ldquo;kane&rdquo;) // alert ra kane</p>
-<p>//Hoặc kết hợp cả tips ở trên thì ta có thể viết luôn như thế này</p>
-<p>var echoName1 = name =&gt; alert(name);</p>
-<p>{% endhighlight %}</p>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8be9fd;font-style:italic">var</span> echoName <span style="color:#ff79c6">=</span> name =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  alert(name);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>echoName(<span style="color:#f1fa8c">&#34;kane&#34;</span>) <span style="color:#6272a4">// alert ra kane
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#6272a4">//Hoặc kết hợp cả tips ở trên thì ta có thể viết luôn như thế này
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#8be9fd;font-style:italic">var</span> echoName1 <span style="color:#ff79c6">=</span> name =&gt; alert(name);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+</code></pre></div><ul>
 <li>Khi <code>function</code> không có tham số:</li>
 </ul>
-<p>{% highlight javascript %}</p>
-<p>var sayHello = () =&gt; alert(&ldquo;Hello&hellip;.!&quot;);</p>
-<p>sayHello(); // alert ra câu Hello&hellip;.!</p>
-<p>{% endhighlight %}</p>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> sayHello <span style="color:#ff79c6">=</span> () =&gt; alert(<span style="color:#f1fa8c">&#34;Hello....!&#34;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>sayHello(); <span style="color:#6272a4">// alert ra câu Hello....!
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4"></span>
+</code></pre></div><ul>
 <li>Ta Phải chú ý đến ràng buộc mũi tên <code>=&gt;</code> nữa nhá:</li>
 </ul>
-<p>{% highlight javascript %}</p>
-<p>const func1 = (x,y) // sai
-=&gt; {
-return x + y;
-};</p>
-<p>const func2 = (x,y) =&gt; // đúng
-{
-return x - y;
-};</p>
-<p>const func3 = (x,y) =&gt; {// đúng</p>
-<p>return x * y;
-};</p>
-<p>const func4 = ( // đúng
-x,
-y
-) =&gt; {
-return x / y;
-}
-{% endhighlight %}</p>
-<h2 id="7-destructuring-assignment-in-es6">7. Destructuring Assignment in ES6</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">const</span> func1 <span style="color:#ff79c6">=</span> (x,y) <span style="color:#6272a4">// sai
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"></span>=&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#ff79c6">return</span> x <span style="color:#ff79c6">+</span> y;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">const</span> func2 <span style="color:#ff79c6">=</span> (x,y) =&gt; <span style="color:#6272a4">// đúng
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#6272a4"></span>{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#ff79c6">return</span> x <span style="color:#ff79c6">-</span> y;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#ff79c6">const</span> func3 <span style="color:#ff79c6">=</span> (x,y) =&gt; {<span style="color:#6272a4">// đúng
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#ff79c6">return</span> x <span style="color:#ff79c6">*</span> y;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#ff79c6">const</span> func4 <span style="color:#ff79c6">=</span> ( <span style="color:#6272a4">// đúng
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#6272a4"></span>x,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>y
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>  <span style="color:#ff79c6">return</span> x <span style="color:#ff79c6">/</span> y;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>}
+</code></pre></div><h2 id="7-destructuring-assignment-in-es6">7. Destructuring Assignment in ES6</h2>
 <pre><code>Cú pháp Destructuring Assignment là một biểu thức Javascript mà nó có thể giải nén các giá trị từ `array` hoặc thuộc tính từ một `object` vào những biến riêng biệt.
-</code></pre><p>{% highlight javascript %}</p>
-<p>var a, b, rest;
-[a, b] = [10, 20];</p>
-<p>console.log(a);
-// expected output: 10</p>
-<p>console.log(b);
-// expected output: 20</p>
-<p>[a, b, &hellip;rest] = [10, 20, 30, 40, 50];</p>
-<p>console.log(rest);
-// expected output: [30,40,50]</p>
-<p>{% endhighlight %}</p>
-<p>Nếu để <code>...</code> trước một biến thì khi bị tràn giá trị như ví dụ cuối thì biến <code>rest</code> nó sẽ lấy hết phần giá trị bị tràn.</p>
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8be9fd;font-style:italic">var</span> a, b, rest;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>[a, b] <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">10</span>, <span style="color:#bd93f9">20</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>console.log(a);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#6272a4">// expected output: 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>console.log(b);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4">// expected output: 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>[a, b, ...rest] <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">10</span>, <span style="color:#bd93f9">20</span>, <span style="color:#bd93f9">30</span>, <span style="color:#bd93f9">40</span>, <span style="color:#bd93f9">50</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>console.log(rest);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#6272a4">// expected output: [30,40,50]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#6272a4"></span>
+</code></pre></div><p>Nếu để <code>...</code> trước một biến thì khi bị tràn giá trị như ví dụ cuối thì biến <code>rest</code> nó sẽ lấy hết phần giá trị bị tràn.</p>
 <p>Còn nhiều tips nữa như có thể: swap variable, ignoring some returned values bạn nào muốn tìm hiểu thêm thì vào <!-- raw HTML omitted -->đây<!-- raw HTML omitted --></p>
 <h2 id="8-modules-in-es6">8. Modules in ES6</h2>
 <p>Nếu bạn nào đang học ReactJS thì sẽ thường sử dụng tính năng này này, lúc ta ta quản lý từng module như một component, mình cũng mới học thôi nên hiểu sao nói vậy.</p>
 <p>Trước ES6 JavaScript không hỗ trợ module. Mọi người thường sử dụng AMD, RequireJS, CommonJS và nhiều cái khác. Bây giờ trong ES6 bạn có thể sử dụng các import và export.</p>
 <p>Hãy xem ví dụ chúng ta có một biến <code>port</code> và phương thức <code>getAccounts</code> trong file<code>module.js</code> ES5:</p>
-<p>{% highlight javascript %}</p>
-<p>module.exports = {
-port: 3000,
-getAccounts: function() {
-&hellip;
-}
-}</p>
-<p>{% endhighlight %}</p>
-<p>Trong file main.js ES5 chúng ta require(&lsquo;module.js) là dependency:</p>
-<p>{% highlight javascript %}</p>
-<p>var service = require(&lsquo;module.js&rsquo;)
-console.log(service.port) // 3000</p>
-<p>{% endhighlight %}</p>
-<p>Với ES6 chúng ta import và export như sau, ở file <code>module.js</code>:</p>
-<p>{% highlight javascript %}</p>
-<p>export var port = 3000
-export function getAccounts(url) {
-&hellip;
-}</p>
-<p>{% endhighlight %}</p>
-<p>Trong file <code>main.js</code></p>
-<p>{% highlight javascript %}</p>
-<p>import {port, getAccounts} from &lsquo;module&rsquo;
-console.log(port) // 3000</p>
-<p>{% endhighlight %}</p>
-<p>Hoặc ta muốn import hết những gì đã export trong file <code>module.js</code> thì:</p>
-<p>{% highlight javascript %}</p>
-<p>import * as service from &lsquo;module&rsquo;
-console.log(service.port) // 3000</p>
-<p>{% endhighlight %}</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>module.exports <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  port<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">3000</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  getAccounts<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>
+</code></pre></div><p>Trong file main.js ES5 chúng ta require(&lsquo;module.js) là dependency:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#8be9fd;font-style:italic">var</span> service <span style="color:#ff79c6">=</span> require(<span style="color:#f1fa8c">&#39;module.js&#39;</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>console.log(service.port) <span style="color:#6272a4">// 3000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4"></span>
+</code></pre></div><p>Với ES6 chúng ta import và export như sau, ở file <code>module.js</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">export</span> <span style="color:#8be9fd;font-style:italic">var</span> port <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3000</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#ff79c6">export</span> <span style="color:#8be9fd;font-style:italic">function</span> getAccounts(url) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>
+</code></pre></div><p>Trong file <code>main.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">import</span> {port, getAccounts} from <span style="color:#f1fa8c">&#39;module&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>console.log(port) <span style="color:#6272a4">// 3000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>
+</code></pre></div><p>Hoặc ta muốn import hết những gì đã export trong file <code>module.js</code> thì:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">import</span> <span style="color:#ff79c6">*</span> as service from <span style="color:#f1fa8c">&#39;module&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>console.log(service.port) <span style="color:#6272a4">// 3000
+</span></code></pre></div>
     </div>
   </article>
 

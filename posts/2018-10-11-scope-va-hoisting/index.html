@@ -164,22 +164,18 @@
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#1-hoisting-là-gì">1. Hoisting là gì?</a></li>
+    <li><a href="#2-scope-là-gì">2️. Scope là gì</a>
       <ul>
-        <li><a href="#1-hoisting-là-gì">1. Hoisting là gì?</a></li>
-        <li><a href="#2-scope-là-gì">2️. Scope là gì</a>
-          <ul>
-            <li><a href="#21-global-scope">2.1 Global scope</a></li>
-            <li><a href="#22-local-scope">2.2 Local Scope</a></li>
-            <li><a href="#23-function-scope">2.3 Function scope</a></li>
-            <li><a href="#23-lexical-scope">2.3 Lexical scope</a></li>
-            <li><a href="#24-scope-chain">2.4 Scope Chain</a></li>
-            <li><a href="#26-closures">2.6 Closures</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-tài-liệu-kham-khảo">3 Tài liệu kham khảo</a></li>
+        <li><a href="#21-global-scope">2.1 Global scope</a></li>
+        <li><a href="#22-local-scope">2.2 Local Scope</a></li>
+        <li><a href="#23-function-scope">2.3 Function scope</a></li>
+        <li><a href="#23-lexical-scope">2.3 Lexical scope</a></li>
+        <li><a href="#24-scope-chain">2.4 Scope Chain</a></li>
+        <li><a href="#26-closures">2.6 Closures</a></li>
       </ul>
     </li>
+    <li><a href="#3-tài-liệu-kham-khảo">3 Tài liệu kham khảo</a></li>
   </ul>
 </nav>
     </div>
@@ -215,68 +211,62 @@
   
     <div class="content" itemprop="articleBody">
       <p>Khi làm việc với javascript có bao giờ các bạn đã để ý là chúng ta hoàn toàn có thể sử dụng một biến trước khi chúng được khai báo không?. Thật ra mà nói thì không hề có chuyện sử dụng một biến trước khi nó được khai báo đâu, chỉ là với javascript thì ngôn ngữ này có cơ chế Hoisting vậy Hoisting là gì?</p>
-<h3 id="1-hoisting-là-gì">1. Hoisting là gì?</h3>
+<h2 id="1-hoisting-là-gì">1. Hoisting là gì?</h2>
 <p>Hoisting được hiểu là khi chúng ta khai báo biến (chỉ khi dùng <code>var</code>) thì javascript sẽ chuyển lên trên cùng của hàm.</p>
 <p>Chúng ta xét ví dụ:</p>
-<p>{% highlight javascript %}
-myFunc();</p>
-<p>function myFunc(){
-console.log(x);
-var x = 3;</p>
-<p>}
-// kết quả là undefined
-{% endhighlight %}</p>
-<p>Theo cơ chế Hoisting thì javascript sẽ hiểu như sau:</p>
-<p>{% highlight javascript %}
-myFunc();</p>
-<p>function myFunc(){
-var x; // x lúc này chưa được gán giá trị thì tức nhiên là undefined
-console.log(x);
-x = 3;
-}
-// kết quả là undefined
-{% endhighlight %}</p>
-<p>Vậy nó có đúng như tôi nói không ? chúng ta sẽ sử dụng 1 hàm kiểm tra xem biến đó đã tồn tại hay chưa để hiểu rõ liệu có gì sai sai ở đây không.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>myFunc();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#8be9fd;font-style:italic">function</span> myFunc(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>	console.log(x);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>	<span style="color:#8be9fd;font-style:italic">var</span> x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>	
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span style="color:#6272a4">// kết quả là undefined
+</span></code></pre></div><p>Theo cơ chế Hoisting thì javascript sẽ hiểu như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>myFunc();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#8be9fd;font-style:italic">function</span> myFunc(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>	<span style="color:#8be9fd;font-style:italic">var</span> x; <span style="color:#6272a4">// x lúc này chưa được gán giá trị thì tức nhiên là undefined
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#6272a4"></span>	console.log(x);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>	x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span style="color:#6272a4">// kết quả là undefined
+</span></code></pre></div><p>Vậy nó có đúng như tôi nói không ? chúng ta sẽ sử dụng 1 hàm kiểm tra xem biến đó đã tồn tại hay chưa để hiểu rõ liệu có gì sai sai ở đây không.</p>
 <p>Hãy ấn F12 chọn Console để kiểm chứng đoạn code bên dưới</p>
-<p>{% highlight javascript %}
-myFunc();</p>
-<p>function myFunc(){
-console.log(y);
-}
-{% endhighlight %}</p>
-<p>Nếu bản thân trong hàm <code>myFunc()</code> không được khai báo thì khi chạy nó sẽ xuất hiện 1 lỗi như sau:
-{% highlight javascript %}
-VM113:4 Uncaught ReferenceError: y is not defined
-at myFunc (&lt; anonymous &gt;:4:14)
-at &lt; anonymous &gt;:1:1
-{% endhighlight %}</p>
-<p>Nếu nó không báo lỗi thì sao? thì có lẽ bạn đã khai báo biến đó ở bên ngoài hàm rồi. Javascript sẽ tìm theo thứ tự inner -&gt; outer, ngộ nhỡ bạn khai báo biến <code>a</code> trong hàm <code>myFunc()</code> và khai báo biến <code>a</code> ở ngoài hàm thì theo cơ chế <code>Scope in javascript</code> thì nếu bên trong hàm không có thì nó sẽ lấy bên ngoài hàm. Bạn có thể kiểm chứng - Try it yourself.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>myFunc();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#8be9fd;font-style:italic">function</span> myFunc(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>	console.log(y);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>}
+</code></pre></div><p>Nếu bản thân trong hàm <code>myFunc()</code> không được khai báo thì khi chạy nó sẽ xuất hiện 1 lỗi như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>VM113<span style="color:#ff79c6">:</span><span style="color:#bd93f9">4</span> Uncaught ReferenceError<span style="color:#ff79c6">:</span> y is not defined
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    at myFunc (<span style="color:#ff79c6">&lt;</span> anonymous <span style="color:#ff79c6">&gt;:</span><span style="color:#bd93f9">4</span><span style="color:#ff79c6">:</span><span style="color:#bd93f9">14</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    at <span style="color:#ff79c6">&lt;</span> anonymous <span style="color:#ff79c6">&gt;:</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">:</span><span style="color:#bd93f9">1</span>
+</code></pre></div><p>Nếu nó không báo lỗi thì sao? thì có lẽ bạn đã khai báo biến đó ở bên ngoài hàm rồi. Javascript sẽ tìm theo thứ tự inner -&gt; outer, ngộ nhỡ bạn khai báo biến <code>a</code> trong hàm <code>myFunc()</code> và khai báo biến <code>a</code> ở ngoài hàm thì theo cơ chế <code>Scope in javascript</code> thì nếu bên trong hàm không có thì nó sẽ lấy bên ngoài hàm. Bạn có thể kiểm chứng - Try it yourself.</p>
 <p>Chúng ta thấy tiếp một định nghĩa <code>Scope</code> vậy scope là giống gì?</p>
-<h3 id="2-scope-là-gì">2️. Scope là gì</h3>
+<h2 id="2-scope-là-gì">2️. Scope là gì</h2>
 <p>Scope trong Javascript được hiểu là phạm vi biến hay phạm vi truy cập của biến, phạm vi này được xác định bằng khoảng trống giữa 2 dấu braces <code>{}</code> , hmm đến đây thì Scope được chia thành 2 loại là <code>Global scope</code> và <code>Local scope</code>, đương nhiên chúng ta học nó không chỉ cho biết mà là để trong lúc làm việc ta xác định được cái nào là Global cái nào là Local để biết đường mà fix bugs, bảo trì.</p>
 <p>Hmm.. ngồi tra 1 tí nhiều định nghĩa lắm chứ không ít đâu ngoài <code>local scope</code>,<code>global scope</code> mà cón có: function scope, lexical scope, scope chain, closure ..</p>
-<h4 id="21-global-scope">2.1 Global scope</h4>
+<h3 id="21-global-scope">2.1 Global scope</h3>
 <p>Chữ Global ở đây được hiểu là toàn cục, 1 biến toàn cục là biến được khai báo không nằm trong bất kì 1 hàm nào, ví dụ:</p>
-<p>{% highlight javascript %}
-// những biến khai báo ngoài đây đều là biến Global
-var global_var = 3;</p>
-<p>function myFunc(x) {
-// trong đây là 1 scope khác
-}</p>
-<p>{% endhighlight %}</p>
-<p>Đấy đơn giản dễ hiểu không cầu kì :).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4">// những biến khai báo ngoài đây đều là biến Global
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">var</span> global_var <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#8be9fd;font-style:italic">function</span> myFunc(x) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  <span style="color:#6272a4">// trong đây là 1 scope khác
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#6272a4"></span>}
+</code></pre></div><p>Đấy đơn giản dễ hiểu không cầu kì :).</p>
 <pre><code>    Global scope là bạn tốt nhất và cũng là cơn ác mộng tồi tệ nhất!!! Nếu không nắm rõ mình đang nằm trong scope nào, chắc chắn ta sẽ gặp vấn đề với global scope (thường là xung đột namespace). Người ta cứ nói rằng việc dùng Global scope là rất dở, nhưng không phải trong mọi trường hợp
-</code></pre><h4 id="22-local-scope">2.2 Local Scope</h4>
-<p>Local được hiểu là cục bộ, những biến khai báo trong 1 hàm được gọi là <code>Local scope</code>
-{% highlight javascript %}
-// những biến khai báo ngoài đây đều là biến Global</p>
-<p>function myFunc(x) {
-// trong đây là 1 scope khác
-// biến nào khai báo trong đây được hiểu là Local 
-}
-{% endhighlight %}</p>
-<p>Hiểu đơn giản là vậy trước đã tiếp theo là phần nâng cao 1 tí đây</p>
-<h4 id="23-function-scope">2.3 Function scope</h4>
+</code></pre><h3 id="22-local-scope">2.2 Local Scope</h3>
+<p>Local được hiểu là cục bộ, những biến khai báo trong 1 hàm được gọi là <code>Local scope</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4">// những biến khai báo ngoài đây đều là biến Global
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#8be9fd;font-style:italic">function</span> myFunc(x) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  <span style="color:#6272a4">// trong đây là 1 scope khác
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#6272a4"></span>  <span style="color:#6272a4">// biến nào khai báo trong đây được hiểu là Local 
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#6272a4"></span>}
+</code></pre></div><p>Hiểu đơn giản là vậy trước đã tiếp theo là phần nâng cao 1 tí đây</p>
+<h3 id="23-function-scope">2.3 Function scope</h3>
 <p>Như tôi nói ở phần định nghĩa thì Scope được xác định bằng khoảng trống giữa 2 dấu braces <code>{}</code> nhưng nó chỉ đúng khi chúng ta khởi tạo 1 hàm, còn lại những <code>{}</code> của vòng lặp hay câu lệnh rẽ nhánh đều không tạo ra <code>scope</code> như:</p>
 <ol>
 <li><code>if</code></li>
@@ -285,92 +275,78 @@ var global_var = 3;</p>
 <li><code>while..</code></li>
 <li><code>...</code></li>
 </ol>
-<p>{% highlight javascript %}
-// Scope A
-var myFunction = function () {
-// Scope B
-var myOtherFunction = function () {
-// Scope C
-};
-};
-{% endhighlight %}</p>
-<h4 id="23-lexical-scope">2.3 Lexical scope</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4">// Scope A
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">var</span> myFunction <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#6272a4">// Scope B
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4"></span>  <span style="color:#8be9fd;font-style:italic">var</span> myOtherFunction <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    <span style="color:#6272a4">// Scope C
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#6272a4"></span>  };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>};
+</code></pre></div><h3 id="23-lexical-scope">2.3 Lexical scope</h3>
 <p>Khi nhìn thấy một function nằm trong một function khác, function bên trong có quyền truy cập tới scope của function bên ngoài, đó gọi là <code>Lexical Scope</code> hay <code>Closure</code> - còn được gọi là <code>Static Scope</code>. Ví dụ:</p>
-<p>{% highlight javascript %}
-// Scope A
-var myFunction = function () {
-// Scope B
-var name = &lsquo;Kane&rsquo;; // định nghĩa trong Scope B
-var myOtherFunction = function () {
-// Scope C: &ldquo;name&rdquo; vẫn có thể được truy cập đến từ đây!!
-};
-};
-{% endhighlight %}</p>
-<p>Làm việc với Lexical scope cũng khá là dễ dàng, bật cứ biến/object/ function được định nghĩa trong scope cha, đều có thể được truy cập bởi các scope con nhỏ hơn</p>
-<p>{% highlight javascript %}
-var name = &lsquo;Kane&rsquo;;
-//Scope A
-var scope1 = function () {
-// name có thể sử dụng ở đây
-//Scope B
-var scope2 = function () {
-// name có thể sử dụng ở đây
-// Scope C
-var scope3 = function () {
-// name có thể sử dụng ở đây
-// Scope D
-};
-};
-};
-{% endhighlight %}</p>
-<p>Chú ý, Lexical scope không hoạt động theo chiều ngược lại, tức là biến/object/function định nghĩa trong scope con thì ko thể truy cập bởi scope cha.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4">// Scope A
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">var</span> myFunction <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#6272a4">// Scope B
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4"></span>  <span style="color:#8be9fd;font-style:italic">var</span> name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Kane&#39;</span>; <span style="color:#6272a4">// định nghĩa trong Scope B
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#6272a4"></span>  <span style="color:#8be9fd;font-style:italic">var</span> myOtherFunction <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>    <span style="color:#6272a4">// Scope C: &#34;name&#34; vẫn có thể được truy cập đến từ đây!!
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span style="color:#6272a4"></span>  };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>};
+</code></pre></div><p>Làm việc với Lexical scope cũng khá là dễ dàng, bật cứ biến/object/ function được định nghĩa trong scope cha, đều có thể được truy cập bởi các scope con nhỏ hơn</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8be9fd;font-style:italic">var</span> name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Kane&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4">//Scope A
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">var</span> scope1 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#6272a4">// name có thể sử dụng ở đây
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#6272a4"></span>  <span style="color:#6272a4">//Scope B
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#6272a4"></span>  <span style="color:#8be9fd;font-style:italic">var</span> scope2 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#6272a4">// name có thể sử dụng ở đây
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// Scope C
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">var</span> scope3 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      <span style="color:#6272a4">// name có thể sử dụng ở đây
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"></span>      <span style="color:#6272a4">// Scope D
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#6272a4"></span>    };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>};
+</code></pre></div><p>Chú ý, Lexical scope không hoạt động theo chiều ngược lại, tức là biến/object/function định nghĩa trong scope con thì ko thể truy cập bởi scope cha.</p>
 <p>Dấu <code>-&gt;</code> có nghĩa là có thể sử dụng, dựa vào ví dụ trên ta suy ra được thứ tự khả dụng</p>
 <p>Scope D -&gt; Scope C -&gt; Scope B -&gt; Scope A</p>
 <p>Và ta không thể truy xuất biến của các scope theo chiều ngược lại như:</p>
 <p>Scope A -&gt; Scope B -&gt; Scope C -&gt; Scope D</p>
-<h4 id="24-scope-chain">2.4 Scope Chain</h4>
+<h3 id="24-scope-chain">2.4 Scope Chain</h3>
 <p>Hiểu đơn giản là nếu chúng ta sử dụng 1 biến <code>varA</code> trong hàm <code>myFunc()</code> mà hàm này không có biến <code>varA</code> thì nó sẽ tìm kiếm những biến nào có tên <code>varA</code> ở những scope liên tiếp bên ngoài nó.</p>
-<p>Điều này khả dụng với Lexical scope, xét ví dụ:
-{% highlight javascript %}
-var name = &lsquo;Kane&rsquo;;
-//Scope A
-var scope1 = function () {
-// name có thể sử dụng ở đây
-//Scope B
-var scope2 = function () {
-// name có thể sử dụng ở đây
-// Scope C
-var scope3 = function () {
-// name có thể sử dụng ở đây
-// Scope D
-console.log(name)
-};
-};
-};
-{% endhighlight %}</p>
-<p>nếu <code>name</code> không có trong scope D thì nó sẽ tìm từng scope cha của nó từ trong ra ngoài scope nào có biến cùng tên <code>name</code> thì nó lấy</p>
+<p>Điều này khả dụng với Lexical scope, xét ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8be9fd;font-style:italic">var</span> name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Kane&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4">//Scope A
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">var</span> scope1 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#6272a4">// name có thể sử dụng ở đây
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#6272a4"></span>  <span style="color:#6272a4">//Scope B
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#6272a4"></span>  <span style="color:#8be9fd;font-style:italic">var</span> scope2 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#6272a4">// name có thể sử dụng ở đây
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// Scope C
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">var</span> scope3 <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      <span style="color:#6272a4">// name có thể sử dụng ở đây
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"></span>      <span style="color:#6272a4">// Scope D
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#6272a4"></span>      console.log(name)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>};
+</code></pre></div><p>nếu <code>name</code> không có trong scope D thì nó sẽ tìm từng scope cha của nó từ trong ra ngoài scope nào có biến cùng tên <code>name</code> thì nó lấy</p>
 <p>Scope D (name? yes:&lsquo;no&rsquo;) -&gt; Scope C (name? yes:&lsquo;no&rsquo;) -&gt; Scope B  (name? yes:&lsquo;no&rsquo;)-&gt; Scope A (name? &lsquo;yes&rsquo;:no)</p>
-<h4 id="26-closures">2.6 Closures</h4>
+<h3 id="26-closures">2.6 Closures</h3>
 <p>Closure có mối quan hệ chặt chẽ với Lexical Scope. Ví dụ tiêu biểu về cách thức hoạt động của closure đó là khi 1 function trả về tham chiếu tới 1 function.</p>
-<p>{% highlight javascript %}
-var sayHello = function (name) {
-var text = &lsquo;Hello, ' + name;
-return function () {
-console.log(text);
-};
-};
-{% endhighlight %}</p>
-<p>Khái niệm <code>closure</code> làm cho scope của ta không thể tiếp cận được public scope. Chỉ gọi function sẽ không thực hiện gì bởi nó trả về kết quả là tham chiếu tới function.</p>
-<p>{% highlight javascript %}
-sayHello(&lsquo;Kane&rsquo;); // nó trả về tham chiếu của function và không thực hiện gì cả
-{% endhighlight %}</p>
-<p>Để method hoạt động ta cần gán nó vào biến rồi mới thực thi:</p>
-<p>{% highlight javascript %}
-var helloMethod = sayHello(&lsquo;Kane&rsquo;);
-helloMethod(); // Hello Kane
-{% endhighlight %}</p>
-<p>Không nhất thiết phải trả về function mới được gọi là closure. Đơn giản chỉ cần truy cập tới biến nằm ngoài Lexical scope cũng là closure.</p>
-<h3 id="3-tài-liệu-kham-khảo">3 Tài liệu kham khảo</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> sayHello <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span> (name) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#8be9fd;font-style:italic">var</span> text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Hello, &#39;</span> <span style="color:#ff79c6">+</span> name;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">function</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    console.log(text);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>};
+</code></pre></div><p>Khái niệm <code>closure</code> làm cho scope của ta không thể tiếp cận được public scope. Chỉ gọi function sẽ không thực hiện gì bởi nó trả về kết quả là tham chiếu tới function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>sayHello(<span style="color:#f1fa8c">&#39;Kane&#39;</span>); <span style="color:#6272a4">// nó trả về tham chiếu của function và không thực hiện gì cả
+</span></code></pre></div><p>Để method hoạt động ta cần gán nó vào biến rồi mới thực thi:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> helloMethod <span style="color:#ff79c6">=</span> sayHello(<span style="color:#f1fa8c">&#39;Kane&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>helloMethod(); <span style="color:#6272a4">// Hello Kane
+</span></code></pre></div><p>Không nhất thiết phải trả về function mới được gọi là closure. Đơn giản chỉ cần truy cập tới biến nằm ngoài Lexical scope cũng là closure.</p>
+<h2 id="3-tài-liệu-kham-khảo">3 Tài liệu kham khảo</h2>
 <p><a href="https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/#what-is-scope">Everything you wanted to know about JavaScript scope</a></p>
 
     </div>
@@ -403,22 +379,18 @@ helloMethod(); // Hello Kane
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#1-hoisting-là-gì">1. Hoisting là gì?</a></li>
+    <li><a href="#2-scope-là-gì">2️. Scope là gì</a>
       <ul>
-        <li><a href="#1-hoisting-là-gì">1. Hoisting là gì?</a></li>
-        <li><a href="#2-scope-là-gì">2️. Scope là gì</a>
-          <ul>
-            <li><a href="#21-global-scope">2.1 Global scope</a></li>
-            <li><a href="#22-local-scope">2.2 Local Scope</a></li>
-            <li><a href="#23-function-scope">2.3 Function scope</a></li>
-            <li><a href="#23-lexical-scope">2.3 Lexical scope</a></li>
-            <li><a href="#24-scope-chain">2.4 Scope Chain</a></li>
-            <li><a href="#26-closures">2.6 Closures</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-tài-liệu-kham-khảo">3 Tài liệu kham khảo</a></li>
+        <li><a href="#21-global-scope">2.1 Global scope</a></li>
+        <li><a href="#22-local-scope">2.2 Local Scope</a></li>
+        <li><a href="#23-function-scope">2.3 Function scope</a></li>
+        <li><a href="#23-lexical-scope">2.3 Lexical scope</a></li>
+        <li><a href="#24-scope-chain">2.4 Scope Chain</a></li>
+        <li><a href="#26-closures">2.6 Closures</a></li>
       </ul>
     </li>
+    <li><a href="#3-tài-liệu-kham-khảo">3 Tài liệu kham khảo</a></li>
   </ul>
 </nav>
     </div>

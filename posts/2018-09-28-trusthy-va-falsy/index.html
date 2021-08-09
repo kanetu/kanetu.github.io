@@ -164,14 +164,10 @@
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#1-primitive-data-type---kiểu-dữ-liệu-nguyên-thủy">1. Primitive data type - Kiểu dữ liệu nguyên thủy</a></li>
-        <li><a href="#2-truthy-và-falsy">2️. Truthy và Falsy</a></li>
-        <li><a href="#2-bonus-hàm-kiểm-tra-truthy">2. Bonus hàm kiểm tra Truthy</a></li>
-        <li><a href="#3-nghiêm-cứu-thêm">3. Nghiêm cứu thêm</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-primitive-data-type---kiểu-dữ-liệu-nguyên-thủy">1. Primitive data type - Kiểu dữ liệu nguyên thủy</a></li>
+    <li><a href="#2-truthy-và-falsy">2️. Truthy và Falsy</a></li>
+    <li><a href="#3-bonus-hàm-kiểm-tra-truthy">3. Bonus hàm kiểm tra Truthy</a></li>
+    <li><a href="#4-nghiêm-cứu-thêm">4. Nghiêm cứu thêm</a></li>
   </ul>
 </nav>
     </div>
@@ -206,8 +202,8 @@
 
   
     <div class="content" itemprop="articleBody">
-      <p>Truthy và Falsy là gì?, thật ra khái niệm rất lạ và tôi cũng tự hỏi nó là cái gì mặc dù học Javascript 4 năm rồi. Đúng là cái gì không biết thì nó thật mới mẽ.</p>
-<h3 id="1-primitive-data-type---kiểu-dữ-liệu-nguyên-thủy">1. Primitive data type - Kiểu dữ liệu nguyên thủy</h3>
+      <p>Truthy và Falsy là gì?, đây là một khái niệm mà rất nhiều người khi học Javascript rất ít khi để ý đến ngay cả mình cũng vậy.</p>
+<h2 id="1-primitive-data-type---kiểu-dữ-liệu-nguyên-thủy">1. Primitive data type - Kiểu dữ liệu nguyên thủy</h2>
 <p>Khi chúng ta khai báo một biến nếu chúng ta không khai báo giá trị của cho biến thì tự động bên trong cơ chế Javascript sẽ <code>set</code> cho biến là <code>undefined</code> đúng không?</p>
 <p>Và để hiểu gõ hơn thì sau đây là 6 kiểu dữ liệu nguyên thủy trong Javascript:</p>
 <ol>
@@ -219,13 +215,11 @@
 <li>Symbol (một giá trị nguyên thủy độc nhất và không thay đổi =&gt; giá trị mới ở ES6).</li>
 </ol>
 <p>Ngoài ra tất cả là đều là một đối tượng (Object) bao gồm cả <code>Array</code></p>
-<p>{% highlight javascript %}
-var a;
-// nếu chúng ta không gán giá trị thì mặc định là undefined
-var y = 5;
-// y = 5 lúc này y mang giá trị kiểu Number
-{% endhighlight %}</p>
-<h3 id="2-truthy-và-falsy">2️. Truthy và Falsy</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> a;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4">// nếu chúng ta không gán giá trị thì mặc định là undefined
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">var</span> y <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4">// y = 5 lúc này y mang giá trị kiểu Number
+</span></code></pre></div><h2 id="2-truthy-và-falsy">2️. Truthy và Falsy</h2>
 <p>Mỗi giá trị có sẵn một giá trị <code>Boolean</code> mặc định thường được gọi là <code>Truthy and Falsy</code> và nếu chúng ta dùng nó trong so sánh (Loose Equality Comparisons - <code>==</code>) thì nó rất là ngáo ộp.</p>
 <p>Để dễ dàng ghi nhớ thì những giá trị sau đây mặc định là **Falsy:</p>
 <ul>
@@ -245,21 +239,20 @@ var y = 5;
 <li><code>function(){}</code></li>
 </ul>
 <p>Cách nhớ nhanh thì ta chỉ cần để ý những giá trị được liệt kê là Falsy thôi còn lại là Truthy tất.</p>
-<h3 id="2-bonus-hàm-kiểm-tra-truthy">2. Bonus hàm kiểm tra Truthy</h3>
-<p>{% highlight javascript %}
-function isTruthy(x) {
-if(x){
-return true;
-}else{
-return false;
-}
-}</p>
-<p>console.log(isTruthy(true));
-console.log(isTruthy(&lsquo;0&rsquo;));
-console.log(isTruthy([]));
-console.log(isTruthy(1));
-{% endhighlight %}</p>
-<h3 id="3-nghiêm-cứu-thêm">3. Nghiêm cứu thêm</h3>
+<h2 id="3-bonus-hàm-kiểm-tra-truthy">3. Bonus hàm kiểm tra Truthy</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8be9fd;font-style:italic">function</span> isTruthy(x) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#ff79c6">if</span>(x){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  }<span style="color:#ff79c6">else</span>{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>console.log(isTruthy(<span style="color:#ff79c6">true</span>));
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>console.log(isTruthy(<span style="color:#f1fa8c">&#39;0&#39;</span>));
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>console.log(isTruthy([]));
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>console.log(isTruthy(<span style="color:#bd93f9">1</span>));
+</code></pre></div><h2 id="4-nghiêm-cứu-thêm">4. Nghiêm cứu thêm</h2>
 <p><a href="https://www.sitepoint.com/javascript-truthy-falsy/">Loose Equality Comparisons và Retrict Equality Comparisons</a></p>
 
     </div>
@@ -292,14 +285,10 @@ console.log(isTruthy(1));
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#1-primitive-data-type---kiểu-dữ-liệu-nguyên-thủy">1. Primitive data type - Kiểu dữ liệu nguyên thủy</a></li>
-        <li><a href="#2-truthy-và-falsy">2️. Truthy và Falsy</a></li>
-        <li><a href="#2-bonus-hàm-kiểm-tra-truthy">2. Bonus hàm kiểm tra Truthy</a></li>
-        <li><a href="#3-nghiêm-cứu-thêm">3. Nghiêm cứu thêm</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-primitive-data-type---kiểu-dữ-liệu-nguyên-thủy">1. Primitive data type - Kiểu dữ liệu nguyên thủy</a></li>
+    <li><a href="#2-truthy-và-falsy">2️. Truthy và Falsy</a></li>
+    <li><a href="#3-bonus-hàm-kiểm-tra-truthy">3. Bonus hàm kiểm tra Truthy</a></li>
+    <li><a href="#4-nghiêm-cứu-thêm">4. Nghiêm cứu thêm</a></li>
   </ul>
 </nav>
     </div>

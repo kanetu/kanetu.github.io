@@ -34,7 +34,7 @@ Coding convention bao gồm những phần: file organization, indentation, comm
       <pubDate>Fri, 28 Sep 2018 03:00:40 +0000</pubDate>
       
       <guid>https://kanetu.github.io/posts/2018-09-28-trusthy-va-falsy/</guid>
-      <description>Truthy và Falsy là gì?, thật ra khái niệm rất lạ và tôi cũng tự hỏi nó là cái gì mặc dù học Javascript 4 năm rồi. Đúng là cái gì không biết thì nó thật mới mẽ.
+      <description>Truthy và Falsy là gì?, đây là một khái niệm mà rất nhiều người khi học Javascript rất ít khi để ý đến ngay cả mình cũng vậy.
 1. Primitive data type - Kiểu dữ liệu nguyên thủy Khi chúng ta khai báo một biến nếu chúng ta không khai báo giá trị của cho biến thì tự động bên trong cơ chế Javascript sẽ set cho biến là undefined đúng không?</description>
     </item>
     
@@ -66,9 +66,8 @@ Coding convention bao gồm những phần: file organization, indentation, comm
       
       <guid>https://kanetu.github.io/posts/2018-07-19-co-che-bat-dong-bo-trong-javascript/</guid>
       <description>Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào, ta xem ví dụ sau:
-{% highlight javascript %} console.log(&amp;lsquo;Dong 1&amp;rsquo;); console.log(&amp;lsquo;Dong 2&amp;rsquo;); console.log(&amp;lsquo;Dong 3&amp;rsquo;); {% endhighlight %}
-Như các bạn thấy thì nhìn vào ta biết ngay nó sẽ in ra những gì, lần luật là:
-{% highlight javascript %} Dong 1 Dong 2 Dong 3 {% endhighlight %}</description>
+1console.log(&amp;#39;Dong 1&amp;#39;); 2console.log(&amp;#39;Dong 2&amp;#39;); 3console.log(&amp;#39;Dong 3&amp;#39;); Như các bạn thấy thì nhìn vào ta biết ngay nó sẽ in ra những gì, lần luật là:
+1Dong 1 2Dong 2 3Dong 3 Bây giờ ta đặt thêm setTimeout() cho dòng thứ 2 để xem sao:</description>
     </item>
     
     <item>
@@ -92,6 +91,36 @@ Chúng tôi lại được anh Mark phân công support tìm bug cho một websi
     </item>
     
     <item>
+      <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 3</title>
+      <link>https://kanetu.github.io/posts/2018-07-6-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</link>
+      <pubDate>Fri, 06 Jul 2018 09:18:40 +0000</pubDate>
+      
+      <guid>https://kanetu.github.io/posts/2018-07-6-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</guid>
+      <description>6.Arrow Function in ES6 Hmm..Tính năng này rất thường xuất hiện trong ReactJS. arrow dịch ra là mũi tên, vâng chúng ta sẽ làm việc với mũi tên :).
+Thông thường khi tạo một function trong Javascript thì ta sử dụng những cách sau:
+1//cách 1 2function nameFunction(var1,var2){ 3 ... 4} 5 6// cách 2 7var nameFunction = function(var1, var2){ 8 .... 9} Trong ES6 ta tạo đơn giản hơn bằng cách sử dụng mũi tên như sau:</description>
+    </item>
+    
+    <item>
+      <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 2</title>
+      <link>https://kanetu.github.io/posts/2018-07-5-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</link>
+      <pubDate>Thu, 05 Jul 2018 12:15:40 +0000</pubDate>
+      
+      <guid>https://kanetu.github.io/posts/2018-07-5-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</guid>
+      <description>Research lại Object trong Javacript Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5.
+Ta gọi mỗi item là một property(thuộc tính) của object nếu value của item đó có kiểu dữ liệu là kiểu phức hợp hoặc các kiểu dữ liệu cơ bản, ngược lại nếu value của item nó là một hàm (một function) thì ta gọi nó là method của object (phương thức của object).</description>
+    </item>
+    
+    <item>
+      <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 1</title>
+      <link>https://kanetu.github.io/posts/2018-07-4-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</link>
+      <pubDate>Wed, 04 Jul 2018 10:15:40 +0000</pubDate>
+      
+      <guid>https://kanetu.github.io/posts/2018-07-4-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</guid>
+      <description>Sau một thời gian nghiên cứu về ReactJS tôi nhận ra mình còn chưa ổn về javascript và tham khảo trên mạng thì có một thành viên trong nhóm nói rằng: &amp;ldquo;Chưa nghiêm cứu về ES6 mà đã vội học ReactJS là một sai lầm&amp;rdquo;, ai cũng thế khi nghe nói như vậy thì chắc hẵn sẽ nghĩ là ES6 lợi hại vậy sao?, có lẻ mình đã cầm đèn chạy trước oto rồi.</description>
+    </item>
+    
+    <item>
       <title>Một tuần tại {Be} Solution</title>
       <link>https://kanetu.github.io/posts/2018-06-11-mot-tuan-tai-be-solution/</link>
       <pubDate>Mon, 11 Jun 2018 14:00:40 +0000</pubDate>
@@ -104,43 +133,10 @@ Tôi gặp một trở ngại khi phải làm việc với Javascript như là l
     <item>
       <title>Ngày đầu thực tập tại {Be} Solution</title>
       <link>https://kanetu.github.io/posts/2018-06-4-ngay-dau-thuc-tap-tai-be-solution/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 04 Jun 2018 12:32:40 +0000</pubDate>
       
       <guid>https://kanetu.github.io/posts/2018-06-4-ngay-dau-thuc-tap-tai-be-solution/</guid>
       <description>Xin chào, tôi là Hiếu nickname là Kane hiện đang là sinh viên năm 3 trường đại học Trà Vinh, năm 3 này tôi được đi thực tập tại một cty outsource ở TP HCM là Be Solutions, ở đây tôi được rất nhiều người hướng dẫn tùy vào từng giai đoạn thực tập, người hướng dẫn tôi anh Yang Nguyễn đặt ra 3 yêu cầu phải làm trong khóa thực tập này bao gồm:</description>
-    </item>
-    
-    <item>
-      <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 1</title>
-      <link>https://kanetu.github.io/posts/2018-07-4-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kanetu.github.io/posts/2018-07-4-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</guid>
-      <description>Sau một thời gian nghiên cứu về ReactJS tôi nhận ra mình còn chưa ổn về javascript và tham khảo trên mạng thì có một thành viên trong nhóm nói rằng: &amp;ldquo;Chưa nghiêm cứu về ES6 mà đã vội học ReactJS là một sai lầm&amp;rdquo;, ai cũng thế khi nghe nói như vậy thì chắc hẵn sẽ nghĩ là ES6 lợi hại vậy sao?, có lẻ mình đã cầm đèn chạy trước oto rồi.</description>
-    </item>
-    
-    <item>
-      <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 2</title>
-      <link>https://kanetu.github.io/posts/2018-07-5-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kanetu.github.io/posts/2018-07-5-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</guid>
-      <description>#Research lại Object trong Javacript Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5.
-Ta gọi mỗi item là một property(thuộc tính) của object nếu value của item đó có kiểu dữ liệu là kiểu phức hợp hoặc các kiểu dữ liệu cơ bản, ngược lại nếu value của item nó là một hàm (một function) thì ta gọi nó là method của object (phương thức của object).</description>
-    </item>
-    
-    <item>
-      <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 3</title>
-      <link>https://kanetu.github.io/posts/2018-07-6-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kanetu.github.io/posts/2018-07-6-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</guid>
-      <description>6.Arrow Function in ES6 Hmm..Tính năng này rất thường xuất hiện trong ReactJS. arrow dịch ra là mũi tên, vâng chúng ta sẽ làm việc với mũi tên :).
-Thông thường khi tạo một function trong Javascript thì ta sử dụng những cách sau:
-{% highlight javascript %}
-//cách 1 function nameFunction(var1,var2){ &amp;hellip; }
-// cách 2 var nameFunction = function(var1, var2){ &amp;hellip;. } {% endhighlight %}
-Trong ES6 ta tạo đơn giản hơn bằng cách sử dụng mũi tên như sau:</description>
     </item>
     
   </channel>

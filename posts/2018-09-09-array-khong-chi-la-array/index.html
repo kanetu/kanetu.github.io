@@ -164,16 +164,12 @@
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#1-stack">1️. Stack</a></li>
-        <li><a href="#2-queue">2. Queue</a></li>
-        <li><a href="#3-dictionary">3. Dictionary</a></li>
-        <li><a href="#4-sortable-list">4. Sortable List</a></li>
-        <li><a href="#5-string-builder">5. String Builder</a></li>
-        <li><a href="#6-combo">6. Combo</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-stack">1️. Stack</a></li>
+    <li><a href="#2-queue">2. Queue</a></li>
+    <li><a href="#3-dictionary">3. Dictionary</a></li>
+    <li><a href="#4-sortable-list">4. Sortable List</a></li>
+    <li><a href="#5-string-builder">5. String Builder</a></li>
+    <li><a href="#6-combo">6. Combo</a></li>
   </ul>
 </nav>
     </div>
@@ -219,82 +215,72 @@ Chúng ta có thể dùng array làm:</p>
 <li>String Builder.</li>
 <li>Combo.</li>
 </ol>
-<h3 id="1-stack">1️. Stack</h3>
+<h2 id="1-stack">1️. Stack</h2>
 <p>Bỏ qua cái thứ 1, chúng ta có thể dùng array như 1 stack, đặc tính của stack là LIFO (đi trễ về sớm). Có 2 method để là chuyện này là push và pop</p>
-<p>const array = [1, 2, 3];
-array.push(4); // =&gt; [1, 2, 3, 4]
-array.pop() // =&gt; [1, 2, 3]</p>
-<h3 id="2-queue">2. Queue</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">const</span> array <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>array.push(<span style="color:#bd93f9">4</span>); <span style="color:#6272a4">// =&gt; [1, 2, 3, 4]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>array.pop() <span style="color:#6272a4">// =&gt; [1, 2, 3]
+</span></code></pre></div><h2 id="2-queue">2. Queue</h2>
 <p>Sử dụng array như 1 queue cũng có 2 method là unshift (enqueue), shift (dequeue) để đảm bảo đặc tính FIFO (đi sớm về sớm)</p>
-<p>{% highlight javascript %}
-const array = [1, 2, 3];
-array.shift(); // =&gt; [2, 3
-array.unshift(1) // =&gt; [1, 2, 3]
-{% endhighlight %}</p>
-<h3 id="3-dictionary">3. Dictionary</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">const</span> array <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>array.shift(); <span style="color:#6272a4">// =&gt; [2, 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>array.unshift(<span style="color:#bd93f9">1</span>) <span style="color:#6272a4">// =&gt; [1, 2, 3]
+</span></code></pre></div><h2 id="3-dictionary">3. Dictionary</h2>
 <p>Dùng array như môt Dictionary có hơi miễn cưỡng nhưng ok, fine, nó vẫn hoạt động bình thường</p>
-<p>{% highlight javascript %}
-const array = [1, 2, 3];
-array['$key1'] = 1; =&gt; [1, 2, 3]
-array.$key2 = 2; =&gt; [1, 2, 3]
-delete array.$key; =&gt; [1, 2, 3]
-{% endhighlight %}</p>
-<p>Như các bạn đã thấy, việc thao tác trên key có 2 điểm cần lưu ý, key phải thêm ký tự phân biệt nào đó để tránh trùng tên với những prop/method của array, ở đây mình dùng dấu $. Thứ hai là việc thêm hay xóa key không làm thay đổi số lượng phần tử trong array. Muốn duyệt key thì dùng</p>
-<p>{% highlight javascript %}
-for(let key in array) // =&gt; 1, 2, 3, $key1 (không có $key2 vì đã bị delete)
-{% endhighlight %}</p>
-<h3 id="4-sortable-list">4. Sortable List</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">const</span> array <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>array[<span style="color:#f1fa8c">&#39;$key1&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>; =&gt; [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>array.$key2 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span>; =&gt; [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#ff79c6">delete</span> array.$key; =&gt; [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>]
+</code></pre></div><p>Như các bạn đã thấy, việc thao tác trên key có 2 điểm cần lưu ý, key phải thêm ký tự phân biệt nào đó để tránh trùng tên với những prop/method của array, ở đây mình dùng dấu $. Thứ hai là việc thêm hay xóa key không làm thay đổi số lượng phần tử trong array. Muốn duyệt key thì dùng</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">let</span> key <span style="color:#ff79c6">in</span> array) <span style="color:#6272a4">// =&gt; 1, 2, 3, $key1 (không có $key2 vì đã bị delete)
+</span></code></pre></div><h2 id="4-sortable-list">4. Sortable List</h2>
 <p>Dùng array như sortable list khá đơn giản, bản thân method sort của array là mutable nên mỗi lần thêm item mới vào thì chúng ta sort lại</p>
-<p>{% highlight javascript %}
-const array = [5, 6, 7];
-array.push(1); // =&gt; [5, 6, 7, 1]
-array.sort(); // =&gt; [1, 5, 6, 7]
-{% endhighlight %}</p>
-<h3 id="5-string-builder">5. String Builder</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">const</span> array <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">6</span>, <span style="color:#bd93f9">7</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>array.push(<span style="color:#bd93f9">1</span>); <span style="color:#6272a4">// =&gt; [5, 6, 7, 1]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>array.sort(); <span style="color:#6272a4">// =&gt; [1, 5, 6, 7]
+</span></code></pre></div><h2 id="5-string-builder">5. String Builder</h2>
 <p>Array còn được sử dụng như String Builder, đa số ngôn ngữ lập trình, việc nối chuỗi mất khá nhiều bộ nhớ và chậm, vi mỗi lần nối chuỗi thì hệ thống phải cấp phát vùng nhớ mới rộng hơn, ứng với độ dài chuỗi củ và mới cộng lại, sau đó sao chép cả 2 vào đó. Nên xử lý chuỗi nhiều có thể làm chậm he thống, vì vậy String Builder ra đời, giúp tối ưu việc chỉnh sửa chuỗi.</p>
-<p>{% highlight javascript %}
-const stringBuilder = [];
-for(let i [0; i &lt; 10000; i++) {
-stringBuilder.push(&lsquo;Hello World&rsquo;);
-}
-const result = stringBuilder.join('');
-{% endhighlight %}</p>
-<h3 id="6-combo">6. Combo</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">const</span> stringBuilder <span style="color:#ff79c6">=</span> [];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">let</span> i [<span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">10000</span>; i<span style="color:#ff79c6">++</span>) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  stringBuilder.push(<span style="color:#f1fa8c">&#39;Hello World&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#ff79c6">const</span> result <span style="color:#ff79c6">=</span> stringBuilder.join(<span style="color:#f1fa8c">&#39;&#39;</span>);
+</code></pre></div><h2 id="6-combo">6. Combo</h2>
 <p>Cách này là một cách tà đạo của array, dùng kết hợp array + dictionary. Ví dụ bạn có một hàm tìm kiếm theo điều kiện sau đó trả về danh sách kết quả tìm được và thứ tự của các phần tử đó trong danh sách ban đầu</p>
-<p>{% highlight javascript %}
-const userTable = [ { name: &lsquo;A&rsquo; }, { name: &lsquo;B&rsquo; }, { name: &lsquo;C&rsquo; } ];
-function findUsers(predicate) {
-const indexes = [];
-const users = userTable.filter((user, index) =&gt; {
-if(predicate(user)) {
-indexes.push(index);
-return true;
-}
-return false;
-});
-return { users, indexes };
-}
-const result = findUsers(user =&gt; user.name === &lsquo;A&rsquo; || user.name === &lsquo;C&rsquo;);
-console.log(result.users); // =&gt; [ { name: &lsquo;A&rsquo; }, { name: &lsquo;C&rsquo; } ]
-console.log(result.indexes); // =&gt; [0, 2]</p>
-<p>// cách làm truyền thống như trên có thể thay thế bằng
-function findUsers(predicate) {
-const indexes = [];
-const users = userTable.filter((user, index) =&gt; {
-if(predicate(user)) {
-indexes.push(index);
-return true;
-}
-return false;
-});
-users.indexes = indexes;
-return users;
-}
-const result = findUsers(user =&gt; user.name === &lsquo;A&rsquo; || user.name === &lsquo;C&rsquo;);
-console.log(result); // =&gt; [ { name: &lsquo;A&rsquo; }, { name: &lsquo;C&rsquo; } ]
-console.log(result.indexes); // =&gt; [0, 2]
-{% endhighlight %}</p>
-<p>☑️ Tổng kết lại thì JS trang bị một kiểu array quá bá đạo, nó có thể đảm nhiệm nhiều chức năng của những kiểu dữ liệu khác nhau. Vẫn câu nói cũ: Tuy đơn giản nhưng không kém phần phức tạp :D</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">const</span> userTable <span style="color:#ff79c6">=</span> [ { name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;A&#39;</span> }, { name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;B&#39;</span> }, { name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;C&#39;</span> } ];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#8be9fd;font-style:italic">function</span> findUsers(predicate) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#ff79c6">const</span> indexes <span style="color:#ff79c6">=</span> [];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#ff79c6">const</span> users <span style="color:#ff79c6">=</span> userTable.filter((user, index) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#ff79c6">if</span>(predicate(user)) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>      indexes.push(index);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  });
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  <span style="color:#ff79c6">return</span> { users, indexes };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#ff79c6">const</span> result <span style="color:#ff79c6">=</span> findUsers(user =&gt; user.name <span style="color:#ff79c6">===</span> <span style="color:#f1fa8c">&#39;A&#39;</span> <span style="color:#ff79c6">||</span> user.name <span style="color:#ff79c6">===</span> <span style="color:#f1fa8c">&#39;C&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>console.log(result.users); <span style="color:#6272a4">// =&gt; [ { name: &#39;A&#39; }, { name: &#39;C&#39; } ]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#6272a4"></span>console.log(result.indexes); <span style="color:#6272a4">// =&gt; [0, 2]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#6272a4">// cách làm truyền thống như trên có thể thay thế bằng
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">function</span> findUsers(predicate) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>  <span style="color:#ff79c6">const</span> indexes <span style="color:#ff79c6">=</span> [];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>  <span style="color:#ff79c6">const</span> users <span style="color:#ff79c6">=</span> userTable.filter((user, index) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    <span style="color:#ff79c6">if</span>(predicate(user)) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>      indexes.push(index);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>  });
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>  users.indexes <span style="color:#ff79c6">=</span> indexes;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>  <span style="color:#ff79c6">return</span> users;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span style="color:#ff79c6">const</span> result <span style="color:#ff79c6">=</span> findUsers(user =&gt; user.name <span style="color:#ff79c6">===</span> <span style="color:#f1fa8c">&#39;A&#39;</span> <span style="color:#ff79c6">||</span> user.name <span style="color:#ff79c6">===</span> <span style="color:#f1fa8c">&#39;C&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>console.log(result); <span style="color:#6272a4">// =&gt; [ { name: &#39;A&#39; }, { name: &#39;C&#39; } ]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#6272a4"></span>console.log(result.indexes); <span style="color:#6272a4">// =&gt; [0, 2]
+</span></code></pre></div><p>☑️ Tổng kết lại thì JS trang bị một kiểu array quá bá đạo, nó có thể đảm nhiệm nhiều chức năng của những kiểu dữ liệu khác nhau. Vẫn câu nói cũ: Tuy đơn giản nhưng không kém phần phức tạp :D</p>
 
     </div>
   </article>
@@ -326,16 +312,12 @@ console.log(result.indexes); // =&gt; [0, 2]
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#1-stack">1️. Stack</a></li>
-        <li><a href="#2-queue">2. Queue</a></li>
-        <li><a href="#3-dictionary">3. Dictionary</a></li>
-        <li><a href="#4-sortable-list">4. Sortable List</a></li>
-        <li><a href="#5-string-builder">5. String Builder</a></li>
-        <li><a href="#6-combo">6. Combo</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-stack">1️. Stack</a></li>
+    <li><a href="#2-queue">2. Queue</a></li>
+    <li><a href="#3-dictionary">3. Dictionary</a></li>
+    <li><a href="#4-sortable-list">4. Sortable List</a></li>
+    <li><a href="#5-string-builder">5. String Builder</a></li>
+    <li><a href="#6-combo">6. Combo</a></li>
   </ul>
 </nav>
     </div>

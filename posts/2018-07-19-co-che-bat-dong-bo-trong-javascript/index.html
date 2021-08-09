@@ -196,32 +196,26 @@
   
     <div class="content" itemprop="articleBody">
       <p>Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào, ta xem ví dụ sau:</p>
-<p>{% highlight javascript %}
-console.log(&lsquo;Dong 1&rsquo;);
-console.log(&lsquo;Dong 2&rsquo;);
-console.log(&lsquo;Dong 3&rsquo;);
-{% endhighlight %}</p>
-<p>Như các bạn thấy thì nhìn vào ta biết ngay nó sẽ in ra những gì, lần luật là:</p>
-<p>{% highlight javascript %}
-Dong 1
-Dong 2
-Dong 3
-{% endhighlight %}</p>
-<p>Bây giờ ta đặt thêm <code>setTimeout()</code> cho dòng thứ 2 để xem sao:</p>
-<p>{% highlight javascript %}
-console.log(&lsquo;Dong 1&rsquo;);</p>
-<p>setTimeout(function(){
-console.log(&lsquo;Dong 2&rsquo;);
-},1000);</p>
-<p>console.log(&lsquo;Dong 3&rsquo;);
-{% endhighlight %}</p>
-<p>Kết quả khi chạy ra đoạn code sau:</p>
-<p>{% highlight javascript %}
-Dong 1
-Dong 3
-Dong 2
-{% endhighlight %}</p>
-<p>Ta nhận ra rằng đáng lẽ sau <code>Dong 1</code> thì mới đến <code>Dong 2</code> đằng này nó nhảy qua <code>Dong 3</code> rồi mới đến <code>Dong 2</code>, để giải thích điều này thì thay vì chờ đợi dòng code nằm trong <code>setTimeout()</code> chạy xong dòng lệnh <code>console.log('Dong 2')</code> giống như cơ chế đồng bộ <code>synchronous</code> thông thường thì javascript sẽ bỏ qua chờ đợi mà chạy dòng code <code>console.log('Dong 3')</code> và trả về kết quả <code>Dong 3</code> trước khi <code>console.log('Dong 2')</code> trong <code>setTimeout()</code> được thực thi. Đây chính là điểm khác nhau giữa cơ chế BẤT ĐỒNG BỘ và ĐỒNG BỘ trong việc lập trình. Việc xử lý bất đồng bộ trong javascript được mô tả dựa trên các thành phân như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>console.log(<span style="color:#f1fa8c">&#39;Dong 1&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>console.log(<span style="color:#f1fa8c">&#39;Dong 2&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>console.log(<span style="color:#f1fa8c">&#39;Dong 3&#39;</span>);
+</code></pre></div><p>Như các bạn thấy thì nhìn vào ta biết ngay nó sẽ in ra những gì, lần luật là:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Dong <span style="color:#bd93f9">1</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Dong <span style="color:#bd93f9">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>Dong <span style="color:#bd93f9">3</span>
+</code></pre></div><p>Bây giờ ta đặt thêm <code>setTimeout()</code> cho dòng thứ 2 để xem sao:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>console.log(<span style="color:#f1fa8c">&#39;Dong 1&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>setTimeout(<span style="color:#8be9fd;font-style:italic">function</span>(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>	console.log(<span style="color:#f1fa8c">&#39;Dong 2&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>},<span style="color:#bd93f9">1000</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>console.log(<span style="color:#f1fa8c">&#39;Dong 3&#39;</span>);
+</code></pre></div><p>Kết quả khi chạy ra đoạn code sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Dong <span style="color:#bd93f9">1</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Dong <span style="color:#bd93f9">3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>Dong <span style="color:#bd93f9">2</span>
+</code></pre></div><p>Ta nhận ra rằng đáng lẽ sau <code>Dong 1</code> thì mới đến <code>Dong 2</code> đằng này nó nhảy qua <code>Dong 3</code> rồi mới đến <code>Dong 2</code>, để giải thích điều này thì thay vì chờ đợi dòng code nằm trong <code>setTimeout()</code> chạy xong dòng lệnh <code>console.log('Dong 2')</code> giống như cơ chế đồng bộ <code>synchronous</code> thông thường thì javascript sẽ bỏ qua chờ đợi mà chạy dòng code <code>console.log('Dong 3')</code> và trả về kết quả <code>Dong 3</code> trước khi <code>console.log('Dong 2')</code> trong <code>setTimeout()</code> được thực thi. Đây chính là điểm khác nhau giữa cơ chế BẤT ĐỒNG BỘ và ĐỒNG BỘ trong việc lập trình. Việc xử lý bất đồng bộ trong javascript được mô tả dựa trên các thành phân như sau:</p>
 <p>![Ảnh 1]({{ &ldquo;img/2018-07-19/anh1.png&rdquo; | absolute_url }})</p>
 <p>Trước khi bước vào tìm hiểu cách hoạt động của các thành phần trên, chúng ta sẽ điểm qua khái niệm về mỗi thành phần.</p>
 <ul>
