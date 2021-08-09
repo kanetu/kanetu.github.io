@@ -7,9 +7,9 @@ description: Truthy và Falsy là gì?, thật ra khái niệm rất lạ và t�
 category: Coding
 ---
 
-Truthy và Falsy là gì?, thật ra khái niệm rất lạ và tôi cũng tự hỏi nó là cái gì mặc dù học Javascript 4 năm rồi. Đúng là cái gì không biết thì nó thật mới mẽ.
+Truthy và Falsy là gì?, đây là một khái niệm mà rất nhiều người khi học Javascript rất ít khi để ý đến ngay cả mình cũng vậy.
 
-### 1. Primitive data type - Kiểu dữ liệu nguyên thủy
+## 1. Primitive data type - Kiểu dữ liệu nguyên thủy
 Khi chúng ta khai báo một biến nếu chúng ta không khai báo giá trị của cho biến thì tự động bên trong cơ chế Javascript sẽ `set` cho biến là `undefined` đúng không?
 
 Và để hiểu gõ hơn thì sau đây là 6 kiểu dữ liệu nguyên thủy trong Javascript:
@@ -23,14 +23,14 @@ Và để hiểu gõ hơn thì sau đây là 6 kiểu dữ liệu nguyên thủy
 
 Ngoài ra tất cả là đều là một đối tượng (Object) bao gồm cả `Array`
 
-{% highlight javascript %}
+```javascript
 var a;
 // nếu chúng ta không gán giá trị thì mặc định là undefined
 var y = 5;
 // y = 5 lúc này y mang giá trị kiểu Number
-{% endhighlight %}
+```
 
-### 2️. Truthy và Falsy
+## 2️. Truthy và Falsy
 Mỗi giá trị có sẵn một giá trị `Boolean` mặc định thường được gọi là `Truthy and Falsy` và nếu chúng ta dùng nó trong so sánh (Loose Equality Comparisons - `==`) thì nó rất là ngáo ộp.
 
 Để dễ dàng ghi nhớ thì những giá trị sau đây mặc định là **Falsy:
@@ -50,9 +50,9 @@ Những giá trị còn lại là **Truthy** bao gồm cả:
 
 Cách nhớ nhanh thì ta chỉ cần để ý những giá trị được liệt kê là Falsy thôi còn lại là Truthy tất.
 
-### 2. Bonus hàm kiểm tra Truthy 
+## 3. Bonus hàm kiểm tra Truthy 
 
-{% highlight javascript %}
+```javascript
 function isTruthy(x) {
   if(x){
     return true;
@@ -65,7 +65,7 @@ console.log(isTruthy(true));
 console.log(isTruthy('0'));
 console.log(isTruthy([]));
 console.log(isTruthy(1));
-{% endhighlight %}
+```
 
-### 3. Nghiêm cứu thêm 
+## 4. Nghiêm cứu thêm 
 [Loose Equality Comparisons và Retrict Equality Comparisons](https://www.sitepoint.com/javascript-truthy-falsy/)

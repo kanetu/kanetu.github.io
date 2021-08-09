@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Điểm qua những tính năng hấp dẫn trong ES6 - Phần 1"
-date:   2018-07-4 10:15:40 +0200
+date:   2018-07-04 10:15:40 +0200
 img: es6-kanetu.github.io.png
 description: Sau một thời gian nghiên cứu về ReactJS tôi nhận ra mình còn chưa ổn về javascript và tham khảo 
 category: Coding
@@ -17,22 +17,22 @@ Tôi còn tưởng rằng nó đã có từ lâu vì đã quen đặt giá trị
 
 Lúc trước thì để đặt một parameters mặc định ta làm như sau:
 
-{% highlight javascript %}
+```javascript
 var link = function (height, color, url) {
     var height = height || 50
     var color = color || 'red'
     var url = url || 'http://azat.co'
     ...
 }
-{% endhighlight %}
+```
 
 ES6 xuất hiện, chúng ta có thể đặt giá trị mặc định trong `()` của `function`
 
-{% highlight javascript %}
+```javascript
 var link = function(height = 50, color = 'red', url = 'http://azat.co') {
   ...
 }
-{% endhighlight %}
+```
 
 Tất nhiên nó chỉ là mặc định, chúng ta có thể thay đổi nó trong thân function, ý nghĩa của việc để giá trị mặc định là giúp ta luôn đúng trong mọi trường hợp, thử nghĩ mà xem nếu ta không truyền vào màu của một đoạn text thì không lẻ nó trông suốt không màu :D, vậy nên color mặc định trong trường hợp này có thể là màu đen hoặc một màu nào đó bạn muốn default.
 
@@ -40,26 +40,25 @@ Tất nhiên nó chỉ là mặc định, chúng ta có thể thay đổi nó tr
 
 Template Literals hay `interpolation` trong các ngôn ngữ khác là một cách hiển thị các biến trong chuỗi. Trong ES5 chúng ta làm như thế này:
 
-{% highlight javascript %}
+```javascript
 var name = 'Your name is ' + first + ' ' + last + '.'
 var url = 'http://localhost:3000/api/messages/' + id
-{% endhighlight %}
+```
 
 Khi học về tính năng của một ngôn ngữ nào đó các bạn nhớ phải để ý xem từ khóa tiếng anh của tính năng đó là như thế nào để thuận tiện cho việc ghi nhớ cũng như pro lên như ở đây là `interpolation`.
 
 Trở lại vấn đề trong ES6 chúng ta có thể sử dụng cú pháp mới ${name} bên trong chuỗi:
 
-{% highlight javascript %}
+```javascript
 var name = `Your name is ${first} ${last}.`
 var url = `http://localhost:3000/api/messages/${id}`
-{% endhighlight %}
-
+```
 Tính năng này cũng có trong PHP, tôi không nhớ là ở version bao nhiêu nhưng tôi sử dụng được ở PHP như:
 
-{% highlight php %}
+```javascript
 	$name = 'Kane';
 	echo ' Hello $name!';
-{% endhighlight %}
+```
 
 Ngoài lề tí thôi tiếp tục tính năng khác nào.
 
@@ -67,7 +66,7 @@ Ngoài lề tí thôi tiếp tục tính năng khác nào.
 
 Một syntactic sugar khác là chuỗi có nhiều dòng (multi-line string). Trong ES5, chúng ta làm như thế này:
 
-{% highlight javascript %}
+```javascript
 var roadPoem = 'Then took the other, as just as fair,\n\t'
     + 'And having perhaps the better claim\n\t'
     + 'Because it was grassy and wanted wear,\n\t'
@@ -76,13 +75,13 @@ var roadPoem = 'Then took the other, as just as fair,\n\t'
 
 var fourAgreements = 'You have the right to be you.\n\
     You can only be you when you do your best.'
-{% endhighlight %}
+```
 
 Thật sự tôi rất ít khi viết nhiều như thế này trong 1 biến javascript nhưng có thì xem biết đâu chừng có ngày sử dụng.
 
 Trong ES6, chỉ cần sử dụng dấu backticks: ` `` `
 
-{% highlight javascript %}
+```javascript
 var roadPoem = `Then took the other, as just as fair,
     And having perhaps the better claim
     Because it was grassy and wanted wear,
@@ -91,7 +90,7 @@ var roadPoem = `Then took the other, as just as fair,
 
 var fourAgreements = `You have the right to be you.
     You can only be you when you do your best.`
-{% endhighlight %}
+```
 
 ## 4. Block-Scoped Constructs Let and Const
 
@@ -99,7 +98,7 @@ Tính năng này cho ta thêm một cách khai báo biến nhưng có trong ph�
 
 Block-Scoped trong ES6 thì có từ khóa `let` cho phép chúng ta khai báo biến trong phạm vi các khối lệnh. Các khối lệnh được định nghĩa bởi cặp ngoặc nhọn {}. Trong ES5, các khối không giới hạn phạm vi của các biến:
 
-{% highlight javascript %}
+```javascript
 function example (a,b) {
 	if(a>b){
 		var temp = a;
@@ -114,11 +113,11 @@ function example (a,b) {
 // console: a = 5
 // console: b = 10
 // console: temp = 10;
-{% endhighlight %}
+```
 
 Và hãy so sánh với hàm này khi sử dụng `let`
 
-{% highlight javascript %}
+```javascript
 function example (a,b) {
 	if(a>b){
 		let temp = a;
@@ -133,13 +132,13 @@ function example (a,b) {
 // console: a = 5
 // console: b = 10
 // console: temp = undefine;
-{% endhighlight %}
+```
 
 Đấy có nghĩa là biến `temp` chỉ có thể sử dụng trong `{}` mà nó bị bao phủ thôi còn khi ra ngoài nó sẽ tự động giải phóng giúp tiết kiệm tài nguyên.
 
 Còn `const` thì sao? đơn giản nó là hằng, mà hằng thì không bao giờ thay đổi
 
-{% highlight javascript %}
+```javascript
 function kaneFunction(oke) {
   const a = 0  
   if (oke) {
@@ -150,4 +149,4 @@ function kaneFunction(oke) {
 }
 // kaneFunction(true)
 // console: a = 0
-{% endhighlight %}
+```

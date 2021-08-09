@@ -9,10 +9,10 @@ category: Coding
 
 Thêm 1 câu hỏi khi interview FrontEnd, Sẽ có vài lần các bạn sẽ được hỏi là css spritesheet là gì? Tại sao lại dùng chúng? Bạn dùng cách gì để tạo ra 1 hình spritesheet.
 
-### 1. CSS Spritesheet là gì?
+## 1. CSS Spritesheet là gì?
 CSS spritesheet là 1 kỹ thuật gom nhiều hình thành 1 tấm hình và dùng css background-image để hiển thị chúng ngoài browse.
 
-### 2. Tại sao lai dùng chúng?
+## 2. Tại sao lai dùng chúng?
 
 - Chúng sẽ làm tăng perfomance khi load web.
 
@@ -20,8 +20,8 @@ CSS spritesheet là 1 kỹ thuật gom nhiều hình thành 1 tấm hình và d�
 
 - Nhược điểm: khi bạn ko dùng spritesheet là khi ta muốn hover vào hình A chuyển trạng thái thành active. Khi bạn hover như vậy, thì buộc browse phải gửi request để tải 1 hình active mà bạn muốn, sẽ có 1 khung trắng vài giây xuất hiện tùy theo internet lúc đó nhanh hay chậm. Nó sẽ gây ko tốt về UX phía user. Bạn có thể xem video để hình dung.
 
-### 3. Cách tạo Spritesheet.
-3/ Hiện tại có 1 vài cách để tạo ra 1 hình spritesheets (theo cá nhân mình)
+## 3. Cách tạo Spritesheet.
+Hiện tại có 1 vài cách để tạo ra 1 hình spritesheets (theo cá nhân mình)
 
 - Tạo bằng thủ công: chúng ta sẽ vào photoshop để cắt hình rùi ghép chúng lại 
 => cách này thì cực vô cùng, khi bạn phải css canh chỉnh từ tọa độ hình. (mới bắt đầu làm FE, mình dùng cách này suốt -,-).

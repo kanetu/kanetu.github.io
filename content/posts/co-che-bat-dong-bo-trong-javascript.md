@@ -9,23 +9,22 @@ description: Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm 
 
 Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào, ta xem ví dụ sau:
 
-{% highlight javascript %}
+```javascript
 console.log('Dong 1');
 console.log('Dong 2');
 console.log('Dong 3');
-{% endhighlight %}
-
+```
 Như các bạn thấy thì nhìn vào ta biết ngay nó sẽ in ra những gì, lần luật là:
 
-{% highlight javascript %}
+```javascript
 Dong 1
 Dong 2
 Dong 3
-{% endhighlight %}
+```
 
 Bây giờ ta đặt thêm `setTimeout()` cho dòng thứ 2 để xem sao:
 
-{% highlight javascript %}
+```javascript
 console.log('Dong 1');
 
 setTimeout(function(){
@@ -33,15 +32,15 @@ setTimeout(function(){
 },1000);
 
 console.log('Dong 3');
-{% endhighlight %}
+```
 
 Kết quả khi chạy ra đoạn code sau:
 
-{% highlight javascript %}
+```javascript
 Dong 1
 Dong 3
 Dong 2
-{% endhighlight %}
+```
 
 Ta nhận ra rằng đáng lẽ sau `Dong 1` thì mới đến `Dong 2` đằng này nó nhảy qua `Dong 3` rồi mới đến `Dong 2`, để giải thích điều này thì thay vì chờ đợi dòng code nằm trong `setTimeout()` chạy xong dòng lệnh `console.log('Dong 2')` giống như cơ chế đồng bộ `synchronous` thông thường thì javascript sẽ bỏ qua chờ đợi mà chạy dòng code `console.log('Dong 3')` và trả về kết quả `Dong 3` trước khi `console.log('Dong 2')` trong `setTimeout()` được thực thi. Đây chính là điểm khác nhau giữa cơ chế BẤT ĐỒNG BỘ và ĐỒNG BỘ trong việc lập trình. Việc xử lý bất đồng bộ trong javascript được mô tả dựa trên các thành phân như sau:
 

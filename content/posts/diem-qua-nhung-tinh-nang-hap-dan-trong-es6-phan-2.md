@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  "Điểm qua những tính năng hấp dẫn trong ES6 - Phần 2"
-date:   2018-07-5 12:15:40 +0200
+date:   2018-07-05 12:15:40 +0200
 img: es6-kanetu.github.io.png
 description: Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5.
 category: Coding
 ---
 
-## `#`Research lại Object trong Javacript
+## Research lại Object trong Javacript
 
 Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5.
 
@@ -19,25 +19,25 @@ Ta gọi mỗi item là một property(thuộc tính) của object nếu value c
 
 Ví dụ object:
 
-{% highlight javascript %}
+```javascript
 var myFirstObject = {
     firstName: "Richard",
     favoriteAuthor: "Conrad"
 };
-{% endhighlight %}
+```
 
 Có 2 cách để tạo ra Object là 
 	1. Dùng Object literals.
 	2. Dùng Object constructor.
 
 Mình sẽ nói ngắn gọn và cho ví dụ về 2 cách này để đi thẳng vào vấn đề.
-### `#`Dùng Object literals
+### Dùng Object literals
 
 Đại khái là sẽ dùng cặp ngoặc nhọn `{ }` để tạo một object. `Literal` có thể hiểu theo ngữ cảnh nào đó là việc “sử dụng chuỗi thuần tuý”.
 
 Ex:
 
-{% highlight javascript %}
+```javascript
 var myBook = {10: 'test1'};  //đối tượng có 1 thuộc tính
 
 //đối tượng có 1 thuộc tính và 1 phương thức (method)
@@ -47,13 +47,13 @@ var myCar = {
       console.log('running');
    }
 };
-{% endhighlight %}
+```
 
-### `#`Dùng Object constructor
+### Dùng Object constructor
 
 Cách này sẽ sử dụng phương thức khởi tạo (constructor) của kiểu dữ liệu Object để tạo ra các object. Phương thức khởi tạo này là một hàm để tạo ra các object mới, ta dùng kèm từ khoá `new`:
 
-{% highlight javascript %}
+```javascript
 //Tạo 1 đối tượng mới
 var myApple = new Object();
 
@@ -63,17 +63,17 @@ myApple.shape = 'round';
 myApple.howSweet = function(){
    console.log('I am sweet');
 };
-{% endhighlight %}
+```
 
-### `#`Tạo nhiều object cùng loại.
+### Tạo nhiều object cùng loại.
 
 Ở mục 5.1 và 5.2 tôi đã giới thiệu cách tạo một `object` trong javascript nhưng đó chỉ là tạo một object thôi vậy để làm tao ta tạo một loạt những object cùng loại. 
 
-#### `##`Sử dụng mẫu khởi tạo
+#### Sử dụng mẫu khởi tạo
 
 Cách này giống như ta tạo một class trong các ngôn ngữ lập trình khác, nhưng khác là Javascript sử dụng từ khoá `function` để tạo ra một hàm khởi tạo đối tượng, dùng từ khoá `this` để gán các thuộc tính cho đối tượng:
 
-{% highlight javascript %}
+```javascript
 function Fruit (_color, _name){
    this.color = _color;
    this.name = _name;
@@ -81,20 +81,20 @@ function Fruit (_color, _name){
       console.log(this.name);
    }
 };
-{% endhighlight %}
+```
 
 Với hàm khởi tạo này, ta có thể tạo hàng loạt các đối tượng kiểu `Fruit` như sau:
 
-{%highlight javascript %}
+```javascript
 var mangoFruit = new Fruit('yellow', 'Mango');
 var appleFruit = new Fruit('red', 'Apple');
-{% endhighlight %}
+```
 
-#### `##`Sử dụng prototype
+#### Sử dụng prototype
 
 Ex:
 
-{% highlight javascript %}
+```javascript
 function Fruit (_color, _name){
 };
 
@@ -103,14 +103,14 @@ Fruit.prototype.name = 'general_name';
 Fruit.prototype.showName = function(){
     console.log(this.name);
 };
-{% endhighlight %}
+```
 
 Với cách này thì ta cũng vẫn sẽ sử dụng hàm Fruit() để tạo ra các đối tượng object như cách ở trên:
 
-{%highlight javascript %}
+```javascript
 var mangoFruit = new Fruit('yellow', 'Mango');
 var appleFruit = new Fruit('red', 'Apple');
-{% endhighlight %}
+```
 
 ### 5. Enhanced Object Literals in ES6
 
@@ -118,7 +118,7 @@ Như tôi đã nói ở trên ta có thể tạo một mẫu khởi tạo để 
 
 #### 5.1 Thuộc tính khởi tạo ngắn hơn
 
-{% highlight javascript %}
+```javascript
 //ES5
     function getLaptop(make, model, year) {
         return {
@@ -129,11 +129,11 @@ Như tôi đã nói ở trên ta có thể tạo một mẫu khởi tạo để 
     }
 
     getLaptop("Apple", "MacBook", "2015");// {make: "Apple", model: "MacBook", year: "2015"}
-{% endhighlight %}
+```
 
 Trong ES6 ta không cần lặp lại những parameter `trùng tên` với thuộc tính.
 
-{% highlight javascript %}
+```javascript
 //ES6
 function getLaptop(make, model, year) {
         return {
@@ -144,13 +144,13 @@ function getLaptop(make, model, year) {
     }
 
     getLaptop("Apple", "MacBook", "2015"); // {make: "Apple", model: "MacBook", year: "2015"}
-{% endhighlight %}
+```
 
 #### 5.2 Viết phương thức (methods) ngắn hơn
 
 Ở phiên bản ES5 cú pháp để viết phương thức trong `object` sẽ như thế này
 
-{% highlight javascript %}
+```javascript
 //ES5
     function getLaptop(make, model, year) {
         return {
@@ -161,11 +161,11 @@ function getLaptop(make, model, year) {
     }
 
     getLaptop("Apple", "MacBook", "2015").sayModel(); //"MacBook"
-{% endhighlight %}
+```
 
 Với ES6 ta không cần viết quá nhiều để phương thức đó hoạt động.
 
-{% highlight javascript %}
+```javascript
 //ES6
     function getLaptop(make, model, year) {
         return{
@@ -176,7 +176,7 @@ Với ES6 ta không cần viết quá nhiều để phương thức đó hoạt 
     }
 
     getLaptop("Apple", "MacBook", "2015").sayModel(); //"MacBook"
-{% endhighlight %}
+```
 
 #### 5.3 Có thể tính toán trong property 
 
@@ -184,29 +184,29 @@ Như ta đã biết thì có 2 cách để chỉ định một khóa khi xử l�
 
 Xem ví dụ này:
 
-{% highlight javascript %}
+```javascript
 var name = "make";
-    const laptop = {
-        [name]: "Apple"
-    }
+const laptop = {
+    [name]: "Apple"
+}
 
-    console.log(laptop.make);//"Apple"
-{% endhighlight %}
+console.log(laptop.make);//"Apple"
+```
 
 Chúng ta thấy rằng nó cho phép ta truyền biến `name` vào dấu `[]` từ đó ta có thể `console.log` đối tượng `laptop` với thuộc tính `make` (là giá trị của biến `name`).
 
 Bonus:
 
-{% highlight javascript %}
+```javascript
 var name = "make";
-    var i = 0;
-    const laptop = {
-        [name + ++i]: "Apple",
-        [name + ++i]: "Dell",
-        [name + ++i]: "HP"
-    }
+var i = 0;
+const laptop = {
+    [name + ++i]: "Apple",
+    [name + ++i]: "Dell",
+    [name + ++i]: "HP"
+}
 
-    console.log(laptop.make1);//"Apple"
-    console.log(laptop.make2);//"Dell"
-    console.log(laptop.make3);//"HP"
-{% endhighlight %}
+console.log(laptop.make1);//"Apple"
+console.log(laptop.make2);//"Dell"
+console.log(laptop.make3);//"HP"
+```

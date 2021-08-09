@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Điểm qua những tính năng hấp dẫn trong ES6 - Phần 3"
-date:   2018-07-6 9:18:40 +0200
+date:   2018-07-06 9:18:40 +0200
 img: es6-kanetu.github.io.png
 description: Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5.
 category: Coding
@@ -14,8 +14,7 @@ Hmm..Tính năng này rất thường xuất hiện trong ReactJS. `arrow` dịc
 
 Thông thường khi tạo một `function` trong Javascript thì ta sử dụng những cách sau: 
 
-{% highlight javascript %}
-
+```javascript
 //cách 1
 function nameFunction(var1,var2){
   ...
@@ -25,12 +24,11 @@ function nameFunction(var1,var2){
 var nameFunction = function(var1, var2){
   ....
 }
-{% endhighlight %}
+```
 
 Trong ES6 ta tạo đơn giản hơn bằng cách sử dụng mũi tên như sau:
 
-{% highlight javascript %}
-
+```javascript
 var nameFunction = (var1,var2) => { //dosomething...};
 
 var echoName = (name) => { 
@@ -39,24 +37,20 @@ var echoName = (name) => {
 
 echoName("kane"); // nó sẽ alert ra kane
 
-{% endhighlight %}
-
+```
 - Khi `funciton` chỉ có `một dòng lệnh`, ta có thể viết như thế này cho gọn hơn.
 
-{% highlight javascript %}
-
+```javascript
 var echoName = (name) => alert(name);
 
 echoName("kane") // alert ra kane
 
-{% endhighlight %}
-
+```
 Nghĩa là bạn có thể bỏ đi cặp dấu {}, điều này tuân thủ theo nguyên tắc "nếu bên thân cặp {} chỉ là một câu lệnh thì bạn có thể bỏ cặp {}".
 
 - Khi `function` chỉ có `một tham tham số`, ta có thể viết ngắn gọn lại là:
 
-{% highlight javascript %}
-
+```javascript
 var echoName = name => {
   alert(name);
 }
@@ -67,22 +61,18 @@ echoName("kane") // alert ra kane
 
 var echoName1 = name => alert(name);
 
-{% endhighlight %}
-
+```
 - Khi `function` không có tham số:
 
-{% highlight javascript %}
-
+```javascript
 var sayHello = () => alert("Hello....!");
 
 sayHello(); // alert ra câu Hello....!
 
-{% endhighlight %}
-
+```
 - Ta Phải chú ý đến ràng buộc mũi tên `=>` nữa nhá:
 
-{% highlight javascript %}
-
+```javascript
 const func1 = (x,y) // sai
 => {
   return x + y;
@@ -104,7 +94,7 @@ y
 ) => {
   return x / y;
 }
-{% endhighlight %}
+```
 
 ## 7. Destructuring Assignment in ES6
 
@@ -112,8 +102,7 @@ y
 Cú pháp Destructuring Assignment là một biểu thức Javascript mà nó có thể giải nén các giá trị từ `array` hoặc thuộc tính từ một `object` vào những biến riêng biệt.
 ```
 
-{% highlight javascript %}
-
+```javascript
 var a, b, rest;
 [a, b] = [10, 20];
 
@@ -128,7 +117,7 @@ console.log(b);
 console.log(rest);
 // expected output: [30,40,50]
 
-{% endhighlight %}
+```
 
 Nếu để `...` trước một biến thì khi bị tràn giá trị như ví dụ cuối thì biến `rest` nó sẽ lấy hết phần giá trị bị tràn.
 
@@ -142,7 +131,7 @@ Trước ES6 JavaScript không hỗ trợ module. Mọi người thường sử 
 
 Hãy xem ví dụ chúng ta có một biến `port` và phương thức `getAccounts` trong file`module.js` ES5:
 
-{% highlight javascript %}
+```javascript
 
 module.exports = {
   port: 3000,
@@ -151,42 +140,37 @@ module.exports = {
   }
 }
 
-{% endhighlight %}
-
+```
 Trong file main.js ES5 chúng ta require('module.js) là dependency:
 
-{% highlight javascript %}
+```javascript
 
 var service = require('module.js')
 console.log(service.port) // 3000
 
-{% endhighlight %}
+```
 
 Với ES6 chúng ta import và export như sau, ở file `module.js`:
 
-{% highlight javascript %}
-
+```javascript
 export var port = 3000
 export function getAccounts(url) {
   ...
 }
 
-{% endhighlight %}
+```
 
 Trong file `main.js`
 
-{% highlight javascript %}
-
+```javascript
 import {port, getAccounts} from 'module'
 console.log(port) // 3000
 
-{% endhighlight %}
+```
 
 Hoặc ta muốn import hết những gì đã export trong file `module.js` thì:
 
-{% highlight javascript %}
-
+```javascript
 import * as service from 'module'
 console.log(service.port) // 3000
-
-{% endhighlight %}
+```
