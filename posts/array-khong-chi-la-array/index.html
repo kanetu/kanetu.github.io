@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="vi_vn">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Array Không Chỉ Là Array  | Kane&#39;s Blog</title>
+  <link rel = 'canonical' href = 'https://kanetu.github.io/posts/array-khong-chi-la-array/'>
+  <meta name="description" content="Hi I&#39;m Kane - a Front-End developer, I&#39;m currently working in Nashtech. In addition, writing blog helps me keep the stories and rearrange my knowledge in the technical journey. Thanks for all.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Array Không Chỉ Là Array " />
+<meta property="og:description" content="Hầu hết các ngôn ngữ đều trang bị kiểu aray để xử lý, lưu trữ nhiều phần tử cùng lúc, JS cũng không ngoại lệ NHƯNG array trong JS không chỉ đơn giản là array." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanetu.github.io/posts/array-khong-chi-la-array/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-09-09T07:45:40+00:00" />
+<meta property="article:modified_time" content="2018-09-09T07:45:40+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Array Không Chỉ Là Array "/>
+<meta name="twitter:description" content="Hầu hết các ngôn ngữ đều trang bị kiểu aray để xử lý, lưu trữ nhiều phần tử cùng lúc, JS cũng không ngoại lệ NHƯNG array trong JS không chỉ đơn giản là array."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://kanetu.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://kanetu.github.io/posts/co-che-bat-dong-bo-trong-javascript/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://kanetu.github.io/posts/css-spritesheet-la-gi/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&text=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&title=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&is_video=false&description=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&title=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&title=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&name=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20&description=H%e1%ba%a7u%20h%e1%ba%bft%20c%c3%a1c%20ng%c3%b4n%20ng%e1%bb%af%20%c4%91%e1%bb%81u%20trang%20b%e1%bb%8b%20ki%e1%bb%83u%20aray%20%c4%91%e1%bb%83%20x%e1%bb%ad%20l%c3%bd%2c%20l%c6%b0u%20tr%e1%bb%af%20nhi%e1%bb%81u%20ph%e1%ba%a7n%20t%e1%bb%ad%20c%c3%b9ng%20l%c3%bac%2c%20JS%20c%c5%a9ng%20kh%c3%b4ng%20ngo%e1%ba%a1i%20l%e1%bb%87%20NH%c6%afNG%20array%20trong%20JS%20kh%c3%b4ng%20ch%e1%bb%89%20%c4%91%c6%a1n%20gi%e1%ba%a3n%20l%c3%a0%20array." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&t=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-stack">1️. Stack</a></li>
+    <li><a href="#2-queue">2. Queue</a></li>
+    <li><a href="#3-dictionary">3. Dictionary</a></li>
+    <li><a href="#4-sortable-list">4. Sortable List</a></li>
+    <li><a href="#5-string-builder">5. String Builder</a></li>
+    <li><a href="#6-combo">6. Combo</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Array Không Chỉ Là Array 
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2018-09-09 07:45:40 &#43;0000 UTC" itemprop="datePublished">2018-09-09</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          3 minute read
+        </div>
+        
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>Hầu hết các ngôn ngữ đều trang bị kiểu aray để xử lý, lưu trữ nhiều phần tử cùng lúc, JS cũng không ngoại lệ NHƯNG array trong JS không chỉ đơn giản là array.
+Chúng ta có thể dùng array làm:</p>
+<ol>
+<li>Array, cái này đương nhiên.</li>
+<li>Stack.</li>
+<li>Queue.</li>
+<li>Dictionary.</li>
+<li>Sortable List.</li>
+<li>String Builder.</li>
+<li>Combo.</li>
+</ol>
+<h2 id="1-stack">1️. Stack</h2>
+<p>Bỏ qua cái thứ 1, chúng ta có thể dùng array như 1 stack, đặc tính của stack là LIFO (đi trễ về sớm). Có 2 method để là chuyện này là push và pop</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">const</span> array <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>array.push(<span style="color:#bd93f9">4</span>); <span style="color:#6272a4">// =&gt; [1, 2, 3, 4]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>array.pop() <span style="color:#6272a4">// =&gt; [1, 2, 3]
+</span></code></pre></div><h2 id="2-queue">2. Queue</h2>
+<p>Sử dụng array như 1 queue cũng có 2 method là unshift (enqueue), shift (dequeue) để đảm bảo đặc tính FIFO (đi sớm về sớm)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">const</span> array <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>array.shift(); <span style="color:#6272a4">// =&gt; [2, 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>array.unshift(<span style="color:#bd93f9">1</span>) <span style="color:#6272a4">// =&gt; [1, 2, 3]
+</span></code></pre></div><h2 id="3-dictionary">3. Dictionary</h2>
+<p>Dùng array như môt Dictionary có hơi miễn cưỡng nhưng ok, fine, nó vẫn hoạt động bình thường</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">const</span> array <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>array[<span style="color:#f1fa8c">&#39;$key1&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>; =&gt; [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>array.$key2 <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span>; =&gt; [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#ff79c6">delete</span> array.$key; =&gt; [<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">3</span>]
+</code></pre></div><p>Như các bạn đã thấy, việc thao tác trên key có 2 điểm cần lưu ý, key phải thêm ký tự phân biệt nào đó để tránh trùng tên với những prop/method của array, ở đây mình dùng dấu $. Thứ hai là việc thêm hay xóa key không làm thay đổi số lượng phần tử trong array. Muốn duyệt key thì dùng</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">let</span> key <span style="color:#ff79c6">in</span> array) <span style="color:#6272a4">// =&gt; 1, 2, 3, $key1 (không có $key2 vì đã bị delete)
+</span></code></pre></div><h2 id="4-sortable-list">4. Sortable List</h2>
+<p>Dùng array như sortable list khá đơn giản, bản thân method sort của array là mutable nên mỗi lần thêm item mới vào thì chúng ta sort lại</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">const</span> array <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">5</span>, <span style="color:#bd93f9">6</span>, <span style="color:#bd93f9">7</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>array.push(<span style="color:#bd93f9">1</span>); <span style="color:#6272a4">// =&gt; [5, 6, 7, 1]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>array.sort(); <span style="color:#6272a4">// =&gt; [1, 5, 6, 7]
+</span></code></pre></div><h2 id="5-string-builder">5. String Builder</h2>
+<p>Array còn được sử dụng như String Builder, đa số ngôn ngữ lập trình, việc nối chuỗi mất khá nhiều bộ nhớ và chậm, vi mỗi lần nối chuỗi thì hệ thống phải cấp phát vùng nhớ mới rộng hơn, ứng với độ dài chuỗi củ và mới cộng lại, sau đó sao chép cả 2 vào đó. Nên xử lý chuỗi nhiều có thể làm chậm he thống, vì vậy String Builder ra đời, giúp tối ưu việc chỉnh sửa chuỗi.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">const</span> stringBuilder <span style="color:#ff79c6">=</span> [];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">let</span> i [<span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">10000</span>; i<span style="color:#ff79c6">++</span>) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  stringBuilder.push(<span style="color:#f1fa8c">&#39;Hello World&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#ff79c6">const</span> result <span style="color:#ff79c6">=</span> stringBuilder.join(<span style="color:#f1fa8c">&#39;&#39;</span>);
+</code></pre></div><h2 id="6-combo">6. Combo</h2>
+<p>Cách này là một cách tà đạo của array, dùng kết hợp array + dictionary. Ví dụ bạn có một hàm tìm kiếm theo điều kiện sau đó trả về danh sách kết quả tìm được và thứ tự của các phần tử đó trong danh sách ban đầu</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">const</span> userTable <span style="color:#ff79c6">=</span> [ { name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;A&#39;</span> }, { name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;B&#39;</span> }, { name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;C&#39;</span> } ];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#8be9fd;font-style:italic">function</span> findUsers(predicate) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#ff79c6">const</span> indexes <span style="color:#ff79c6">=</span> [];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#ff79c6">const</span> users <span style="color:#ff79c6">=</span> userTable.filter((user, index) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#ff79c6">if</span>(predicate(user)) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>      indexes.push(index);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  });
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  <span style="color:#ff79c6">return</span> { users, indexes };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#ff79c6">const</span> result <span style="color:#ff79c6">=</span> findUsers(user =&gt; user.name <span style="color:#ff79c6">===</span> <span style="color:#f1fa8c">&#39;A&#39;</span> <span style="color:#ff79c6">||</span> user.name <span style="color:#ff79c6">===</span> <span style="color:#f1fa8c">&#39;C&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>console.log(result.users); <span style="color:#6272a4">// =&gt; [ { name: &#39;A&#39; }, { name: &#39;C&#39; } ]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#6272a4"></span>console.log(result.indexes); <span style="color:#6272a4">// =&gt; [0, 2]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#6272a4">// cách làm truyền thống như trên có thể thay thế bằng
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">function</span> findUsers(predicate) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>  <span style="color:#ff79c6">const</span> indexes <span style="color:#ff79c6">=</span> [];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>  <span style="color:#ff79c6">const</span> users <span style="color:#ff79c6">=</span> userTable.filter((user, index) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    <span style="color:#ff79c6">if</span>(predicate(user)) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>      indexes.push(index);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>      <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>  });
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>  users.indexes <span style="color:#ff79c6">=</span> indexes;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>  <span style="color:#ff79c6">return</span> users;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span style="color:#ff79c6">const</span> result <span style="color:#ff79c6">=</span> findUsers(user =&gt; user.name <span style="color:#ff79c6">===</span> <span style="color:#f1fa8c">&#39;A&#39;</span> <span style="color:#ff79c6">||</span> user.name <span style="color:#ff79c6">===</span> <span style="color:#f1fa8c">&#39;C&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>console.log(result); <span style="color:#6272a4">// =&gt; [ { name: &#39;A&#39; }, { name: &#39;C&#39; } ]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#6272a4"></span>console.log(result.indexes); <span style="color:#6272a4">// =&gt; [0, 2]
+</span></code></pre></div><p>☑️ Tổng kết lại thì JS trang bị một kiểu array quá bá đạo, nó có thể đảm nhiệm nhiều chức năng của những kiểu dữ liệu khác nhau. Vẫn câu nói cũ: Tuy đơn giản nhưng không kém phần phức tạp :D</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-stack">1️. Stack</a></li>
+    <li><a href="#2-queue">2. Queue</a></li>
+    <li><a href="#3-dictionary">3. Dictionary</a></li>
+    <li><a href="#4-sortable-list">4. Sortable List</a></li>
+    <li><a href="#5-string-builder">5. String Builder</a></li>
+    <li><a href="#6-combo">6. Combo</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&text=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&title=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&is_video=false&description=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&title=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&title=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&name=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20&description=H%e1%ba%a7u%20h%e1%ba%bft%20c%c3%a1c%20ng%c3%b4n%20ng%e1%bb%af%20%c4%91%e1%bb%81u%20trang%20b%e1%bb%8b%20ki%e1%bb%83u%20aray%20%c4%91%e1%bb%83%20x%e1%bb%ad%20l%c3%bd%2c%20l%c6%b0u%20tr%e1%bb%af%20nhi%e1%bb%81u%20ph%e1%ba%a7n%20t%e1%bb%ad%20c%c3%b9ng%20l%c3%bac%2c%20JS%20c%c5%a9ng%20kh%c3%b4ng%20ngo%e1%ba%a1i%20l%e1%bb%87%20NH%c6%afNG%20array%20trong%20JS%20kh%c3%b4ng%20ch%e1%bb%89%20%c4%91%c6%a1n%20gi%e1%ba%a3n%20l%c3%a0%20array." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2farray-khong-chi-la-array%2f&t=Array%20Kh%c3%b4ng%20Ch%e1%bb%89%20L%c3%a0%20Array%20" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Kane Tu 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+<script src=/js/code-copy.js></script>
+
+
+
+</html>

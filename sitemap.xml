@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kanetu.github.io/posts/2019-10-15-coding-convention/</loc>
+    <loc>https://kanetu.github.io/posts/coding-convention/</loc>
     <lastmod>2019-10-15T11:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kanetu.github.io/</loc>
@@ -11,40 +11,40 @@
     <loc>https://kanetu.github.io/posts/</loc>
     <lastmod>2019-10-15T11:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-10-11-scope-va-hoisting/</loc>
+    <loc>https://kanetu.github.io/posts/scope-va-hoisting/</loc>
     <lastmod>2018-10-11T10:45:40+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-09-28-trusthy-va-falsy/</loc>
+    <loc>https://kanetu.github.io/posts/trusthy-va-falsy/</loc>
     <lastmod>2018-09-28T03:00:40+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-09-11-css-spritesheet-la-gi/</loc>
+    <loc>https://kanetu.github.io/posts/css-spritesheet-la-gi/</loc>
     <lastmod>2018-09-11T01:45:40+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-09-09-array-khong-chi-la-array/</loc>
+    <loc>https://kanetu.github.io/posts/array-khong-chi-la-array/</loc>
     <lastmod>2018-09-09T07:45:40+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-07-19-co-che-bat-dong-bo-trong-javascript/</loc>
+    <loc>https://kanetu.github.io/posts/co-che-bat-dong-bo-trong-javascript/</loc>
     <lastmod>2018-07-19T09:38:40+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-07-13-suy-nghi-cua-mot-thang-intern/</loc>
+    <loc>https://kanetu.github.io/posts/suy-nghi-cua-mot-thang-intern/</loc>
     <lastmod>2018-07-13T14:32:40+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-07-12-mot-thang-tai-be-solution/</loc>
+    <loc>https://kanetu.github.io/posts/mot-thang-tai-be-solution/</loc>
     <lastmod>2018-07-11T12:32:40+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-07-6-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</loc>
+    <loc>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</loc>
     <lastmod>2018-07-06T09:18:40+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-07-5-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</loc>
+    <loc>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</loc>
     <lastmod>2018-07-05T12:15:40+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-07-4-diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</loc>
+    <loc>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</loc>
     <lastmod>2018-07-04T10:15:40+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-06-11-mot-tuan-tai-be-solution/</loc>
+    <loc>https://kanetu.github.io/posts/mot-tuan-tai-be-solution/</loc>
     <lastmod>2018-06-11T14:00:40+00:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/2018-06-4-ngay-dau-thuc-tap-tai-be-solution/</loc>
+    <loc>https://kanetu.github.io/posts/ngay-dau-thuc-tap-tai-be-solution/</loc>
     <lastmod>2018-06-04T12:32:40+00:00</lastmod>
   </url><url>
     <loc>https://kanetu.github.io/categories/</loc>

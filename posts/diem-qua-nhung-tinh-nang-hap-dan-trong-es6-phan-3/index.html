@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="vi_vn">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Điểm qua những tính năng hấp dẫn trong ES6 - Phần 3 | Kane&#39;s Blog</title>
+  <link rel = 'canonical' href = 'https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/'>
+  <meta name="description" content="Hi I&#39;m Kane - a Front-End developer, I&#39;m currently working in Nashtech. In addition, writing blog helps me keep the stories and rearrange my knowledge in the technical journey. Thanks for all.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Điểm qua những tính năng hấp dẫn trong ES6 - Phần 3" />
+<meta property="og:description" content="Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-07-06T09:18:40+00:00" />
+<meta property="article:modified_time" content="2018-07-06T09:18:40+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Điểm qua những tính năng hấp dẫn trong ES6 - Phần 3"/>
+<meta name="twitter:description" content="Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://kanetu.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://kanetu.github.io/posts/mot-thang-tai-be-solution/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&text=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&is_video=false&description=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&name=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203&description=Tr%c6%b0%e1%bb%9bc%20ti%c3%aan%20%c4%91%e1%bb%83%20hi%e1%bb%83u%20g%c3%b5%20v%e1%bb%81%20t%c3%adnh%20n%c4%83ng%20ti%e1%ba%bfp%20theo%20ta%20c%e1%ba%a7n%20hi%e1%bb%83u%20g%c3%b5%20Object%20trong%20Javacript%20l%c3%a0%20g%c3%ac%2c%20n%e1%ba%bfu%20ai%20%c4%91%c3%a3%20hi%e1%bb%83u%20r%e1%bb%93i%20th%c3%ac%20c%c3%b3%20th%e1%bb%83%20scoll%20xu%e1%bb%91ng%20m%e1%bb%a5c%205." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&t=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#6arrow-function-in-es6">6.Arrow Function in ES6</a></li>
+    <li><a href="#7-destructuring-assignment-in-es6">7. Destructuring Assignment in ES6</a></li>
+    <li><a href="#8-modules-in-es6">8. Modules in ES6</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Điểm qua những tính năng hấp dẫn trong ES6 - Phần 3
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2018-07-06 09:18:40 &#43;0000 UTC" itemprop="datePublished">2018-07-06</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          3 minute read
+        </div>
+        
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="6arrow-function-in-es6">6.Arrow Function in ES6</h2>
+<p>Hmm..Tính năng này rất thường xuất hiện trong ReactJS. <code>arrow</code> dịch ra là mũi tên, vâng chúng ta sẽ làm việc với mũi tên :).</p>
+<p>Thông thường khi tạo một <code>function</code> trong Javascript thì ta sử dụng những cách sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4">//cách 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">function</span> nameFunction(var1,var2){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#6272a4">// cách 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">var</span> nameFunction <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>(var1, var2){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>  ....
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>}
+</code></pre></div><p>Trong ES6 ta tạo đơn giản hơn bằng cách sử dụng mũi tên như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> nameFunction <span style="color:#ff79c6">=</span> (var1,var2) =&gt; { <span style="color:#6272a4">//dosomething...};
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#8be9fd;font-style:italic">var</span> echoName <span style="color:#ff79c6">=</span> (name) =&gt; { 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  alert(name)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>echoName(<span style="color:#f1fa8c">&#34;kane&#34;</span>); <span style="color:#6272a4">// nó sẽ alert ra kane
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span style="color:#6272a4"></span>
+</code></pre></div><ul>
+<li>Khi <code>funciton</code> chỉ có <code>một dòng lệnh</code>, ta có thể viết như thế này cho gọn hơn.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> echoName <span style="color:#ff79c6">=</span> (name) =&gt; alert(name);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>echoName(<span style="color:#f1fa8c">&#34;kane&#34;</span>) <span style="color:#6272a4">// alert ra kane
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4"></span>
+</code></pre></div><p>Nghĩa là bạn có thể bỏ đi cặp dấu {}, điều này tuân thủ theo nguyên tắc &ldquo;nếu bên thân cặp {} chỉ là một câu lệnh thì bạn có thể bỏ cặp {}&rdquo;.</p>
+<ul>
+<li>Khi <code>function</code> chỉ có <code>một tham tham số</code>, ta có thể viết ngắn gọn lại là:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8be9fd;font-style:italic">var</span> echoName <span style="color:#ff79c6">=</span> name =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  alert(name);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>echoName(<span style="color:#f1fa8c">&#34;kane&#34;</span>) <span style="color:#6272a4">// alert ra kane
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#6272a4">//Hoặc kết hợp cả tips ở trên thì ta có thể viết luôn như thế này
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#8be9fd;font-style:italic">var</span> echoName1 <span style="color:#ff79c6">=</span> name =&gt; alert(name);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+</code></pre></div><ul>
+<li>Khi <code>function</code> không có tham số:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> sayHello <span style="color:#ff79c6">=</span> () =&gt; alert(<span style="color:#f1fa8c">&#34;Hello....!&#34;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>sayHello(); <span style="color:#6272a4">// alert ra câu Hello....!
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4"></span>
+</code></pre></div><ul>
+<li>Ta Phải chú ý đến ràng buộc mũi tên <code>=&gt;</code> nữa nhá:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">const</span> func1 <span style="color:#ff79c6">=</span> (x,y) <span style="color:#6272a4">// sai
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"></span>=&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#ff79c6">return</span> x <span style="color:#ff79c6">+</span> y;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#ff79c6">const</span> func2 <span style="color:#ff79c6">=</span> (x,y) =&gt; <span style="color:#6272a4">// đúng
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#6272a4"></span>{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#ff79c6">return</span> x <span style="color:#ff79c6">-</span> y;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#ff79c6">const</span> func3 <span style="color:#ff79c6">=</span> (x,y) =&gt; {<span style="color:#6272a4">// đúng
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#ff79c6">return</span> x <span style="color:#ff79c6">*</span> y;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#ff79c6">const</span> func4 <span style="color:#ff79c6">=</span> ( <span style="color:#6272a4">// đúng
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#6272a4"></span>x,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>y
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>  <span style="color:#ff79c6">return</span> x <span style="color:#ff79c6">/</span> y;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>}
+</code></pre></div><h2 id="7-destructuring-assignment-in-es6">7. Destructuring Assignment in ES6</h2>
+<pre><code>Cú pháp Destructuring Assignment là một biểu thức Javascript mà nó có thể giải nén các giá trị từ `array` hoặc thuộc tính từ một `object` vào những biến riêng biệt.
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8be9fd;font-style:italic">var</span> a, b, rest;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>[a, b] <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">10</span>, <span style="color:#bd93f9">20</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>console.log(a);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#6272a4">// expected output: 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>console.log(b);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4">// expected output: 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>[a, b, ...rest] <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">10</span>, <span style="color:#bd93f9">20</span>, <span style="color:#bd93f9">30</span>, <span style="color:#bd93f9">40</span>, <span style="color:#bd93f9">50</span>];
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>console.log(rest);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#6272a4">// expected output: [30,40,50]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#6272a4"></span>
+</code></pre></div><p>Nếu để <code>...</code> trước một biến thì khi bị tràn giá trị như ví dụ cuối thì biến <code>rest</code> nó sẽ lấy hết phần giá trị bị tràn.</p>
+<p>Còn nhiều tips nữa như có thể: swap variable, ignoring some returned values bạn nào muốn tìm hiểu thêm thì vào <!-- raw HTML omitted -->đây<!-- raw HTML omitted --></p>
+<h2 id="8-modules-in-es6">8. Modules in ES6</h2>
+<p>Nếu bạn nào đang học ReactJS thì sẽ thường sử dụng tính năng này này, lúc ta ta quản lý từng module như một component, mình cũng mới học thôi nên hiểu sao nói vậy.</p>
+<p>Trước ES6 JavaScript không hỗ trợ module. Mọi người thường sử dụng AMD, RequireJS, CommonJS và nhiều cái khác. Bây giờ trong ES6 bạn có thể sử dụng các import và export.</p>
+<p>Hãy xem ví dụ chúng ta có một biến <code>port</code> và phương thức <code>getAccounts</code> trong file<code>module.js</code> ES5:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>module.exports <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  port<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">3000</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  getAccounts<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>
+</code></pre></div><p>Trong file main.js ES5 chúng ta require(&lsquo;module.js) là dependency:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#8be9fd;font-style:italic">var</span> service <span style="color:#ff79c6">=</span> require(<span style="color:#f1fa8c">&#39;module.js&#39;</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>console.log(service.port) <span style="color:#6272a4">// 3000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4"></span>
+</code></pre></div><p>Với ES6 chúng ta import và export như sau, ở file <code>module.js</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">export</span> <span style="color:#8be9fd;font-style:italic">var</span> port <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3000</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#ff79c6">export</span> <span style="color:#8be9fd;font-style:italic">function</span> getAccounts(url) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>
+</code></pre></div><p>Trong file <code>main.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">import</span> {port, getAccounts} from <span style="color:#f1fa8c">&#39;module&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>console.log(port) <span style="color:#6272a4">// 3000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>
+</code></pre></div><p>Hoặc ta muốn import hết những gì đã export trong file <code>module.js</code> thì:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ff79c6">import</span> <span style="color:#ff79c6">*</span> as service from <span style="color:#f1fa8c">&#39;module&#39;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>console.log(service.port) <span style="color:#6272a4">// 3000
+</span></code></pre></div>
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#6arrow-function-in-es6">6.Arrow Function in ES6</a></li>
+    <li><a href="#7-destructuring-assignment-in-es6">7. Destructuring Assignment in ES6</a></li>
+    <li><a href="#8-modules-in-es6">8. Modules in ES6</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&text=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&is_video=false&description=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&name=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203&description=Tr%c6%b0%e1%bb%9bc%20ti%c3%aan%20%c4%91%e1%bb%83%20hi%e1%bb%83u%20g%c3%b5%20v%e1%bb%81%20t%c3%adnh%20n%c4%83ng%20ti%e1%ba%bfp%20theo%20ta%20c%e1%ba%a7n%20hi%e1%bb%83u%20g%c3%b5%20Object%20trong%20Javacript%20l%c3%a0%20g%c3%ac%2c%20n%e1%ba%bfu%20ai%20%c4%91%c3%a3%20hi%e1%bb%83u%20r%e1%bb%93i%20th%c3%ac%20c%c3%b3%20th%e1%bb%83%20scoll%20xu%e1%bb%91ng%20m%e1%bb%a5c%205." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3%2f&t=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%203" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Kane Tu 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+<script src=/js/code-copy.js></script>
+
+
+
+</html>

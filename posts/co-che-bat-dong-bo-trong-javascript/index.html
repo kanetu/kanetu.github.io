@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="vi_vn">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Cơ chế bất đồng bộ trong Javascript | Kane&#39;s Blog</title>
+  <link rel = 'canonical' href = 'https://kanetu.github.io/posts/co-che-bat-dong-bo-trong-javascript/'>
+  <meta name="description" content="Hi I&#39;m Kane - a Front-End developer, I&#39;m currently working in Nashtech. In addition, writing blog helps me keep the stories and rearrange my knowledge in the technical journey. Thanks for all.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Cơ chế bất đồng bộ trong Javascript" />
+<meta property="og:description" content="Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanetu.github.io/posts/co-che-bat-dong-bo-trong-javascript/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-07-19T09:38:40+00:00" />
+<meta property="article:modified_time" content="2018-07-19T09:38:40+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cơ chế bất đồng bộ trong Javascript"/>
+<meta name="twitter:description" content="Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://kanetu.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://kanetu.github.io/posts/suy-nghi-cua-mot-thang-intern/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://kanetu.github.io/posts/array-khong-chi-la-array/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&text=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&title=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&is_video=false&description=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&title=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&title=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&name=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript&description=Nh%c6%b0%20bao%20ng%c3%a0y%20gi%e1%bb%9d%20l%c3%a0%20l%c3%bac%20r%c3%a3nh%20n%c3%aan%20t%c3%b4i%20quy%e1%ba%bft%20%c4%91%e1%bb%8bnh%20t%c3%acm%20hi%e1%bb%83u%20xem%20c%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20javascript%20n%c3%b3%20ho%e1%ba%a1t%20%c4%91%e1%bb%99ng%20nh%c6%b0%20th%e1%ba%bf%20n%c3%a0o" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&t=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Cơ chế bất đồng bộ trong Javascript
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2018-07-19 09:38:40 &#43;0000 UTC" itemprop="datePublished">2018-07-19</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          4 minute read
+        </div>
+        
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào, ta xem ví dụ sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>console.log(<span style="color:#f1fa8c">&#39;Dong 1&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>console.log(<span style="color:#f1fa8c">&#39;Dong 2&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>console.log(<span style="color:#f1fa8c">&#39;Dong 3&#39;</span>);
+</code></pre></div><p>Như các bạn thấy thì nhìn vào ta biết ngay nó sẽ in ra những gì, lần luật là:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Dong <span style="color:#bd93f9">1</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Dong <span style="color:#bd93f9">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>Dong <span style="color:#bd93f9">3</span>
+</code></pre></div><p>Bây giờ ta đặt thêm <code>setTimeout()</code> cho dòng thứ 2 để xem sao:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>console.log(<span style="color:#f1fa8c">&#39;Dong 1&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>setTimeout(<span style="color:#8be9fd;font-style:italic">function</span>(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>	console.log(<span style="color:#f1fa8c">&#39;Dong 2&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>},<span style="color:#bd93f9">1000</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>console.log(<span style="color:#f1fa8c">&#39;Dong 3&#39;</span>);
+</code></pre></div><p>Kết quả khi chạy ra đoạn code sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Dong <span style="color:#bd93f9">1</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>Dong <span style="color:#bd93f9">3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>Dong <span style="color:#bd93f9">2</span>
+</code></pre></div><p>Ta nhận ra rằng đáng lẽ sau <code>Dong 1</code> thì mới đến <code>Dong 2</code> đằng này nó nhảy qua <code>Dong 3</code> rồi mới đến <code>Dong 2</code>, để giải thích điều này thì thay vì chờ đợi dòng code nằm trong <code>setTimeout()</code> chạy xong dòng lệnh <code>console.log('Dong 2')</code> giống như cơ chế đồng bộ <code>synchronous</code> thông thường thì javascript sẽ bỏ qua chờ đợi mà chạy dòng code <code>console.log('Dong 3')</code> và trả về kết quả <code>Dong 3</code> trước khi <code>console.log('Dong 2')</code> trong <code>setTimeout()</code> được thực thi. Đây chính là điểm khác nhau giữa cơ chế BẤT ĐỒNG BỘ và ĐỒNG BỘ trong việc lập trình. Việc xử lý bất đồng bộ trong javascript được mô tả dựa trên các thành phân như sau:</p>
+<p>![Ảnh 1]({{ &ldquo;img/2018-07-19/anh1.png&rdquo; | absolute_url }})</p>
+<p>Trước khi bước vào tìm hiểu cách hoạt động của các thành phần trên, chúng ta sẽ điểm qua khái niệm về mỗi thành phần.</p>
+<ul>
+<li>CALL STACK - là một dạng cấu trúc dữ liệu ghi lại vị trí các lệnh đang được thực hiện trong chương trình. Khi lệnh bắt đầu được thực hiện sẽ được đưa vào đỉnh của stack và sau khi thực hiện xong sẽ được lấy ra khỏi ngăn xếp.</li>
+<li>WEB APIs - vể bản chất đây chính là các thread mà ta không thể truy cập trực tiếp mà chỉ có thể gọi được đến nó. Các thread này do trình duyệt cung cấp.</li>
+<li>CALLBACK QUEUE - là một dạng cấu trúc dữ liệu với nguyên tắc First-In-First-Out (vào trước ra trước).</li>
+<li>EVENT LOOP - có nhiệm vụ giám sát tình trạng của CALL STACK và CALLBACK QUEUE.</li>
+</ul>
+<p>Để hiểu được quá trình thực hiện của cơ chế bất đồng bộ ta sẽ đưa ví dụ thứ hai vào và thực hiện trong mô hình trên.</p>
+<p>![Ảnh 2]({{ &ldquo;img//2018-07-19/anh2.png&rdquo; | absolute_url }})</p>
+<p>Đầu tiên khi chương trình bắt đầu chạy lệnh đầu tiên của chương trình <code>(console.log('Dong 1'))</code> sẽ được đưa vào trong CALL STACK.</p>
+<p>![Ảnh 3]({{ &ldquo;img//2018-07-19/anh3.png&rdquo; | absolute_url }})</p>
+<p>Lệnh này lập tức trả về dòng chữ <code>Dong 1</code> đồng nghĩa với việc nó đã chạy xong và được đẩy ra khỏi CALL STACK.</p>
+<p>![Ảnh 4]({{ &ldquo;img//2018-07-19/anh4.png&rdquo; | absolute_url }})</p>
+<p>Tiếp đến hàm 
+<code>setTimeout(function()  { console.log('Dong 2'); }, 1000);</code> 
+được đưa vào trong CALL STACK để thực hiện.</p>
+<p>![Ảnh 5]({{ &ldquo;img//2018-07-19/anh5.png&rdquo; | absolute_url }})</p>
+<p>Tuy nhiên hàm nay không trả về kết qua ngay mà phải đợi 1 giây. Hàm <code>setTimeout()</code> ở đây chính là một API mà WEB APIs cung cấp. Lập tức đoạn code này được chuyển vào trong WEB APIs và trình duyệt sẽ tạo ra một bộ hẹn giờ tương ứng với thời gian trên là 1 giây trước khi trả về kết quả</p>
+<p>![Ảnh 6]({{ &ldquo;img//2018-07-19/anh6.png&rdquo; | absolute_url }})</p>
+<p>Khi đoạn code thứ 2 được chuyển sang WEB APIs thì lập tức đoạn code cuối cùng <code>console.log('Dong 3')</code> đã được đưa vào CALL STACK để thực hiện và trả về kết quả là dòng chữ <code>Dong 3</code>. Sau đó đoạn code này cũng được đẩy ra khỏi CALL STACK</p>
+<p>![Ảnh 7]({{ &ldquo;img//2018-07-19/anh7.png&rdquo; | absolute_url }})</p>
+<p>![Ảnh 8]({{ &ldquo;img//2018-07-19/anh8.png&rdquo; | absolute_url }})</p>
+<p>Sau khi bộ giờ trong WEB APIs chạy xong thì kết quả trả về lúc này không được in ngay ra màn hình mà nó được đẩy vào CALLBACK QUEUE</p>
+<p>![Ảnh 9]({{ &ldquo;img//2018-07-19/anh9.png&rdquo; | absolute_url }})</p>
+<p>EVENT LOOP với chức năng liên tục giám sát xem CALL STACK đã trống chưa và CALLBACK QUEUE có gì không. Lúc này CALLBACK QUEUE đang chờ kết quả mà WEB APIs trả về nên và CALL STACK lúc này cũng đã trống do toàn bộ code trong chương trình đã được thực hiện nên nó sẽ đẩy kết quả trong CALLBACK QUEUE vào lại CALL STACK và đoạn code <code>console.log('Dong 2')</code> được thực hiện và trả kết quả ra màn hình.</p>
+<p>![Ảnh 10]({{ &ldquo;img/2018-07-19/anh10.png&rdquo; | absolute_url }})</p>
+<p>![Ảnh 11]({{ &ldquo;img/2018-07-19/anh11.png&rdquo; | absolute_url }})</p>
+<p>Đó là toàn bộ quá trình diễn ra trong cơ chế chạy bất đồng bộ của javascript, tuy nhiên ta cần chú ý một số điểm sau:</p>
+<ul>
+<li>
+<p>EVENT LOOP chỉ tiến hành đẩy hàm trả về từ CALLBACK QUEUE sang CALL STACK khi CALL STACK đã thực hiện xong hết các đoạn code khác của chương trình</p>
+</li>
+<li>
+<p>Thứ tự các kết quả được trả về từ WEB APIs sang CALLBACK QUEUE sẽ không theo thứ tự đưa vào mà sẽ tùy thuộc hàm nào chạy xong trước sẽ được đẩy vào CALLBACK QUEUE trước đồng nghĩa với việc sẽ được chuyển qua CALL STACK trước.</p>
+</li>
+</ul>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&text=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&title=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&is_video=false&description=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&title=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&title=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&name=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript&description=Nh%c6%b0%20bao%20ng%c3%a0y%20gi%e1%bb%9d%20l%c3%a0%20l%c3%bac%20r%c3%a3nh%20n%c3%aan%20t%c3%b4i%20quy%e1%ba%bft%20%c4%91%e1%bb%8bnh%20t%c3%acm%20hi%e1%bb%83u%20xem%20c%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20javascript%20n%c3%b3%20ho%e1%ba%a1t%20%c4%91%e1%bb%99ng%20nh%c6%b0%20th%e1%ba%bf%20n%c3%a0o" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&t=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Kane Tu 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+<script src=/js/code-copy.js></script>
+
+
+
+</html>

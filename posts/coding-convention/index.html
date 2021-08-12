@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="vi_vn">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Coding Convention - Qui ước mã hóa | Kane&#39;s Blog</title>
+  <link rel = 'canonical' href = 'https://kanetu.github.io/posts/coding-convention/'>
+  <meta name="description" content="Hi I&#39;m Kane - a Front-End developer, I&#39;m currently working in Nashtech. In addition, writing blog helps me keep the stories and rearrange my knowledge in the technical journey. Thanks for all.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Coding Convention - Qui ước mã hóa" />
+<meta property="og:description" content="Để viết bài này mình sẽ đi theo định nghĩa &#34;What is coding convention&#34; của thầy Ân Nguyễn, còn lại là những chia sẽ suy nghĩ của cá nhân mình, nên sẽ không khỏi thiếu sót và cần bổ sung từ thầy cô và các bạn." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanetu.github.io/posts/coding-convention/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-10-15T11:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-15T11:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Coding Convention - Qui ước mã hóa"/>
+<meta name="twitter:description" content="Để viết bài này mình sẽ đi theo định nghĩa &#34;What is coding convention&#34; của thầy Ân Nguyễn, còn lại là những chia sẽ suy nghĩ của cá nhân mình, nên sẽ không khỏi thiếu sót và cần bổ sung từ thầy cô và các bạn."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://kanetu.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://kanetu.github.io/posts/scope-va-hoisting/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&text=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&title=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&is_video=false&description=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&title=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&title=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&name=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a&description=%c4%90%e1%bb%83%20vi%e1%ba%bft%20b%c3%a0i%20n%c3%a0y%20m%c3%acnh%20s%e1%ba%bd%20%c4%91i%20theo%20%c4%91%e1%bb%8bnh%20ngh%c4%a9a%20%22What%20is%20coding%20convention%22%20c%e1%bb%a7a%20th%e1%ba%a7y%20%c3%82n%20Nguy%e1%bb%85n%2c%20c%c3%b2n%20l%e1%ba%a1i%20l%c3%a0%20nh%e1%bb%afng%20chia%20s%e1%ba%bd%20suy%20ngh%c4%a9%20c%e1%bb%a7a%20c%c3%a1%20nh%c3%a2n%20m%c3%acnh%2c%20n%c3%aan%20s%e1%ba%bd%20kh%c3%b4ng%20kh%e1%bb%8fi%20thi%e1%ba%bfu%20s%c3%b3t%20v%c3%a0%20c%e1%ba%a7n%20b%e1%bb%95%20sung%20t%e1%bb%ab%20th%e1%ba%a7y%20c%c3%b4%20v%c3%a0%20c%c3%a1c%20b%e1%ba%a1n." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&t=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-file-organization">1. FILE ORGANIZATION</a></li>
+    <li><a href="#2-comment">2. COMMENT</a></li>
+    <li><a href="#3-indentation">3. INDENTATION</a></li>
+    <li><a href="#4-declarations">4. DECLARATIONS</a></li>
+    <li><a href="#5-naming-conventions">5. NAMING CONVENTIONS</a></li>
+    <li><a href="#6-format-code-tool">6 FORMAT CODE TOOL</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Coding Convention - Qui ước mã hóa
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2019-10-15 11:00:00 &#43;0000 UTC" itemprop="datePublished">2019-10-15</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          3 minute read
+        </div>
+        
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>Để viết bài này mình sẽ đi theo định nghĩa &ldquo;What is coding convention&rdquo; của thầy Ân Nguyễn, còn lại là những chia sẽ suy nghĩ của cá nhân mình, nên sẽ không khỏi thiếu sót và cần bổ sung từ thầy cô và các bạn.</p>
+<p>Coding convention bao gồm những phần: file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices, programming principles,&hellip;quá nhiều cho một post cho nên mình sẽ trọng tâm vào những cái thường gặp.</p>
+<p>Why do we need to follow the coding convention?</p>
+<ul>
+<li>Làm cho code dễ đọc hơn.</li>
+<li>Chuyên nghiệp.</li>
+<li>Mã nguồn dễ bảo trì chỉnh sửa hơn.</li>
+<li>Tạo sự tôn trọng dành cho người đến sau.</li>
+</ul>
+<h2 id="1-file-organization">1. FILE ORGANIZATION</h2>
+<p>Việc tổ chức file này rất quan trọng và theo mình nó được coi là cột sống của dự án, những việc này thường được những người có kinh nghiệm đảm nhiệm.  Các thư mục được tổ chức phân theo từng chức năng như: route, components, container, assets,&hellip;</p>
+<p>Đối với những dự án vừa và nhỏ người ta thường chia dự án theo MVC tức model, view, controller, với những dự án lớn người ta sẽ có cách chia khác nhau nữa là chia theo từng chức năng của hệ thống để dễ dàng chỉnh sửa như: post, payment, product&hellip;</p>
+<p>Những cài đặt liên quan đến triển khai hệ thống: docker, webpack,.. phân chia môi trường: development, staging, production, cài đặt database,&hellip;  Để hiểu và làm được những thứ này bạn đã đủ lên trình senior rồi</p>
+<h2 id="2-comment">2. COMMENT</h2>
+<p>Đối với lập trình mà nói việc code mà không để lại comment là trash code nhất là đối với những bạn làm BE, những xử lý logic phức tạp bạn phải loay hoay cả buổi mà không biết mình đang làm gì vì lỡ quay sang thằng bạn kế bên, điều này thật kinh khủng, Thói quen comment trước khi làm là một kỹ năng và kỹ năng đó sẽ mang lại nhiều lợi ích hơn bạn tưởng</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4">// Feature: 
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span>callAPI <span style="color:#8be9fd;font-style:italic">function</span> callAPI(){   
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>   <span style="color:#6272a4">// List what you handler here   
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4"></span>   iUsingThisPackageToGetAPI();   
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>   <span style="color:#6272a4">// It is better when comment each line   
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#6272a4"></span>}
+</code></pre></div><p>Và một cảnh giới của giới lập trình là: <strong>Good code is self-documenting</strong> nghĩa là không cần comment người khác nhìn vào cũng biết code mình làm gì, mình ghét nhất code kiểu đánh đố nhau, cực kỳ ghét.</p>
+<h2 id="3-indentation">3. INDENTATION</h2>
+<p>Luôn thục đầu dòng 1 tab trước cha mẹ của nó cũng như học sinh phải biết lễ phép với thầy cô, điều này giúp code sáng sủa hơn nhìn vào phát là kết ngay và quan trọng hơn tính chất này còn là sự bắt buộc ở những ngôn ngữ dạng Hyper text như Jade/Pug (thử đi để thấy độ khó chịu).</p>
+<p><a href="https://pugjs.org/api/getting-started.html">Pug</a>.</p>
+<p><em>Ex1: Bad practice</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">function</span> IAmYourFather(){ 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4">//the children say 
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>noIAmYourChildrenOK() 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+</code></pre></div><p><em>Ex2: Good practice</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">function</span> IAmYourFather(){   
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#6272a4">// the children say   
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4"></span>  YesDaddy();   
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+</code></pre></div><h2 id="4-declarations">4. DECLARATIONS</h2>
+<p>Việc khai báo biến thì phải khai báo ngay ở đầu file, khai báo thuộc tính phải ở sau tên class Đối với những ngôn ngữ lập trình cho phép khai báo tên hàm thì hãy làm điều đó trước khi định nghĩa hàm để khi lướt qua ta có thể biết nó có những hàm nào, định nghĩa ra sao, input, output&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4">// Find max number 
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span><span style="color:#ff79c6">int</span> max(<span style="color:#ff79c6">int</span> a, <span style="color:#ff79c6">int</span> b);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#ff79c6">int</span> max(<span style="color:#ff79c6">int</span> a, <span style="color:#ff79c6">int</span> b){   
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  <span style="color:#6272a4">// define here 
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#6272a4"></span>}
+</code></pre></div><h2 id="5-naming-conventions">5. NAMING CONVENTIONS</h2>
+<p>Hiện nay ta có một số qui ước để đặt tên cho biến, hàm tuy nhiên nó sẽ được điều chỉnh linh hoạt trong khi làm việc nhóm, nhưng thông thường sẽ như thế này:</p>
+<ol>
+<li>Tên Biến sẽ dùng chữ in thường, gạch dưới &ldquo;_&rdquo; giữa những chữ in thường: <code>int firstname = &quot;Kane&quot;</code></li>
+<li>Tên Hằng sẽ dùng chữ in hoa toàn bộ: <code>const KANEBLOG = &quot;https://kanetu.github.io/&quot;</code></li>
+<li>Tên Hàm/Method sẽ viết theo kiểu Camel (lạc đà): <code>myFunction()</code></li>
+<li>Tên Class viết theo kiểu StudlyCaps (Pascal Case), in hoa mỗi chữ cái đầu: <code>class PaymentVnpay{}</code></li>
+</ol>
+<p>Hãy dành thời gian để xem cái này để hiểu gõ hơn:
+<a href="http://bit.ly/2mA3crH">Qui tắt đặt tên biến - Code style (PHP code style, Database naming convention. Mastering Git - {Be} Solution)</a>.</p>
+<h2 id="6-format-code-tool">6 FORMAT CODE TOOL</h2>
+<p>Nếu bạn đang code JavaScript hãy sử dụng ESLint trên VSCode nó sẽ giúp bạn format lại code theo đúng chuẩn ES6</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-file-organization">1. FILE ORGANIZATION</a></li>
+    <li><a href="#2-comment">2. COMMENT</a></li>
+    <li><a href="#3-indentation">3. INDENTATION</a></li>
+    <li><a href="#4-declarations">4. DECLARATIONS</a></li>
+    <li><a href="#5-naming-conventions">5. NAMING CONVENTIONS</a></li>
+    <li><a href="#6-format-code-tool">6 FORMAT CODE TOOL</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&text=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&title=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&is_video=false&description=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&title=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&title=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&name=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a&description=%c4%90%e1%bb%83%20vi%e1%ba%bft%20b%c3%a0i%20n%c3%a0y%20m%c3%acnh%20s%e1%ba%bd%20%c4%91i%20theo%20%c4%91%e1%bb%8bnh%20ngh%c4%a9a%20%22What%20is%20coding%20convention%22%20c%e1%bb%a7a%20th%e1%ba%a7y%20%c3%82n%20Nguy%e1%bb%85n%2c%20c%c3%b2n%20l%e1%ba%a1i%20l%c3%a0%20nh%e1%bb%afng%20chia%20s%e1%ba%bd%20suy%20ngh%c4%a9%20c%e1%bb%a7a%20c%c3%a1%20nh%c3%a2n%20m%c3%acnh%2c%20n%c3%aan%20s%e1%ba%bd%20kh%c3%b4ng%20kh%e1%bb%8fi%20thi%e1%ba%bfu%20s%c3%b3t%20v%c3%a0%20c%e1%ba%a7n%20b%e1%bb%95%20sung%20t%e1%bb%ab%20th%e1%ba%a7y%20c%c3%b4%20v%c3%a0%20c%c3%a1c%20b%e1%ba%a1n." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&t=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Kane Tu 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+<script src=/js/code-copy.js></script>
+
+
+
+</html>

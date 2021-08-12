@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="vi_vn">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Điểm qua những tính năng hấp dẫn trong ES6 - Phần 2 | Kane&#39;s Blog</title>
+  <link rel = 'canonical' href = 'https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/'>
+  <meta name="description" content="Hi I&#39;m Kane - a Front-End developer, I&#39;m currently working in Nashtech. In addition, writing blog helps me keep the stories and rearrange my knowledge in the technical journey. Thanks for all.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Điểm qua những tính năng hấp dẫn trong ES6 - Phần 2" />
+<meta property="og:description" content="Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-07-05T12:15:40+00:00" />
+<meta property="article:modified_time" content="2018-07-05T12:15:40+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Điểm qua những tính năng hấp dẫn trong ES6 - Phần 2"/>
+<meta name="twitter:description" content="Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://kanetu.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&text=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&is_video=false&description=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&name=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202&description=Tr%c6%b0%e1%bb%9bc%20ti%c3%aan%20%c4%91%e1%bb%83%20hi%e1%bb%83u%20g%c3%b5%20v%e1%bb%81%20t%c3%adnh%20n%c4%83ng%20ti%e1%ba%bfp%20theo%20ta%20c%e1%ba%a7n%20hi%e1%bb%83u%20g%c3%b5%20Object%20trong%20Javacript%20l%c3%a0%20g%c3%ac%2c%20n%e1%ba%bfu%20ai%20%c4%91%c3%a3%20hi%e1%bb%83u%20r%e1%bb%93i%20th%c3%ac%20c%c3%b3%20th%e1%bb%83%20scoll%20xu%e1%bb%91ng%20m%e1%bb%a5c%205." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&t=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#research-lại-object-trong-javacript">Research lại Object trong Javacript</a>
+      <ul>
+        <li><a href="#dùng-object-literals">Dùng Object literals</a></li>
+        <li><a href="#dùng-object-constructor">Dùng Object constructor</a></li>
+        <li><a href="#tạo-nhiều-object-cùng-loại">Tạo nhiều object cùng loại.</a>
+          <ul>
+            <li><a href="#sử-dụng-mẫu-khởi-tạo">Sử dụng mẫu khởi tạo</a></li>
+            <li><a href="#sử-dụng-prototype">Sử dụng prototype</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-enhanced-object-literals-in-es6">5. Enhanced Object Literals in ES6</a>
+          <ul>
+            <li><a href="#51-thuộc-tính-khởi-tạo-ngắn-hơn">5.1 Thuộc tính khởi tạo ngắn hơn</a></li>
+            <li><a href="#52-viết-phương-thức-methods-ngắn-hơn">5.2 Viết phương thức (methods) ngắn hơn</a></li>
+            <li><a href="#53-có-thể-tính-toán-trong-property">5.3 Có thể tính toán trong property</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Điểm qua những tính năng hấp dẫn trong ES6 - Phần 2
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2018-07-05 12:15:40 &#43;0000 UTC" itemprop="datePublished">2018-07-05</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          4 minute read
+        </div>
+        
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="research-lại-object-trong-javacript">Research lại Object trong Javacript</h2>
+<p>Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5.</p>
+<!-- raw HTML omitted -->
+<p>Ta gọi mỗi item là một property(thuộc tính) của object nếu value của item đó có kiểu dữ liệu là kiểu phức hợp hoặc các kiểu dữ liệu cơ bản, ngược lại nếu value của item nó là một hàm (một function) thì ta gọi nó là method của object (phương thức của object).</p>
+<p>Ví dụ object:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> myFirstObject <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    firstName<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;Richard&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    favoriteAuthor<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;Conrad&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>};
+</code></pre></div><p>Có 2 cách để tạo ra Object là 
+1. Dùng Object literals.
+2. Dùng Object constructor.</p>
+<p>Mình sẽ nói ngắn gọn và cho ví dụ về 2 cách này để đi thẳng vào vấn đề.</p>
+<h3 id="dùng-object-literals">Dùng Object literals</h3>
+<p>Đại khái là sẽ dùng cặp ngoặc nhọn <code>{ }</code> để tạo một object. <code>Literal</code> có thể hiểu theo ngữ cảnh nào đó là việc “sử dụng chuỗi thuần tuý”.</p>
+<p>Ex:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> myBook <span style="color:#ff79c6">=</span> {<span style="color:#bd93f9">10</span><span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;test1&#39;</span>};  <span style="color:#6272a4">//đối tượng có 1 thuộc tính
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#6272a4">//đối tượng có 1 thuộc tính và 1 phương thức (method)
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">var</span> myCar <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>   brand<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;Toyota&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>   run<span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>      console.log(<span style="color:#f1fa8c">&#39;running&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>   }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>};
+</code></pre></div><h3 id="dùng-object-constructor">Dùng Object constructor</h3>
+<p>Cách này sẽ sử dụng phương thức khởi tạo (constructor) của kiểu dữ liệu Object để tạo ra các object. Phương thức khởi tạo này là một hàm để tạo ra các object mới, ta dùng kèm từ khoá <code>new</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#6272a4">//Tạo 1 đối tượng mới
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">var</span> myApple <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd;font-style:italic">Object</span>();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#6272a4">//Thêm các thuộc tính cho đối tượng
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#6272a4"></span>myApple.color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;red&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>myApple.shape <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;round&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>myApple.howSweet <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>   console.log(<span style="color:#f1fa8c">&#39;I am sweet&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>};
+</code></pre></div><h3 id="tạo-nhiều-object-cùng-loại">Tạo nhiều object cùng loại.</h3>
+<p>Ở mục 5.1 và 5.2 tôi đã giới thiệu cách tạo một <code>object</code> trong javascript nhưng đó chỉ là tạo một object thôi vậy để làm tao ta tạo một loạt những object cùng loại.</p>
+<h4 id="sử-dụng-mẫu-khởi-tạo">Sử dụng mẫu khởi tạo</h4>
+<p>Cách này giống như ta tạo một class trong các ngôn ngữ lập trình khác, nhưng khác là Javascript sử dụng từ khoá <code>function</code> để tạo ra một hàm khởi tạo đối tượng, dùng từ khoá <code>this</code> để gán các thuộc tính cho đối tượng:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">function</span> Fruit (<span style="color:#bd93f9">_</span>color, <span style="color:#bd93f9">_</span>name){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>   <span style="color:#ff79c6">this</span>.color <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">_</span>color;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>   <span style="color:#ff79c6">this</span>.name <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">_</span>name;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>   <span style="color:#ff79c6">this</span>.showName <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>      console.log(<span style="color:#ff79c6">this</span>.name);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>   }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>};
+</code></pre></div><p>Với hàm khởi tạo này, ta có thể tạo hàng loạt các đối tượng kiểu <code>Fruit</code> như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> mangoFruit <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Fruit(<span style="color:#f1fa8c">&#39;yellow&#39;</span>, <span style="color:#f1fa8c">&#39;Mango&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#8be9fd;font-style:italic">var</span> appleFruit <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Fruit(<span style="color:#f1fa8c">&#39;red&#39;</span>, <span style="color:#f1fa8c">&#39;Apple&#39;</span>);
+</code></pre></div><h4 id="sử-dụng-prototype">Sử dụng prototype</h4>
+<p>Ex:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">function</span> Fruit (<span style="color:#bd93f9">_</span>color, <span style="color:#bd93f9">_</span>name){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>Fruit.prototype.color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;general_color&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>Fruit.prototype.name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;general_name&#39;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>Fruit.prototype.showName <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>(){
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>    console.log(<span style="color:#ff79c6">this</span>.name);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>};
+</code></pre></div><p>Với cách này thì ta cũng vẫn sẽ sử dụng hàm Fruit() để tạo ra các đối tượng object như cách ở trên:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> mangoFruit <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Fruit(<span style="color:#f1fa8c">&#39;yellow&#39;</span>, <span style="color:#f1fa8c">&#39;Mango&#39;</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#8be9fd;font-style:italic">var</span> appleFruit <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Fruit(<span style="color:#f1fa8c">&#39;red&#39;</span>, <span style="color:#f1fa8c">&#39;Apple&#39;</span>);
+</code></pre></div><h3 id="5-enhanced-object-literals-in-es6">5. Enhanced Object Literals in ES6</h3>
+<p>Như tôi đã nói ở trên ta có thể tạo một mẫu khởi tạo để tạo nhiều object cùng loại, nó tương tự class như trong các ngôn ngữ khác.</p>
+<h4 id="51-thuộc-tính-khởi-tạo-ngắn-hơn">5.1 Thuộc tính khởi tạo ngắn hơn</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">//ES5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">function</span> getLaptop(make, model, year) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        <span style="color:#ff79c6">return</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>            make<span style="color:#ff79c6">:</span> make,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>            model<span style="color:#ff79c6">:</span> model,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>            year<span style="color:#ff79c6">:</span> year
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    getLaptop(<span style="color:#f1fa8c">&#34;Apple&#34;</span>, <span style="color:#f1fa8c">&#34;MacBook&#34;</span>, <span style="color:#f1fa8c">&#34;2015&#34;</span>);<span style="color:#6272a4">// {make: &#34;Apple&#34;, model: &#34;MacBook&#34;, year: &#34;2015&#34;}
+</span></code></pre></div><p>Trong ES6 ta không cần lặp lại những parameter <code>trùng tên</code> với thuộc tính.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">//ES6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">function</span> getLaptop(make, model, year) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        <span style="color:#ff79c6">return</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>            make,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>            model,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>            year
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    getLaptop(<span style="color:#f1fa8c">&#34;Apple&#34;</span>, <span style="color:#f1fa8c">&#34;MacBook&#34;</span>, <span style="color:#f1fa8c">&#34;2015&#34;</span>); <span style="color:#6272a4">// {make: &#34;Apple&#34;, model: &#34;MacBook&#34;, year: &#34;2015&#34;}
+</span></code></pre></div><h4 id="52-viết-phương-thức-methods-ngắn-hơn">5.2 Viết phương thức (methods) ngắn hơn</h4>
+<p>Ở phiên bản ES5 cú pháp để viết phương thức trong <code>object</code> sẽ như thế này</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">//ES5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">function</span> getLaptop(make, model, year) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        <span style="color:#ff79c6">return</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>           sayModel <span style="color:#ff79c6">:</span> <span style="color:#8be9fd;font-style:italic">function</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>                <span style="color:#ff79c6">return</span> model;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>            }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    getLaptop(<span style="color:#f1fa8c">&#34;Apple&#34;</span>, <span style="color:#f1fa8c">&#34;MacBook&#34;</span>, <span style="color:#f1fa8c">&#34;2015&#34;</span>).sayModel(); <span style="color:#6272a4">//&#34;MacBook&#34;
+</span></code></pre></div><p>Với ES6 ta không cần viết quá nhiều để phương thức đó hoạt động.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">//ES6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">function</span> getLaptop(make, model, year) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        <span style="color:#ff79c6">return</span>{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>            sayModel() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>                <span style="color:#ff79c6">return</span> model;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>            }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    getLaptop(<span style="color:#f1fa8c">&#34;Apple&#34;</span>, <span style="color:#f1fa8c">&#34;MacBook&#34;</span>, <span style="color:#f1fa8c">&#34;2015&#34;</span>).sayModel(); <span style="color:#6272a4">//&#34;MacBook&#34;
+</span></code></pre></div><h4 id="53-có-thể-tính-toán-trong-property">5.3 Có thể tính toán trong property</h4>
+<p>Như ta đã biết thì có 2 cách để chỉ định một khóa khi xử lý một thuộc tính của object là dấu chấm <code>.</code> và dấu ngoặc vuông <code>[]</code>, dấu ngoặc vuông cho phép chúng ta xử lý thuộc tính của object với các biểu thức</p>
+<p>Xem ví dụ này:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#8be9fd;font-style:italic">var</span> name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;make&#34;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#ff79c6">const</span> laptop <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    [name]<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;Apple&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>console.log(laptop.make);<span style="color:#6272a4">//&#34;Apple&#34;
+</span></code></pre></div><p>Chúng ta thấy rằng nó cho phép ta truyền biến <code>name</code> vào dấu <code>[]</code> từ đó ta có thể <code>console.log</code> đối tượng <code>laptop</code> với thuộc tính <code>make</code> (là giá trị của biến <code>name</code>).</p>
+<p>Bonus:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8be9fd;font-style:italic">var</span> name <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;make&#34;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#8be9fd;font-style:italic">var</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#ff79c6">const</span> laptop <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    [name <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">++</span>i]<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;Apple&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    [name <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">++</span>i]<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;Dell&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    [name <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">++</span>i]<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;HP&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>console.log(laptop.make1);<span style="color:#6272a4">//&#34;Apple&#34;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#6272a4"></span>console.log(laptop.make2);<span style="color:#6272a4">//&#34;Dell&#34;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"></span>console.log(laptop.make3);<span style="color:#6272a4">//&#34;HP&#34;
+</span></code></pre></div>
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#research-lại-object-trong-javacript">Research lại Object trong Javacript</a>
+      <ul>
+        <li><a href="#dùng-object-literals">Dùng Object literals</a></li>
+        <li><a href="#dùng-object-constructor">Dùng Object constructor</a></li>
+        <li><a href="#tạo-nhiều-object-cùng-loại">Tạo nhiều object cùng loại.</a>
+          <ul>
+            <li><a href="#sử-dụng-mẫu-khởi-tạo">Sử dụng mẫu khởi tạo</a></li>
+            <li><a href="#sử-dụng-prototype">Sử dụng prototype</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-enhanced-object-literals-in-es6">5. Enhanced Object Literals in ES6</a>
+          <ul>
+            <li><a href="#51-thuộc-tính-khởi-tạo-ngắn-hơn">5.1 Thuộc tính khởi tạo ngắn hơn</a></li>
+            <li><a href="#52-viết-phương-thức-methods-ngắn-hơn">5.2 Viết phương thức (methods) ngắn hơn</a></li>
+            <li><a href="#53-có-thể-tính-toán-trong-property">5.3 Có thể tính toán trong property</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&text=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&is_video=false&description=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&name=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202&description=Tr%c6%b0%e1%bb%9bc%20ti%c3%aan%20%c4%91%e1%bb%83%20hi%e1%bb%83u%20g%c3%b5%20v%e1%bb%81%20t%c3%adnh%20n%c4%83ng%20ti%e1%ba%bfp%20theo%20ta%20c%e1%ba%a7n%20hi%e1%bb%83u%20g%c3%b5%20Object%20trong%20Javacript%20l%c3%a0%20g%c3%ac%2c%20n%e1%ba%bfu%20ai%20%c4%91%c3%a3%20hi%e1%bb%83u%20r%e1%bb%93i%20th%c3%ac%20c%c3%b3%20th%e1%bb%83%20scoll%20xu%e1%bb%91ng%20m%e1%bb%a5c%205." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2%2f&t=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%202" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Kane Tu 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+<script src=/js/code-copy.js></script>
+
+
+
+</html>
