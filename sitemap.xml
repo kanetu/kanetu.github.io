@@ -8,17 +8,32 @@
     <loc>https://kanetu.github.io/posts/</loc>
     <lastmod>2021-08-21T10:28:52+07:00</lastmod>
   </url><url>
-    <loc>https://kanetu.github.io/posts/webhook_la_gi/</loc>
+    <loc>https://kanetu.github.io/tags/</loc>
+    <lastmod>2021-08-21T10:28:52+07:00</lastmod>
+  </url><url>
+    <loc>https://kanetu.github.io/tags/technology/</loc>
+    <lastmod>2021-08-21T10:28:52+07:00</lastmod>
+  </url><url>
+    <loc>https://kanetu.github.io/posts/webhook-la-gi/</loc>
     <lastmod>2021-08-21T10:28:52+07:00</lastmod>
   </url><url>
     <loc>https://kanetu.github.io/posts/coding-convention/</loc>
     <lastmod>2019-10-15T11:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kanetu.github.io/tags/soft-skills/</loc>
+    <lastmod>2019-10-15T11:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kanetu.github.io/tags/javascript/</loc>
+    <lastmod>2018-10-11T10:45:40+00:00</lastmod>
   </url><url>
     <loc>https://kanetu.github.io/posts/scope-va-hoisting/</loc>
     <lastmod>2018-10-11T10:45:40+00:00</lastmod>
   </url><url>
     <loc>https://kanetu.github.io/posts/trusthy-va-falsy/</loc>
     <lastmod>2018-09-28T03:00:40+00:00</lastmod>
+  </url><url>
+    <loc>https://kanetu.github.io/tags/css/</loc>
+    <lastmod>2018-09-11T01:45:40+00:00</lastmod>
   </url><url>
     <loc>https://kanetu.github.io/posts/css-spritesheet-la-gi/</loc>
     <lastmod>2018-09-11T01:45:40+00:00</lastmod>
@@ -28,6 +43,9 @@
   </url><url>
     <loc>https://kanetu.github.io/posts/co-che-bat-dong-bo-trong-javascript/</loc>
     <lastmod>2018-07-19T09:38:40+00:00</lastmod>
+  </url><url>
+    <loc>https://kanetu.github.io/tags/diary/</loc>
+    <lastmod>2018-07-13T14:32:40+00:00</lastmod>
   </url><url>
     <loc>https://kanetu.github.io/posts/suy-nghi-cua-mot-thang-intern/</loc>
     <lastmod>2018-07-13T14:32:40+00:00</lastmod>
@@ -51,7 +69,5 @@
     <lastmod>2018-06-04T12:32:40+00:00</lastmod>
   </url><url>
     <loc>https://kanetu.github.io/categories/</loc>
-  </url><url>
-    <loc>https://kanetu.github.io/tags/</loc>
   </url>
 </urlset>

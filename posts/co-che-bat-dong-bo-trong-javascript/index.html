@@ -14,7 +14,9 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Cơ chế bất đồng bộ trong Javascript" />
-<meta property="og:description" content="Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào" />
+<meta property="og:description" content="Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào, ta xem ví dụ sau:
+1console.log(&#39;Dong 1&#39;); 2console.log(&#39;Dong 2&#39;); 3console.log(&#39;Dong 3&#39;); Như các bạn thấy thì nhìn vào ta biết ngay nó sẽ in ra những gì, lần luật là:
+1Dong 1 2Dong 2 3Dong 3 Bây giờ ta đặt thêm setTimeout() cho dòng thứ 2 để xem sao:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanetu.github.io/posts/co-che-bat-dong-bo-trong-javascript/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-07-19T09:38:40+00:00" />
@@ -23,14 +25,16 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cơ chế bất đồng bộ trong Javascript"/>
-<meta name="twitter:description" content="Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào"/>
+<meta name="twitter:description" content="Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào, ta xem ví dụ sau:
+1console.log(&#39;Dong 1&#39;); 2console.log(&#39;Dong 2&#39;); 3console.log(&#39;Dong 3&#39;); Như các bạn thấy thì nhìn vào ta biết ngay nó sẽ in ra những gì, lần luật là:
+1Dong 1 2Dong 2 3Dong 3 Bây giờ ta đặt thêm setTimeout() cho dòng thứ 2 để xem sao:"/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.71e2eff5c628056e7a2a91a7ce29d1aa95088e5bc1952ffd315c12a370886838642b76f1e90164982dac424321102e695bd1a9115b7dbc980f7f0bb08c90783e.css" integrity="sha512-ceLv9cYoBW56KpGnzinRqpUIjlvBlS/9MVwSo3CIaDhkK3bx6QFkmC2sQkMhEC5pW9GpEVt9vJgPfwuwjJB4Pg=="> 
 
   
   
@@ -41,8 +45,14 @@
     <![endif]-->
   
 
-  
-<link rel="icon" type="image/png" href="https://kanetu.github.io/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://kanetu.github.io/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="https://kanetu.github.io/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="https://kanetu.github.io/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="https://kanetu.github.io/favicon/site.webmanifest" />
+<link rel="mask-icon" href="https://kanetu.github.io/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="icon" type="image/png" href="https://kanetu.github.io/favicon/favicon.ico" />   
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 
   
   
@@ -63,11 +73,9 @@
          
         <li><a href="/">Home</a></li>
          
-        <li><a href="/posts">Writings</a></li>
+        <li><a href="/posts">Posts</a></li>
          
         <li><a href="/tags">Tags</a></li>
-         
-        <li><a href="/about">About</a></li>
         
       </ul>
     </span>
@@ -149,7 +157,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&name=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript&description=Nh%c6%b0%20bao%20ng%c3%a0y%20gi%e1%bb%9d%20l%c3%a0%20l%c3%bac%20r%c3%a3nh%20n%c3%aan%20t%c3%b4i%20quy%e1%ba%bft%20%c4%91%e1%bb%8bnh%20t%c3%acm%20hi%e1%bb%83u%20xem%20c%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20javascript%20n%c3%b3%20ho%e1%ba%a1t%20%c4%91%e1%bb%99ng%20nh%c6%b0%20th%e1%ba%bf%20n%c3%a0o" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&name=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript&description=Nh%c6%b0%20bao%20ng%c3%a0y%20gi%e1%bb%9d%20l%c3%a0%20l%c3%bac%20r%c3%a3nh%20n%c3%aan%20t%c3%b4i%20quy%e1%ba%bft%20%c4%91%e1%bb%8bnh%20t%c3%acm%20hi%e1%bb%83u%20xem%20c%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20javascript%20n%c3%b3%20ho%e1%ba%a1t%20%c4%91%e1%bb%99ng%20nh%c6%b0%20th%e1%ba%bf%20n%c3%a0o%2c%20ta%20xem%20v%c3%ad%20d%e1%bb%a5%20sau%3a%0a1console.log%28%26%2339%3bDong%201%26%2339%3b%29%3b%202console.log%28%26%2339%3bDong%202%26%2339%3b%29%3b%203console.log%28%26%2339%3bDong%203%26%2339%3b%29%3b%20Nh%c6%b0%20c%c3%a1c%20b%e1%ba%a1n%20th%e1%ba%a5y%20th%c3%ac%20nh%c3%acn%20v%c3%a0o%20ta%20bi%e1%ba%bft%20ngay%20n%c3%b3%20s%e1%ba%bd%20in%20ra%20nh%e1%bb%afng%20g%c3%ac%2c%20l%e1%ba%a7n%20lu%e1%ba%adt%20l%c3%a0%3a%0a1Dong%201%202Dong%202%203Dong%203%20B%c3%a2y%20gi%e1%bb%9d%20ta%20%c4%91%e1%ba%b7t%20th%c3%aam%20setTimeout%28%29%20cho%20d%c3%b2ng%20th%e1%bb%a9%202%20%c4%91%e1%bb%83%20xem%20sao%3a" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -189,6 +197,14 @@
         </div>
         
         
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/javascript" rel="tag">javascript</a>
+            
+        </div>
         
       </div>
     </header>
@@ -272,11 +288,9 @@
          
           <li><a href="/">Home</a></li>
          
-          <li><a href="/posts">Writings</a></li>
+          <li><a href="/posts">Posts</a></li>
          
           <li><a href="/tags">Tags</a></li>
-         
-          <li><a href="/about">About</a></li>
         
       </ul>
     </div>
@@ -329,7 +343,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&name=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript&description=Nh%c6%b0%20bao%20ng%c3%a0y%20gi%e1%bb%9d%20l%c3%a0%20l%c3%bac%20r%c3%a3nh%20n%c3%aan%20t%c3%b4i%20quy%e1%ba%bft%20%c4%91%e1%bb%8bnh%20t%c3%acm%20hi%e1%bb%83u%20xem%20c%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20javascript%20n%c3%b3%20ho%e1%ba%a1t%20%c4%91%e1%bb%99ng%20nh%c6%b0%20th%e1%ba%bf%20n%c3%a0o" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fco-che-bat-dong-bo-trong-javascript%2f&name=C%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20Javascript&description=Nh%c6%b0%20bao%20ng%c3%a0y%20gi%e1%bb%9d%20l%c3%a0%20l%c3%bac%20r%c3%a3nh%20n%c3%aan%20t%c3%b4i%20quy%e1%ba%bft%20%c4%91%e1%bb%8bnh%20t%c3%acm%20hi%e1%bb%83u%20xem%20c%c6%a1%20ch%e1%ba%bf%20b%e1%ba%a5t%20%c4%91%e1%bb%93ng%20b%e1%bb%99%20trong%20javascript%20n%c3%b3%20ho%e1%ba%a1t%20%c4%91%e1%bb%99ng%20nh%c6%b0%20th%e1%ba%bf%20n%c3%a0o%2c%20ta%20xem%20v%c3%ad%20d%e1%bb%a5%20sau%3a%0a1console.log%28%26%2339%3bDong%201%26%2339%3b%29%3b%202console.log%28%26%2339%3bDong%202%26%2339%3b%29%3b%203console.log%28%26%2339%3bDong%203%26%2339%3b%29%3b%20Nh%c6%b0%20c%c3%a1c%20b%e1%ba%a1n%20th%e1%ba%a5y%20th%c3%ac%20nh%c3%acn%20v%c3%a0o%20ta%20bi%e1%ba%bft%20ngay%20n%c3%b3%20s%e1%ba%bd%20in%20ra%20nh%e1%bb%afng%20g%c3%ac%2c%20l%e1%ba%a7n%20lu%e1%ba%adt%20l%c3%a0%3a%0a1Dong%201%202Dong%202%203Dong%203%20B%c3%a2y%20gi%e1%bb%9d%20ta%20%c4%91%e1%ba%b7t%20th%c3%aam%20setTimeout%28%29%20cho%20d%c3%b2ng%20th%e1%bb%a9%202%20%c4%91%e1%bb%83%20xem%20sao%3a" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -368,11 +382,9 @@
          
         <li><a href="/">Home</a></li>
          
-        <li><a href="/posts">Writings</a></li>
+        <li><a href="/posts">Posts</a></li>
          
         <li><a href="/tags">Tags</a></li>
-         
-        <li><a href="/about">About</a></li>
         
       </ul>
     </nav>

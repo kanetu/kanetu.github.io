@@ -10,10 +10,10 @@
     <lastBuildDate>Sat, 21 Aug 2021 10:28:52 +0700</lastBuildDate><atom:link href="https://kanetu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Webhook là gì?</title>
-      <link>https://kanetu.github.io/posts/webhook_la_gi/</link>
+      <link>https://kanetu.github.io/posts/webhook-la-gi/</link>
       <pubDate>Sat, 21 Aug 2021 10:28:52 +0700</pubDate>
       
-      <guid>https://kanetu.github.io/posts/webhook_la_gi/</guid>
+      <guid>https://kanetu.github.io/posts/webhook-la-gi/</guid>
       <description>1. Webhook là gì?  Webhook là một tính nắng cho phép hệ thống A cập nhật các sự kiện trong thời gian thực của bên thứ ba một cách tự động. Webhook được biết đến với nhiều thuật ngữ khác như: Web callback, HTTP Push API, Reverse API,&amp;hellip; Webhook sẽ chuyển dữ liệu đến các ứng dụng lắng nghe nó ngay khi nó được trigger điều này có nghĩa là ứng dụng của bạn sẽ nhận được dữ liệu ngay làm tức không giống như những API thông thường, điều mà chúng nó phải thăm dò dữ liệu thường xuyên để đảm bảo tính real-time (thời gian thực)  2.</description>
     </item>
     

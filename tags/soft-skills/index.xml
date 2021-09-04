@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>soft-skills on Kane&#39;s Blog</title>
+    <link>https://kanetu.github.io/tags/soft-skills/</link>
+    <description>Recent content in soft-skills on Kane&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi_vn</language>
+    <copyright>Kane Tu</copyright>
+    <lastBuildDate>Tue, 15 Oct 2019 11:00:00 +0000</lastBuildDate><atom:link href="https://kanetu.github.io/tags/soft-skills/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coding Convention - Qui ước mã hóa</title>
+      <link>https://kanetu.github.io/posts/coding-convention/</link>
+      <pubDate>Tue, 15 Oct 2019 11:00:00 +0000</pubDate>
+      
+      <guid>https://kanetu.github.io/posts/coding-convention/</guid>
+      <description>Để viết bài này mình sẽ đi theo định nghĩa &amp;ldquo;What is coding convention&amp;rdquo; của thầy Ân Nguyễn, còn lại là những chia sẽ suy nghĩ của cá nhân mình, nên sẽ không khỏi thiếu sót và cần bổ sung từ thầy cô và các bạn.
+Coding convention bao gồm những phần: file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices, programming principles,&amp;hellip;quá nhiều cho một post cho nên mình sẽ trọng tâm vào những cái thường gặp.</description>
+    </item>
+    
+  </channel>
+</rss>

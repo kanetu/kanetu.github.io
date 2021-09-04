@@ -14,7 +14,8 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Trusthy và Falsy" />
-<meta property="og:description" content="Truthy và Falsy là gì?, thật ra khái niệm rất lạ và tôi cũng tự hỏi nó là cái gì mặc dù học Javascript 4 năm rồi. Đúng là cái gì không biết thì nó thật mới mẽ." />
+<meta property="og:description" content="Truthy và Falsy là gì?, đây là một khái niệm mà rất nhiều người khi học Javascript rất ít khi để ý đến ngay cả mình cũng vậy.
+1. Primitive data type - Kiểu dữ liệu nguyên thủy Khi chúng ta khai báo một biến nếu chúng ta không khai báo giá trị của cho biến thì tự động bên trong cơ chế Javascript sẽ set cho biến là undefined đúng không?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanetu.github.io/posts/trusthy-va-falsy/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-09-28T03:00:40+00:00" />
@@ -23,14 +24,15 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Trusthy và Falsy"/>
-<meta name="twitter:description" content="Truthy và Falsy là gì?, thật ra khái niệm rất lạ và tôi cũng tự hỏi nó là cái gì mặc dù học Javascript 4 năm rồi. Đúng là cái gì không biết thì nó thật mới mẽ."/>
+<meta name="twitter:description" content="Truthy và Falsy là gì?, đây là một khái niệm mà rất nhiều người khi học Javascript rất ít khi để ý đến ngay cả mình cũng vậy.
+1. Primitive data type - Kiểu dữ liệu nguyên thủy Khi chúng ta khai báo một biến nếu chúng ta không khai báo giá trị của cho biến thì tự động bên trong cơ chế Javascript sẽ set cho biến là undefined đúng không?"/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.71e2eff5c628056e7a2a91a7ce29d1aa95088e5bc1952ffd315c12a370886838642b76f1e90164982dac424321102e695bd1a9115b7dbc980f7f0bb08c90783e.css" integrity="sha512-ceLv9cYoBW56KpGnzinRqpUIjlvBlS/9MVwSo3CIaDhkK3bx6QFkmC2sQkMhEC5pW9GpEVt9vJgPfwuwjJB4Pg=="> 
 
   
   
@@ -41,8 +43,14 @@
     <![endif]-->
   
 
-  
-<link rel="icon" type="image/png" href="https://kanetu.github.io/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://kanetu.github.io/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="https://kanetu.github.io/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="https://kanetu.github.io/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="https://kanetu.github.io/favicon/site.webmanifest" />
+<link rel="mask-icon" href="https://kanetu.github.io/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="icon" type="image/png" href="https://kanetu.github.io/favicon/favicon.ico" />   
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 
   
   
@@ -63,11 +71,9 @@
          
         <li><a href="/">Home</a></li>
          
-        <li><a href="/posts">Writings</a></li>
+        <li><a href="/posts">Posts</a></li>
          
         <li><a href="/tags">Tags</a></li>
-         
-        <li><a href="/about">About</a></li>
         
       </ul>
     </span>
@@ -149,7 +155,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2ftrusthy-va-falsy%2f&name=Trusthy%20v%c3%a0%20Falsy&description=Truthy%20v%c3%a0%20Falsy%20l%c3%a0%20g%c3%ac%3f%2c%20th%e1%ba%adt%20ra%20kh%c3%a1i%20ni%e1%bb%87m%20r%e1%ba%a5t%20l%e1%ba%a1%20v%c3%a0%20t%c3%b4i%20c%c5%a9ng%20t%e1%bb%b1%20h%e1%bb%8fi%20n%c3%b3%20l%c3%a0%20c%c3%a1i%20g%c3%ac%20m%e1%ba%b7c%20d%c3%b9%20h%e1%bb%8dc%20Javascript%204%20n%c4%83m%20r%e1%bb%93i.%20%c4%90%c3%bang%20l%c3%a0%20c%c3%a1i%20g%c3%ac%20kh%c3%b4ng%20bi%e1%ba%bft%20th%c3%ac%20n%c3%b3%20th%e1%ba%adt%20m%e1%bb%9bi%20m%e1%ba%bd." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2ftrusthy-va-falsy%2f&name=Trusthy%20v%c3%a0%20Falsy&description=Truthy%20v%c3%a0%20Falsy%20l%c3%a0%20g%c3%ac%3f%2c%20%c4%91%c3%a2y%20l%c3%a0%20m%e1%bb%99t%20kh%c3%a1i%20ni%e1%bb%87m%20m%c3%a0%20r%e1%ba%a5t%20nhi%e1%bb%81u%20ng%c6%b0%e1%bb%9di%20khi%20h%e1%bb%8dc%20Javascript%20r%e1%ba%a5t%20%c3%adt%20khi%20%c4%91%e1%bb%83%20%c3%bd%20%c4%91%e1%ba%bfn%20ngay%20c%e1%ba%a3%20m%c3%acnh%20c%c5%a9ng%20v%e1%ba%ady.%0a1.%20Primitive%20data%20type%20-%20Ki%e1%bb%83u%20d%e1%bb%af%20li%e1%bb%87u%20nguy%c3%aan%20th%e1%bb%a7y%20Khi%20ch%c3%bang%20ta%20khai%20b%c3%a1o%20m%e1%bb%99t%20bi%e1%ba%bfn%20n%e1%ba%bfu%20ch%c3%bang%20ta%20kh%c3%b4ng%20khai%20b%c3%a1o%20gi%c3%a1%20tr%e1%bb%8b%20c%e1%bb%a7a%20cho%20bi%e1%ba%bfn%20th%c3%ac%20t%e1%bb%b1%20%c4%91%e1%bb%99ng%20b%c3%aan%20trong%20c%c6%a1%20ch%e1%ba%bf%20Javascript%20s%e1%ba%bd%20set%20cho%20bi%e1%ba%bfn%20l%c3%a0%20undefined%20%c4%91%c3%bang%20kh%c3%b4ng%3f" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -196,6 +202,14 @@
         </div>
         
         
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/javascript" rel="tag">javascript</a>
+            
+        </div>
         
       </div>
     </header>
@@ -273,11 +287,9 @@
          
           <li><a href="/">Home</a></li>
          
-          <li><a href="/posts">Writings</a></li>
+          <li><a href="/posts">Posts</a></li>
          
           <li><a href="/tags">Tags</a></li>
-         
-          <li><a href="/about">About</a></li>
         
       </ul>
     </div>
@@ -337,7 +349,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2ftrusthy-va-falsy%2f&name=Trusthy%20v%c3%a0%20Falsy&description=Truthy%20v%c3%a0%20Falsy%20l%c3%a0%20g%c3%ac%3f%2c%20th%e1%ba%adt%20ra%20kh%c3%a1i%20ni%e1%bb%87m%20r%e1%ba%a5t%20l%e1%ba%a1%20v%c3%a0%20t%c3%b4i%20c%c5%a9ng%20t%e1%bb%b1%20h%e1%bb%8fi%20n%c3%b3%20l%c3%a0%20c%c3%a1i%20g%c3%ac%20m%e1%ba%b7c%20d%c3%b9%20h%e1%bb%8dc%20Javascript%204%20n%c4%83m%20r%e1%bb%93i.%20%c4%90%c3%bang%20l%c3%a0%20c%c3%a1i%20g%c3%ac%20kh%c3%b4ng%20bi%e1%ba%bft%20th%c3%ac%20n%c3%b3%20th%e1%ba%adt%20m%e1%bb%9bi%20m%e1%ba%bd." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2ftrusthy-va-falsy%2f&name=Trusthy%20v%c3%a0%20Falsy&description=Truthy%20v%c3%a0%20Falsy%20l%c3%a0%20g%c3%ac%3f%2c%20%c4%91%c3%a2y%20l%c3%a0%20m%e1%bb%99t%20kh%c3%a1i%20ni%e1%bb%87m%20m%c3%a0%20r%e1%ba%a5t%20nhi%e1%bb%81u%20ng%c6%b0%e1%bb%9di%20khi%20h%e1%bb%8dc%20Javascript%20r%e1%ba%a5t%20%c3%adt%20khi%20%c4%91%e1%bb%83%20%c3%bd%20%c4%91%e1%ba%bfn%20ngay%20c%e1%ba%a3%20m%c3%acnh%20c%c5%a9ng%20v%e1%ba%ady.%0a1.%20Primitive%20data%20type%20-%20Ki%e1%bb%83u%20d%e1%bb%af%20li%e1%bb%87u%20nguy%c3%aan%20th%e1%bb%a7y%20Khi%20ch%c3%bang%20ta%20khai%20b%c3%a1o%20m%e1%bb%99t%20bi%e1%ba%bfn%20n%e1%ba%bfu%20ch%c3%bang%20ta%20kh%c3%b4ng%20khai%20b%c3%a1o%20gi%c3%a1%20tr%e1%bb%8b%20c%e1%bb%a7a%20cho%20bi%e1%ba%bfn%20th%c3%ac%20t%e1%bb%b1%20%c4%91%e1%bb%99ng%20b%c3%aan%20trong%20c%c6%a1%20ch%e1%ba%bf%20Javascript%20s%e1%ba%bd%20set%20cho%20bi%e1%ba%bfn%20l%c3%a0%20undefined%20%c4%91%c3%bang%20kh%c3%b4ng%3f" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -376,11 +388,9 @@
          
         <li><a href="/">Home</a></li>
          
-        <li><a href="/posts">Writings</a></li>
+        <li><a href="/posts">Posts</a></li>
          
         <li><a href="/tags">Tags</a></li>
-         
-        <li><a href="/about">About</a></li>
         
       </ul>
     </nav>

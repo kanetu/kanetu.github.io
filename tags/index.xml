@@ -6,6 +6,52 @@
     <description>Recent content in Tags on Kane&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi_vn</language>
-    <copyright>Kane Tu</copyright><atom:link href="https://kanetu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Kane Tu</copyright>
+    <lastBuildDate>Sat, 21 Aug 2021 10:28:52 +0700</lastBuildDate><atom:link href="https://kanetu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>technology</title>
+      <link>https://kanetu.github.io/tags/technology/</link>
+      <pubDate>Sat, 21 Aug 2021 10:28:52 +0700</pubDate>
+      
+      <guid>https://kanetu.github.io/tags/technology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>soft-skills</title>
+      <link>https://kanetu.github.io/tags/soft-skills/</link>
+      <pubDate>Tue, 15 Oct 2019 11:00:00 +0000</pubDate>
+      
+      <guid>https://kanetu.github.io/tags/soft-skills/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://kanetu.github.io/tags/javascript/</link>
+      <pubDate>Thu, 11 Oct 2018 10:45:40 +0000</pubDate>
+      
+      <guid>https://kanetu.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://kanetu.github.io/tags/css/</link>
+      <pubDate>Tue, 11 Sep 2018 01:45:40 +0000</pubDate>
+      
+      <guid>https://kanetu.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diary</title>
+      <link>https://kanetu.github.io/tags/diary/</link>
+      <pubDate>Fri, 13 Jul 2018 14:32:40 +0000</pubDate>
+      
+      <guid>https://kanetu.github.io/tags/diary/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

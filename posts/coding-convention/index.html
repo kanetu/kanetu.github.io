@@ -14,7 +14,8 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Coding Convention - Qui ước mã hóa" />
-<meta property="og:description" content="Để viết bài này mình sẽ đi theo định nghĩa &#34;What is coding convention&#34; của thầy Ân Nguyễn, còn lại là những chia sẽ suy nghĩ của cá nhân mình, nên sẽ không khỏi thiếu sót và cần bổ sung từ thầy cô và các bạn." />
+<meta property="og:description" content="Để viết bài này mình sẽ đi theo định nghĩa &ldquo;What is coding convention&rdquo; của thầy Ân Nguyễn, còn lại là những chia sẽ suy nghĩ của cá nhân mình, nên sẽ không khỏi thiếu sót và cần bổ sung từ thầy cô và các bạn.
+Coding convention bao gồm những phần: file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices, programming principles,&hellip;quá nhiều cho một post cho nên mình sẽ trọng tâm vào những cái thường gặp." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanetu.github.io/posts/coding-convention/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-10-15T11:00:00+00:00" />
@@ -23,14 +24,15 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Coding Convention - Qui ước mã hóa"/>
-<meta name="twitter:description" content="Để viết bài này mình sẽ đi theo định nghĩa &#34;What is coding convention&#34; của thầy Ân Nguyễn, còn lại là những chia sẽ suy nghĩ của cá nhân mình, nên sẽ không khỏi thiếu sót và cần bổ sung từ thầy cô và các bạn."/>
+<meta name="twitter:description" content="Để viết bài này mình sẽ đi theo định nghĩa &ldquo;What is coding convention&rdquo; của thầy Ân Nguyễn, còn lại là những chia sẽ suy nghĩ của cá nhân mình, nên sẽ không khỏi thiếu sót và cần bổ sung từ thầy cô và các bạn.
+Coding convention bao gồm những phần: file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices, programming principles,&hellip;quá nhiều cho một post cho nên mình sẽ trọng tâm vào những cái thường gặp."/>
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.71e2eff5c628056e7a2a91a7ce29d1aa95088e5bc1952ffd315c12a370886838642b76f1e90164982dac424321102e695bd1a9115b7dbc980f7f0bb08c90783e.css" integrity="sha512-ceLv9cYoBW56KpGnzinRqpUIjlvBlS/9MVwSo3CIaDhkK3bx6QFkmC2sQkMhEC5pW9GpEVt9vJgPfwuwjJB4Pg=="> 
 
   
   
@@ -41,8 +43,14 @@
     <![endif]-->
   
 
-  
-<link rel="icon" type="image/png" href="https://kanetu.github.io/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://kanetu.github.io/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="https://kanetu.github.io/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="https://kanetu.github.io/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="https://kanetu.github.io/favicon/site.webmanifest" />
+<link rel="mask-icon" href="https://kanetu.github.io/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="icon" type="image/png" href="https://kanetu.github.io/favicon/favicon.ico" />   
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 
   
   
@@ -63,11 +71,9 @@
          
         <li><a href="/">Home</a></li>
          
-        <li><a href="/posts">Writings</a></li>
+        <li><a href="/posts">Posts</a></li>
          
         <li><a href="/tags">Tags</a></li>
-         
-        <li><a href="/about">About</a></li>
         
       </ul>
     </span>
@@ -83,7 +89,7 @@
         
         
         <li>
-          <a class="icon" href="https://kanetu.github.io/posts/webhook_la_gi/" aria-label="Next">
+          <a class="icon" href="https://kanetu.github.io/posts/webhook-la-gi/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -149,7 +155,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&name=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a&description=%c4%90%e1%bb%83%20vi%e1%ba%bft%20b%c3%a0i%20n%c3%a0y%20m%c3%acnh%20s%e1%ba%bd%20%c4%91i%20theo%20%c4%91%e1%bb%8bnh%20ngh%c4%a9a%20%22What%20is%20coding%20convention%22%20c%e1%bb%a7a%20th%e1%ba%a7y%20%c3%82n%20Nguy%e1%bb%85n%2c%20c%c3%b2n%20l%e1%ba%a1i%20l%c3%a0%20nh%e1%bb%afng%20chia%20s%e1%ba%bd%20suy%20ngh%c4%a9%20c%e1%bb%a7a%20c%c3%a1%20nh%c3%a2n%20m%c3%acnh%2c%20n%c3%aan%20s%e1%ba%bd%20kh%c3%b4ng%20kh%e1%bb%8fi%20thi%e1%ba%bfu%20s%c3%b3t%20v%c3%a0%20c%e1%ba%a7n%20b%e1%bb%95%20sung%20t%e1%bb%ab%20th%e1%ba%a7y%20c%c3%b4%20v%c3%a0%20c%c3%a1c%20b%e1%ba%a1n." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&name=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a&description=%c4%90%e1%bb%83%20vi%e1%ba%bft%20b%c3%a0i%20n%c3%a0y%20m%c3%acnh%20s%e1%ba%bd%20%c4%91i%20theo%20%c4%91%e1%bb%8bnh%20ngh%c4%a9a%20%26ldquo%3bWhat%20is%20coding%20convention%26rdquo%3b%20c%e1%bb%a7a%20th%e1%ba%a7y%20%c3%82n%20Nguy%e1%bb%85n%2c%20c%c3%b2n%20l%e1%ba%a1i%20l%c3%a0%20nh%e1%bb%afng%20chia%20s%e1%ba%bd%20suy%20ngh%c4%a9%20c%e1%bb%a7a%20c%c3%a1%20nh%c3%a2n%20m%c3%acnh%2c%20n%c3%aan%20s%e1%ba%bd%20kh%c3%b4ng%20kh%e1%bb%8fi%20thi%e1%ba%bfu%20s%c3%b3t%20v%c3%a0%20c%e1%ba%a7n%20b%e1%bb%95%20sung%20t%e1%bb%ab%20th%e1%ba%a7y%20c%c3%b4%20v%c3%a0%20c%c3%a1c%20b%e1%ba%a1n.%0aCoding%20convention%20bao%20g%e1%bb%93m%20nh%e1%bb%afng%20ph%e1%ba%a7n%3a%20file%20organization%2c%20indentation%2c%20comments%2c%20declarations%2c%20statements%2c%20white%20space%2c%20naming%20conventions%2c%20programming%20practices%2c%20programming%20principles%2c%26hellip%3bqu%c3%a1%20nhi%e1%bb%81u%20cho%20m%e1%bb%99t%20post%20cho%20n%c3%aan%20m%c3%acnh%20s%e1%ba%bd%20tr%e1%bb%8dng%20t%c3%a2m%20v%c3%a0o%20nh%e1%bb%afng%20c%c3%a1i%20th%c6%b0%e1%bb%9dng%20g%e1%ba%b7p." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -198,6 +204,14 @@
         </div>
         
         
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/soft-skills" rel="tag">soft-skills</a>
+            
+        </div>
         
       </div>
     </header>
@@ -278,11 +292,9 @@
          
           <li><a href="/">Home</a></li>
          
-          <li><a href="/posts">Writings</a></li>
+          <li><a href="/posts">Posts</a></li>
          
           <li><a href="/tags">Tags</a></li>
-         
-          <li><a href="/about">About</a></li>
         
       </ul>
     </div>
@@ -344,7 +356,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&name=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a&description=%c4%90%e1%bb%83%20vi%e1%ba%bft%20b%c3%a0i%20n%c3%a0y%20m%c3%acnh%20s%e1%ba%bd%20%c4%91i%20theo%20%c4%91%e1%bb%8bnh%20ngh%c4%a9a%20%22What%20is%20coding%20convention%22%20c%e1%bb%a7a%20th%e1%ba%a7y%20%c3%82n%20Nguy%e1%bb%85n%2c%20c%c3%b2n%20l%e1%ba%a1i%20l%c3%a0%20nh%e1%bb%afng%20chia%20s%e1%ba%bd%20suy%20ngh%c4%a9%20c%e1%bb%a7a%20c%c3%a1%20nh%c3%a2n%20m%c3%acnh%2c%20n%c3%aan%20s%e1%ba%bd%20kh%c3%b4ng%20kh%e1%bb%8fi%20thi%e1%ba%bfu%20s%c3%b3t%20v%c3%a0%20c%e1%ba%a7n%20b%e1%bb%95%20sung%20t%e1%bb%ab%20th%e1%ba%a7y%20c%c3%b4%20v%c3%a0%20c%c3%a1c%20b%e1%ba%a1n." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fcoding-convention%2f&name=Coding%20Convention%20-%20Qui%20%c6%b0%e1%bb%9bc%20m%c3%a3%20h%c3%b3a&description=%c4%90%e1%bb%83%20vi%e1%ba%bft%20b%c3%a0i%20n%c3%a0y%20m%c3%acnh%20s%e1%ba%bd%20%c4%91i%20theo%20%c4%91%e1%bb%8bnh%20ngh%c4%a9a%20%26ldquo%3bWhat%20is%20coding%20convention%26rdquo%3b%20c%e1%bb%a7a%20th%e1%ba%a7y%20%c3%82n%20Nguy%e1%bb%85n%2c%20c%c3%b2n%20l%e1%ba%a1i%20l%c3%a0%20nh%e1%bb%afng%20chia%20s%e1%ba%bd%20suy%20ngh%c4%a9%20c%e1%bb%a7a%20c%c3%a1%20nh%c3%a2n%20m%c3%acnh%2c%20n%c3%aan%20s%e1%ba%bd%20kh%c3%b4ng%20kh%e1%bb%8fi%20thi%e1%ba%bfu%20s%c3%b3t%20v%c3%a0%20c%e1%ba%a7n%20b%e1%bb%95%20sung%20t%e1%bb%ab%20th%e1%ba%a7y%20c%c3%b4%20v%c3%a0%20c%c3%a1c%20b%e1%ba%a1n.%0aCoding%20convention%20bao%20g%e1%bb%93m%20nh%e1%bb%afng%20ph%e1%ba%a7n%3a%20file%20organization%2c%20indentation%2c%20comments%2c%20declarations%2c%20statements%2c%20white%20space%2c%20naming%20conventions%2c%20programming%20practices%2c%20programming%20principles%2c%26hellip%3bqu%c3%a1%20nhi%e1%bb%81u%20cho%20m%e1%bb%99t%20post%20cho%20n%c3%aan%20m%c3%acnh%20s%e1%ba%bd%20tr%e1%bb%8dng%20t%c3%a2m%20v%c3%a0o%20nh%e1%bb%afng%20c%c3%a1i%20th%c6%b0%e1%bb%9dng%20g%e1%ba%b7p." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -383,11 +395,9 @@
          
         <li><a href="/">Home</a></li>
          
-        <li><a href="/posts">Writings</a></li>
+        <li><a href="/posts">Posts</a></li>
          
         <li><a href="/tags">Tags</a></li>
-         
-        <li><a href="/about">About</a></li>
         
       </ul>
     </nav>
