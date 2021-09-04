@@ -1,10 +1,8 @@
 ---
-layout: post
 title:  "Một tháng tại {Be} Solution"
 date:   2018-07-11 12:32:40 +0200
-img: a-month-on-be-solution.jpg
-category: Intern
-description: Sau hơn một tháng thực tập tại đây thì tôi và Eric đã hoàn thành phần trainer của mình và anh leader đã chuyển chúng tôi cho anh Mark - người đang quản lí một vài dự án.
+tags: 
+    - diary
 ---
 
 Sau hơn một tháng thực tập tại đây thì tôi và Eric đã hoàn thành phần trainer của mình và anh leader đã chuyển chúng tôi cho anh Mark - người đang quản lí một vài dự án.

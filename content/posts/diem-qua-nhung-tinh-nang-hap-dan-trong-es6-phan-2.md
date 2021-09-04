@@ -1,10 +1,8 @@
 ---
-layout: post
 title:  "Điểm qua những tính năng hấp dẫn trong ES6 - Phần 2"
 date:   2018-07-05 12:15:40 +0200
-img: es6-kanetu.github.io.png
-description: Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5.
-category: Coding
+tags:
+    - javascript
 ---
 
 ## Research lại Object trong Javacript

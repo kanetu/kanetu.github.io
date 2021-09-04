@@ -1,10 +1,8 @@
 ---
-layout: post
 title:  "CSS Spritesheet là gì? "
 date:   2018-09-11 01:45:40 +0200
-img: css-sprites.jpg
-description: Thêm 1 câu hỏi khi interview FrontEnd, Sẽ có vài lần các bạn sẽ được hỏi là css spritesheet là gì? Tại sao lại.
-category: Coding
+tags:
+    - css
 ---
 
 Thêm 1 câu hỏi khi interview FrontEnd, Sẽ có vài lần các bạn sẽ được hỏi là css spritesheet là gì? Tại sao lại dùng chúng? Bạn dùng cách gì để tạo ra 1 hình spritesheet.

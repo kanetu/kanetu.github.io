@@ -1,10 +1,8 @@
 ---
-layout: post
 title:  "Cơ chế bất đồng bộ trong Javascript"
 date:   2018-07-19 9:38:40 +0200
-img: co-che-bat-dong-bo-trong-javascript.png
-category: Coding
-description: Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào
+tags:
+    - javascript
 ---
 
 Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào, ta xem ví dụ sau:

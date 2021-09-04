@@ -1,6 +1,8 @@
 ---
 title: "Webhook là gì?"
 date: 2021-08-21T10:28:52+07:00
+tags: 
+    - technology
 ---
 
 ### 1. Webhook là gì?

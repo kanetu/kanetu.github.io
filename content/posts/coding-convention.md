@@ -1,10 +1,8 @@
 ---
-layout: post
 title:  "Coding Convention - Qui ước mã hóa"
 date:   2019-10-15 11:00:00 +0200
-img: coding-convention.jpg
-description: Để viết bài này mình sẽ đi theo định nghĩa "What is coding convention" của thầy Ân Nguyễn, còn lại là những chia sẽ suy nghĩ của cá nhân mình, nên sẽ không khỏi thiếu sót và cần bổ sung từ thầy cô và các bạn.  
-category: Coding
+tags:
+    - soft-skills
 ---
 
 Để viết bài này mình sẽ đi theo định nghĩa "What is coding convention" của thầy Ân Nguyễn, còn lại là những chia sẽ suy nghĩ của cá nhân mình, nên sẽ không khỏi thiếu sót và cần bổ sung từ thầy cô và các bạn.  

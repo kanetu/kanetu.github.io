@@ -1,10 +1,8 @@
 ---
-layout: post
 title:  "Array Không Chỉ Là Array "
 date:   2018-09-09 7:45:40 +0200
-img: array-javascript.png
-description: Hầu hết các ngôn ngữ đều trang bị kiểu aray để xử lý, lưu trữ nhiều phần tử cùng lúc, JS cũng không ngoại lệ NHƯNG array trong JS không chỉ đơn giản là array.
-category: Coding
+tags:
+    - javascript
 ---
 
 Hầu hết các ngôn ngữ đều trang bị kiểu aray để xử lý, lưu trữ nhiều phần tử cùng lúc, JS cũng không ngoại lệ NHƯNG array trong JS không chỉ đơn giản là array.
