@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Scope và Hoisting | Kane&#39;s Blog</title>
-  <link rel = 'canonical' href = 'https://kanetu.github.io/posts/scope-va-hoisting/'>
+  <link rel = 'canonical' href = 'https://blog.tuminhhieu.com/posts/scope-va-hoisting/'>
   <meta name="description" content="Hi I&#39;m Kane - a Front-End developer, I&#39;m currently working in Nashtech. In addition, writing blog helps me keep the stories and rearrange my knowledge in the technical journey. Thanks for all.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -17,7 +17,7 @@
 <meta property="og:description" content="Khi làm việc với javascript có bao giờ các bạn đã để ý là chúng ta hoàn toàn có thể sử dụng một biến trước khi chúng được khai báo không?. Thật ra mà nói thì không hề có chuyện sử dụng một biến trước khi nó được khai báo đâu, chỉ là với javascript thì ngôn ngữ này có cơ chế Hoisting vậy Hoisting là gì?
 1. Hoisting là gì?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kanetu.github.io/posts/scope-va-hoisting/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://blog.tuminhhieu.com/posts/scope-va-hoisting/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-10-11T10:45:40+00:00" />
 <meta property="article:modified_time" content="2018-10-11T10:45:40+00:00" />
 
@@ -32,7 +32,7 @@
     
   
   
-  <link rel="stylesheet" href="https://kanetu.github.io/css/styles.71e2eff5c628056e7a2a91a7ce29d1aa95088e5bc1952ffd315c12a370886838642b76f1e90164982dac424321102e695bd1a9115b7dbc980f7f0bb08c90783e.css" integrity="sha512-ceLv9cYoBW56KpGnzinRqpUIjlvBlS/9MVwSo3CIaDhkK3bx6QFkmC2sQkMhEC5pW9GpEVt9vJgPfwuwjJB4Pg=="> 
+  <link rel="stylesheet" href="https://blog.tuminhhieu.com/css/styles.71e2eff5c628056e7a2a91a7ce29d1aa95088e5bc1952ffd315c12a370886838642b76f1e90164982dac424321102e695bd1a9115b7dbc980f7f0bb08c90783e.css" integrity="sha512-ceLv9cYoBW56KpGnzinRqpUIjlvBlS/9MVwSo3CIaDhkK3bx6QFkmC2sQkMhEC5pW9GpEVt9vJgPfwuwjJB4Pg=="> 
 
   
   
@@ -43,12 +43,12 @@
     <![endif]-->
   
 
-  <link rel="apple-touch-icon" sizes="180x180" href="https://kanetu.github.io/favicon/apple-touch-icon.png"/>
-<link rel="icon" type="image/png" sizes="32x32" href="https://kanetu.github.io/favicon/favicon-32x32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="https://kanetu.github.io/favicon/favicon-16x16.png"/>
-<link rel="manifest" href="https://kanetu.github.io/favicon/site.webmanifest" />
-<link rel="mask-icon" href="https://kanetu.github.io/favicon/safari-pinned-tab.svg" color="#5bbad5" />
-<link rel="icon" type="image/png" href="https://kanetu.github.io/favicon/favicon.ico" />   
+  <link rel="apple-touch-icon" sizes="180x180" href="https://blog.tuminhhieu.com/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.tuminhhieu.com/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="https://blog.tuminhhieu.com/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="https://blog.tuminhhieu.com/favicon/site.webmanifest" />
+<link rel="mask-icon" href="https://blog.tuminhhieu.com/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="icon" type="image/png" href="https://blog.tuminhhieu.com/favicon/favicon.ico" />   
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
@@ -82,14 +82,14 @@
       <ul>
         
         <li>
-          <a class="icon" href=" https://kanetu.github.io/posts/trusthy-va-falsy/" aria-label="Previous">
+          <a class="icon" href=" https://blog.tuminhhieu.com/posts/trusthy-va-falsy/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://kanetu.github.io/posts/coding-convention/" aria-label="Next">
+          <a class="icon" href="https://blog.tuminhhieu.com/posts/coding-convention/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -120,47 +120,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&text=Scope%20v%c3%a0%20Hoisting" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&text=Scope%20v%c3%a0%20Hoisting" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&is_video=false&description=Scope%20v%c3%a0%20Hoisting" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&is_video=false&description=Scope%20v%c3%a0%20Hoisting" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Scope%20v%c3%a0%20Hoisting&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Scope%20v%c3%a0%20Hoisting&body=Check out this article: https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&name=Scope%20v%c3%a0%20Hoisting&description=Khi%20l%c3%a0m%20vi%e1%bb%87c%20v%e1%bb%9bi%20javascript%20c%c3%b3%20bao%20gi%e1%bb%9d%20c%c3%a1c%20b%e1%ba%a1n%20%c4%91%c3%a3%20%c4%91%e1%bb%83%20%c3%bd%20l%c3%a0%20ch%c3%bang%20ta%20ho%c3%a0n%20to%c3%a0n%20c%c3%b3%20th%e1%bb%83%20s%e1%bb%ad%20d%e1%bb%a5ng%20m%e1%bb%99t%20bi%e1%ba%bfn%20tr%c6%b0%e1%bb%9bc%20khi%20ch%c3%bang%20%c4%91%c6%b0%e1%bb%a3c%20khai%20b%c3%a1o%20kh%c3%b4ng%3f.%20Th%e1%ba%adt%20ra%20m%c3%a0%20n%c3%b3i%20th%c3%ac%20kh%c3%b4ng%20h%e1%bb%81%20c%c3%b3%20chuy%e1%bb%87n%20s%e1%bb%ad%20d%e1%bb%a5ng%20m%e1%bb%99t%20bi%e1%ba%bfn%20tr%c6%b0%e1%bb%9bc%20khi%20n%c3%b3%20%c4%91%c6%b0%e1%bb%a3c%20khai%20b%c3%a1o%20%c4%91%c3%a2u%2c%20ch%e1%bb%89%20l%c3%a0%20v%e1%bb%9bi%20javascript%20th%c3%ac%20ng%c3%b4n%20ng%e1%bb%af%20n%c3%a0y%20c%c3%b3%20c%c6%a1%20ch%e1%ba%bf%20Hoisting%20v%e1%ba%ady%20Hoisting%20l%c3%a0%20g%c3%ac%3f%0a1.%20Hoisting%20l%c3%a0%20g%c3%ac%3f" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&name=Scope%20v%c3%a0%20Hoisting&description=Khi%20l%c3%a0m%20vi%e1%bb%87c%20v%e1%bb%9bi%20javascript%20c%c3%b3%20bao%20gi%e1%bb%9d%20c%c3%a1c%20b%e1%ba%a1n%20%c4%91%c3%a3%20%c4%91%e1%bb%83%20%c3%bd%20l%c3%a0%20ch%c3%bang%20ta%20ho%c3%a0n%20to%c3%a0n%20c%c3%b3%20th%e1%bb%83%20s%e1%bb%ad%20d%e1%bb%a5ng%20m%e1%bb%99t%20bi%e1%ba%bfn%20tr%c6%b0%e1%bb%9bc%20khi%20ch%c3%bang%20%c4%91%c6%b0%e1%bb%a3c%20khai%20b%c3%a1o%20kh%c3%b4ng%3f.%20Th%e1%ba%adt%20ra%20m%c3%a0%20n%c3%b3i%20th%c3%ac%20kh%c3%b4ng%20h%e1%bb%81%20c%c3%b3%20chuy%e1%bb%87n%20s%e1%bb%ad%20d%e1%bb%a5ng%20m%e1%bb%99t%20bi%e1%ba%bfn%20tr%c6%b0%e1%bb%9bc%20khi%20n%c3%b3%20%c4%91%c6%b0%e1%bb%a3c%20khai%20b%c3%a1o%20%c4%91%c3%a2u%2c%20ch%e1%bb%89%20l%c3%a0%20v%e1%bb%9bi%20javascript%20th%c3%ac%20ng%c3%b4n%20ng%e1%bb%af%20n%c3%a0y%20c%c3%b3%20c%c6%a1%20ch%e1%ba%bf%20Hoisting%20v%e1%ba%ady%20Hoisting%20l%c3%a0%20g%c3%ac%3f%0a1.%20Hoisting%20l%c3%a0%20g%c3%ac%3f" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&t=Scope%20v%c3%a0%20Hoisting" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&t=Scope%20v%c3%a0%20Hoisting" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -416,47 +416,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&text=Scope%20v%c3%a0%20Hoisting" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&text=Scope%20v%c3%a0%20Hoisting" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&is_video=false&description=Scope%20v%c3%a0%20Hoisting" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&is_video=false&description=Scope%20v%c3%a0%20Hoisting" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Scope%20v%c3%a0%20Hoisting&body=Check out this article: https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Scope%20v%c3%a0%20Hoisting&body=Check out this article: https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&title=Scope%20v%c3%a0%20Hoisting" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&name=Scope%20v%c3%a0%20Hoisting&description=Khi%20l%c3%a0m%20vi%e1%bb%87c%20v%e1%bb%9bi%20javascript%20c%c3%b3%20bao%20gi%e1%bb%9d%20c%c3%a1c%20b%e1%ba%a1n%20%c4%91%c3%a3%20%c4%91%e1%bb%83%20%c3%bd%20l%c3%a0%20ch%c3%bang%20ta%20ho%c3%a0n%20to%c3%a0n%20c%c3%b3%20th%e1%bb%83%20s%e1%bb%ad%20d%e1%bb%a5ng%20m%e1%bb%99t%20bi%e1%ba%bfn%20tr%c6%b0%e1%bb%9bc%20khi%20ch%c3%bang%20%c4%91%c6%b0%e1%bb%a3c%20khai%20b%c3%a1o%20kh%c3%b4ng%3f.%20Th%e1%ba%adt%20ra%20m%c3%a0%20n%c3%b3i%20th%c3%ac%20kh%c3%b4ng%20h%e1%bb%81%20c%c3%b3%20chuy%e1%bb%87n%20s%e1%bb%ad%20d%e1%bb%a5ng%20m%e1%bb%99t%20bi%e1%ba%bfn%20tr%c6%b0%e1%bb%9bc%20khi%20n%c3%b3%20%c4%91%c6%b0%e1%bb%a3c%20khai%20b%c3%a1o%20%c4%91%c3%a2u%2c%20ch%e1%bb%89%20l%c3%a0%20v%e1%bb%9bi%20javascript%20th%c3%ac%20ng%c3%b4n%20ng%e1%bb%af%20n%c3%a0y%20c%c3%b3%20c%c6%a1%20ch%e1%ba%bf%20Hoisting%20v%e1%ba%ady%20Hoisting%20l%c3%a0%20g%c3%ac%3f%0a1.%20Hoisting%20l%c3%a0%20g%c3%ac%3f" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&name=Scope%20v%c3%a0%20Hoisting&description=Khi%20l%c3%a0m%20vi%e1%bb%87c%20v%e1%bb%9bi%20javascript%20c%c3%b3%20bao%20gi%e1%bb%9d%20c%c3%a1c%20b%e1%ba%a1n%20%c4%91%c3%a3%20%c4%91%e1%bb%83%20%c3%bd%20l%c3%a0%20ch%c3%bang%20ta%20ho%c3%a0n%20to%c3%a0n%20c%c3%b3%20th%e1%bb%83%20s%e1%bb%ad%20d%e1%bb%a5ng%20m%e1%bb%99t%20bi%e1%ba%bfn%20tr%c6%b0%e1%bb%9bc%20khi%20ch%c3%bang%20%c4%91%c6%b0%e1%bb%a3c%20khai%20b%c3%a1o%20kh%c3%b4ng%3f.%20Th%e1%ba%adt%20ra%20m%c3%a0%20n%c3%b3i%20th%c3%ac%20kh%c3%b4ng%20h%e1%bb%81%20c%c3%b3%20chuy%e1%bb%87n%20s%e1%bb%ad%20d%e1%bb%a5ng%20m%e1%bb%99t%20bi%e1%ba%bfn%20tr%c6%b0%e1%bb%9bc%20khi%20n%c3%b3%20%c4%91%c6%b0%e1%bb%a3c%20khai%20b%c3%a1o%20%c4%91%c3%a2u%2c%20ch%e1%bb%89%20l%c3%a0%20v%e1%bb%9bi%20javascript%20th%c3%ac%20ng%c3%b4n%20ng%e1%bb%af%20n%c3%a0y%20c%c3%b3%20c%c6%a1%20ch%e1%ba%bf%20Hoisting%20v%e1%ba%ady%20Hoisting%20l%c3%a0%20g%c3%ac%3f%0a1.%20Hoisting%20l%c3%a0%20g%c3%ac%3f" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.github.io%2fposts%2fscope-va-hoisting%2f&t=Scope%20v%c3%a0%20Hoisting" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fscope-va-hoisting%2f&t=Scope%20v%c3%a0%20Hoisting" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

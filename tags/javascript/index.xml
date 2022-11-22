@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>javascript on Kane&#39;s Blog</title>
-    <link>https://kanetu.github.io/tags/javascript/</link>
+    <link>https://blog.tuminhhieu.com/tags/javascript/</link>
     <description>Recent content in javascript on Kane&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi_vn</language>
     <copyright>Kane Tu</copyright>
-    <lastBuildDate>Thu, 11 Oct 2018 10:45:40 +0000</lastBuildDate><atom:link href="https://kanetu.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Oct 2018 10:45:40 +0000</lastBuildDate><atom:link href="https://blog.tuminhhieu.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Scope và Hoisting</title>
-      <link>https://kanetu.github.io/posts/scope-va-hoisting/</link>
+      <link>https://blog.tuminhhieu.com/posts/scope-va-hoisting/</link>
       <pubDate>Thu, 11 Oct 2018 10:45:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/scope-va-hoisting/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/scope-va-hoisting/</guid>
       <description>Khi làm việc với javascript có bao giờ các bạn đã để ý là chúng ta hoàn toàn có thể sử dụng một biến trước khi chúng được khai báo không?. Thật ra mà nói thì không hề có chuyện sử dụng một biến trước khi nó được khai báo đâu, chỉ là với javascript thì ngôn ngữ này có cơ chế Hoisting vậy Hoisting là gì?
 1. Hoisting là gì?</description>
     </item>
     
     <item>
       <title>Trusthy và Falsy</title>
-      <link>https://kanetu.github.io/posts/trusthy-va-falsy/</link>
+      <link>https://blog.tuminhhieu.com/posts/trusthy-va-falsy/</link>
       <pubDate>Fri, 28 Sep 2018 03:00:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/trusthy-va-falsy/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/trusthy-va-falsy/</guid>
       <description>Truthy và Falsy là gì?, đây là một khái niệm mà rất nhiều người khi học Javascript rất ít khi để ý đến ngay cả mình cũng vậy.
 1. Primitive data type - Kiểu dữ liệu nguyên thủy Khi chúng ta khai báo một biến nếu chúng ta không khai báo giá trị của cho biến thì tự động bên trong cơ chế Javascript sẽ set cho biến là undefined đúng không?</description>
     </item>
     
     <item>
       <title>Array Không Chỉ Là Array </title>
-      <link>https://kanetu.github.io/posts/array-khong-chi-la-array/</link>
+      <link>https://blog.tuminhhieu.com/posts/array-khong-chi-la-array/</link>
       <pubDate>Sun, 09 Sep 2018 07:45:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/array-khong-chi-la-array/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/array-khong-chi-la-array/</guid>
       <description>Hầu hết các ngôn ngữ đều trang bị kiểu aray để xử lý, lưu trữ nhiều phần tử cùng lúc, JS cũng không ngoại lệ NHƯNG array trong JS không chỉ đơn giản là array. Chúng ta có thể dùng array làm:
  Array, cái này đương nhiên. Stack. Queue. Dictionary. Sortable List. String Builder. Combo.  1️. Stack Bỏ qua cái thứ 1, chúng ta có thể dùng array như 1 stack, đặc tính của stack là LIFO (đi trễ về sớm).</description>
     </item>
     
     <item>
       <title>Cơ chế bất đồng bộ trong Javascript</title>
-      <link>https://kanetu.github.io/posts/co-che-bat-dong-bo-trong-javascript/</link>
+      <link>https://blog.tuminhhieu.com/posts/co-che-bat-dong-bo-trong-javascript/</link>
       <pubDate>Thu, 19 Jul 2018 09:38:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/co-che-bat-dong-bo-trong-javascript/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/co-che-bat-dong-bo-trong-javascript/</guid>
       <description>Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào, ta xem ví dụ sau:
 1console.log(&amp;#39;Dong 1&amp;#39;); 2console.log(&amp;#39;Dong 2&amp;#39;); 3console.log(&amp;#39;Dong 3&amp;#39;); Như các bạn thấy thì nhìn vào ta biết ngay nó sẽ in ra những gì, lần luật là:
 1Dong 1 2Dong 2 3Dong 3 Bây giờ ta đặt thêm setTimeout() cho dòng thứ 2 để xem sao:</description>
@@ -51,10 +51,10 @@
     
     <item>
       <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 3</title>
-      <link>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</link>
+      <link>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</link>
       <pubDate>Fri, 06 Jul 2018 09:18:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</guid>
       <description>6.Arrow Function in ES6 Hmm..Tính năng này rất thường xuất hiện trong ReactJS. arrow dịch ra là mũi tên, vâng chúng ta sẽ làm việc với mũi tên :).
 Thông thường khi tạo một function trong Javascript thì ta sử dụng những cách sau:
 1//cách 1 2function nameFunction(var1,var2){ 3 ... 4} 5 6// cách 2 7var nameFunction = function(var1, var2){ 8 .... 9} Trong ES6 ta tạo đơn giản hơn bằng cách sử dụng mũi tên như sau:</description>
@@ -62,20 +62,20 @@ Thông thường khi tạo một function trong Javascript thì ta sử dụng n
     
     <item>
       <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 2</title>
-      <link>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</link>
+      <link>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</link>
       <pubDate>Thu, 05 Jul 2018 12:15:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</guid>
       <description>Research lại Object trong Javacript Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5.
 Ta gọi mỗi item là một property(thuộc tính) của object nếu value của item đó có kiểu dữ liệu là kiểu phức hợp hoặc các kiểu dữ liệu cơ bản, ngược lại nếu value của item nó là một hàm (một function) thì ta gọi nó là method của object (phương thức của object).</description>
     </item>
     
     <item>
       <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 1</title>
-      <link>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</link>
+      <link>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</link>
       <pubDate>Wed, 04 Jul 2018 10:15:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</guid>
       <description>Sau một thời gian nghiên cứu về ReactJS tôi nhận ra mình còn chưa ổn về javascript và tham khảo trên mạng thì có một thành viên trong nhóm nói rằng: &amp;ldquo;Chưa nghiêm cứu về ES6 mà đã vội học ReactJS là một sai lầm&amp;rdquo;, ai cũng thế khi nghe nói như vậy thì chắc hẵn sẽ nghĩ là ES6 lợi hại vậy sao?, có lẻ mình đã cầm đèn chạy trước oto rồi.</description>
     </item>
     

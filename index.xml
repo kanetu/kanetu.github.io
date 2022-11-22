@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kane&#39;s Blog</title>
-    <link>https://kanetu.github.io/</link>
+    <link>https://blog.tuminhhieu.com/</link>
     <description>Recent content on Kane&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi_vn</language>
     <copyright>Kane Tu</copyright>
-    <lastBuildDate>Sat, 21 Aug 2021 10:28:52 +0700</lastBuildDate><atom:link href="https://kanetu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Aug 2021 10:28:52 +0700</lastBuildDate><atom:link href="https://blog.tuminhhieu.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Webhook là gì?</title>
-      <link>https://kanetu.github.io/posts/webhook-la-gi/</link>
+      <link>https://blog.tuminhhieu.com/posts/webhook-la-gi/</link>
       <pubDate>Sat, 21 Aug 2021 10:28:52 +0700</pubDate>
       
-      <guid>https://kanetu.github.io/posts/webhook-la-gi/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/webhook-la-gi/</guid>
       <description>1. Webhook là gì?  Webhook là một tính nắng cho phép hệ thống A cập nhật các sự kiện trong thời gian thực của bên thứ ba một cách tự động. Webhook được biết đến với nhiều thuật ngữ khác như: Web callback, HTTP Push API, Reverse API,&amp;hellip; Webhook sẽ chuyển dữ liệu đến các ứng dụng lắng nghe nó ngay khi nó được trigger điều này có nghĩa là ứng dụng của bạn sẽ nhận được dữ liệu ngay làm tức không giống như những API thông thường, điều mà chúng nó phải thăm dò dữ liệu thường xuyên để đảm bảo tính real-time (thời gian thực)  2.</description>
     </item>
     
     <item>
       <title>Coding Convention - Qui ước mã hóa</title>
-      <link>https://kanetu.github.io/posts/coding-convention/</link>
+      <link>https://blog.tuminhhieu.com/posts/coding-convention/</link>
       <pubDate>Tue, 15 Oct 2019 11:00:00 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/coding-convention/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/coding-convention/</guid>
       <description>Để viết bài này mình sẽ đi theo định nghĩa &amp;ldquo;What is coding convention&amp;rdquo; của thầy Ân Nguyễn, còn lại là những chia sẽ suy nghĩ của cá nhân mình, nên sẽ không khỏi thiếu sót và cần bổ sung từ thầy cô và các bạn.
 Coding convention bao gồm những phần: file organization, indentation, comments, declarations, statements, white space, naming conventions, programming practices, programming principles,&amp;hellip;quá nhiều cho một post cho nên mình sẽ trọng tâm vào những cái thường gặp.</description>
     </item>
     
     <item>
       <title>Scope và Hoisting</title>
-      <link>https://kanetu.github.io/posts/scope-va-hoisting/</link>
+      <link>https://blog.tuminhhieu.com/posts/scope-va-hoisting/</link>
       <pubDate>Thu, 11 Oct 2018 10:45:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/scope-va-hoisting/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/scope-va-hoisting/</guid>
       <description>Khi làm việc với javascript có bao giờ các bạn đã để ý là chúng ta hoàn toàn có thể sử dụng một biến trước khi chúng được khai báo không?. Thật ra mà nói thì không hề có chuyện sử dụng một biến trước khi nó được khai báo đâu, chỉ là với javascript thì ngôn ngữ này có cơ chế Hoisting vậy Hoisting là gì?
 1. Hoisting là gì?</description>
     </item>
     
     <item>
       <title>Trusthy và Falsy</title>
-      <link>https://kanetu.github.io/posts/trusthy-va-falsy/</link>
+      <link>https://blog.tuminhhieu.com/posts/trusthy-va-falsy/</link>
       <pubDate>Fri, 28 Sep 2018 03:00:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/trusthy-va-falsy/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/trusthy-va-falsy/</guid>
       <description>Truthy và Falsy là gì?, đây là một khái niệm mà rất nhiều người khi học Javascript rất ít khi để ý đến ngay cả mình cũng vậy.
 1. Primitive data type - Kiểu dữ liệu nguyên thủy Khi chúng ta khai báo một biến nếu chúng ta không khai báo giá trị của cho biến thì tự động bên trong cơ chế Javascript sẽ set cho biến là undefined đúng không?</description>
     </item>
     
     <item>
       <title>CSS Spritesheet là gì? </title>
-      <link>https://kanetu.github.io/posts/css-spritesheet-la-gi/</link>
+      <link>https://blog.tuminhhieu.com/posts/css-spritesheet-la-gi/</link>
       <pubDate>Tue, 11 Sep 2018 01:45:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/css-spritesheet-la-gi/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/css-spritesheet-la-gi/</guid>
       <description>Thêm 1 câu hỏi khi interview FrontEnd, Sẽ có vài lần các bạn sẽ được hỏi là css spritesheet là gì? Tại sao lại dùng chúng? Bạn dùng cách gì để tạo ra 1 hình spritesheet.
 1. CSS Spritesheet là gì? CSS spritesheet là 1 kỹ thuật gom nhiều hình thành 1 tấm hình và dùng css background-image để hiển thị chúng ngoài browse.
 2. Tại sao lai dùng chúng?   Chúng sẽ làm tăng perfomance khi load web.</description>
@@ -60,20 +60,20 @@ Coding convention bao gồm những phần: file organization, indentation, comm
     
     <item>
       <title>Array Không Chỉ Là Array </title>
-      <link>https://kanetu.github.io/posts/array-khong-chi-la-array/</link>
+      <link>https://blog.tuminhhieu.com/posts/array-khong-chi-la-array/</link>
       <pubDate>Sun, 09 Sep 2018 07:45:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/array-khong-chi-la-array/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/array-khong-chi-la-array/</guid>
       <description>Hầu hết các ngôn ngữ đều trang bị kiểu aray để xử lý, lưu trữ nhiều phần tử cùng lúc, JS cũng không ngoại lệ NHƯNG array trong JS không chỉ đơn giản là array. Chúng ta có thể dùng array làm:
  Array, cái này đương nhiên. Stack. Queue. Dictionary. Sortable List. String Builder. Combo.  1️. Stack Bỏ qua cái thứ 1, chúng ta có thể dùng array như 1 stack, đặc tính của stack là LIFO (đi trễ về sớm).</description>
     </item>
     
     <item>
       <title>Cơ chế bất đồng bộ trong Javascript</title>
-      <link>https://kanetu.github.io/posts/co-che-bat-dong-bo-trong-javascript/</link>
+      <link>https://blog.tuminhhieu.com/posts/co-che-bat-dong-bo-trong-javascript/</link>
       <pubDate>Thu, 19 Jul 2018 09:38:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/co-che-bat-dong-bo-trong-javascript/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/co-che-bat-dong-bo-trong-javascript/</guid>
       <description>Như bao ngày giờ là lúc rãnh nên tôi quyết định tìm hiểu xem cơ chế bất đồng bộ trong javascript nó hoạt động như thế nào, ta xem ví dụ sau:
 1console.log(&amp;#39;Dong 1&amp;#39;); 2console.log(&amp;#39;Dong 2&amp;#39;); 3console.log(&amp;#39;Dong 3&amp;#39;); Như các bạn thấy thì nhìn vào ta biết ngay nó sẽ in ra những gì, lần luật là:
 1Dong 1 2Dong 2 3Dong 3 Bây giờ ta đặt thêm setTimeout() cho dòng thứ 2 để xem sao:</description>
@@ -81,30 +81,30 @@ Coding convention bao gồm những phần: file organization, indentation, comm
     
     <item>
       <title>Suy nghĩa của một thằng Intern</title>
-      <link>https://kanetu.github.io/posts/suy-nghi-cua-mot-thang-intern/</link>
+      <link>https://blog.tuminhhieu.com/posts/suy-nghi-cua-mot-thang-intern/</link>
       <pubDate>Fri, 13 Jul 2018 14:32:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/suy-nghi-cua-mot-thang-intern/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/suy-nghi-cua-mot-thang-intern/</guid>
       <description>Hôm này là một ngày buồn chán, tôi đã hoàn thành xong khóa trainning của mình và giờ khá là rãnh để ngồi viết những dòng này. Người ta nói &amp;ldquo;Ngựa non háu đá&amp;rdquo; và đó chính là tôi bây giờ.
 Ở {Be} cũng rất vui mọi người hòa đồng với nhau, nhưng ở đây tôi không thực sự yêu thích công việc này hoặc có lẻ tôi đang dành trọn tình yêu của mình cho javascript vì nó rất powerful, nhất là nó rất có nhiều framework: ReactJS, AngularJS, VueJS.</description>
     </item>
     
     <item>
       <title>Một tháng tại {Be} Solution</title>
-      <link>https://kanetu.github.io/posts/mot-thang-tai-be-solution/</link>
+      <link>https://blog.tuminhhieu.com/posts/mot-thang-tai-be-solution/</link>
       <pubDate>Wed, 11 Jul 2018 12:32:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/mot-thang-tai-be-solution/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/mot-thang-tai-be-solution/</guid>
       <description>Sau hơn một tháng thực tập tại đây thì tôi và Eric đã hoàn thành phần trainer của mình và anh leader đã chuyển chúng tôi cho anh Mark - người đang quản lí một vài dự án.
 Chúng tôi lại được anh Mark phân công support tìm bug cho một website khách hàng, cụ thể là chúng tôi đang làm việc của một tester - tìm lỗi, tôi không chắc công việc của một tester là như thế nào nhưng tôi chắc là tôi đang làm việc trên website của khách hàng như là một người dùng  và vừa là admin.</description>
     </item>
     
     <item>
       <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 3</title>
-      <link>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</link>
+      <link>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</link>
       <pubDate>Fri, 06 Jul 2018 09:18:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-3/</guid>
       <description>6.Arrow Function in ES6 Hmm..Tính năng này rất thường xuất hiện trong ReactJS. arrow dịch ra là mũi tên, vâng chúng ta sẽ làm việc với mũi tên :).
 Thông thường khi tạo một function trong Javascript thì ta sử dụng những cách sau:
 1//cách 1 2function nameFunction(var1,var2){ 3 ... 4} 5 6// cách 2 7var nameFunction = function(var1, var2){ 8 .... 9} Trong ES6 ta tạo đơn giản hơn bằng cách sử dụng mũi tên như sau:</description>
@@ -112,39 +112,39 @@ Thông thường khi tạo một function trong Javascript thì ta sử dụng n
     
     <item>
       <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 2</title>
-      <link>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</link>
+      <link>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</link>
       <pubDate>Thu, 05 Jul 2018 12:15:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/</guid>
       <description>Research lại Object trong Javacript Trước tiên để hiểu gõ về tính năng tiếp theo ta cần hiểu gõ Object trong Javacript là gì, nếu ai đã hiểu rồi thì có thể scoll xuống mục 5.
 Ta gọi mỗi item là một property(thuộc tính) của object nếu value của item đó có kiểu dữ liệu là kiểu phức hợp hoặc các kiểu dữ liệu cơ bản, ngược lại nếu value của item nó là một hàm (một function) thì ta gọi nó là method của object (phương thức của object).</description>
     </item>
     
     <item>
       <title>Điểm qua những tính năng hấp dẫn trong ES6 - Phần 1</title>
-      <link>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</link>
+      <link>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</link>
       <pubDate>Wed, 04 Jul 2018 10:15:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/</guid>
       <description>Sau một thời gian nghiên cứu về ReactJS tôi nhận ra mình còn chưa ổn về javascript và tham khảo trên mạng thì có một thành viên trong nhóm nói rằng: &amp;ldquo;Chưa nghiêm cứu về ES6 mà đã vội học ReactJS là một sai lầm&amp;rdquo;, ai cũng thế khi nghe nói như vậy thì chắc hẵn sẽ nghĩ là ES6 lợi hại vậy sao?, có lẻ mình đã cầm đèn chạy trước oto rồi.</description>
     </item>
     
     <item>
       <title>Một tuần tại {Be} Solution</title>
-      <link>https://kanetu.github.io/posts/mot-tuan-tai-be-solution/</link>
+      <link>https://blog.tuminhhieu.com/posts/mot-tuan-tai-be-solution/</link>
       <pubDate>Mon, 11 Jun 2018 14:00:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/mot-tuan-tai-be-solution/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/mot-tuan-tai-be-solution/</guid>
       <description>Hello !!! Sau một tuần chúng tôi đã hoàn thành giao diện được giao, phải nói là gặp rất nhiều khó khăn trong phần javascript, tôi cảm thấy nghi ngơ về câu &amp;ldquo;Javascript is easy to learn&amp;rdquo; trên http://w3schools.com, có lẻ nó chỉ dễ cho học còn làm thì chưa chắc tới đâu.
 Tôi gặp một trở ngại khi phải làm việc với Javascript như là làm sao áp dụng script cho một phần tử html chưa được render ra, và thật may là đàn anh của tôi hướng dẫn một tips này:</description>
     </item>
     
     <item>
       <title>Ngày đầu thực tập tại {Be} Solution</title>
-      <link>https://kanetu.github.io/posts/ngay-dau-thuc-tap-tai-be-solution/</link>
+      <link>https://blog.tuminhhieu.com/posts/ngay-dau-thuc-tap-tai-be-solution/</link>
       <pubDate>Mon, 04 Jun 2018 12:32:40 +0000</pubDate>
       
-      <guid>https://kanetu.github.io/posts/ngay-dau-thuc-tap-tai-be-solution/</guid>
+      <guid>https://blog.tuminhhieu.com/posts/ngay-dau-thuc-tap-tai-be-solution/</guid>
       <description>Xin chào, tôi là Hiếu nickname là Kane hiện đang là sinh viên năm 3 trường đại học Trà Vinh, năm 3 này tôi được đi thực tập tại một cty outsource ở TP HCM là Be Solutions, ở đây tôi được rất nhiều người hướng dẫn tùy vào từng giai đoạn thực tập, người hướng dẫn tôi anh Yang Nguyễn đặt ra 3 yêu cầu phải làm trong khóa thực tập này bao gồm:</description>
     </item>
     

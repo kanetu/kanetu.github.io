@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Kane&#39;s Blog</title>
-    <link>https://kanetu.github.io/categories/</link>
+    <link>https://blog.tuminhhieu.com/categories/</link>
     <description>Recent content in Categories on Kane&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi_vn</language>
-    <copyright>Kane Tu</copyright><atom:link href="https://kanetu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Kane Tu</copyright><atom:link href="https://blog.tuminhhieu.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
