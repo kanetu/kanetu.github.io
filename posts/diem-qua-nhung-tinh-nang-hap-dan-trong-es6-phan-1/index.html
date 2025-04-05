@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Điểm qua những tính năng hấp dẫn trong ES6 - Phần 1 | Kane&#39;s Blog</title>
-  <link rel = 'canonical' href = 'https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/'>
+  <link rel = 'canonical' href = 'https://kanetu.is-a.dev/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/'>
   <meta name="description" content="Hi I&#39;m Kane - a Front-End developer, I&#39;m currently working in Nashtech. In addition, writing blog helps me keep the stories and rearrange my knowledge in the technical journey. Thanks for all.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -16,7 +16,7 @@
   <meta property="og:title" content="Điểm qua những tính năng hấp dẫn trong ES6 - Phần 1" />
 <meta property="og:description" content="Sau một thời gian nghiên cứu về ReactJS tôi nhận ra mình còn chưa ổn về javascript và tham khảo trên mạng thì có một thành viên trong nhóm nói rằng: &ldquo;Chưa nghiêm cứu về ES6 mà đã vội học ReactJS là một sai lầm&rdquo;, ai cũng thế khi nghe nói như vậy thì chắc hẵn sẽ nghĩ là ES6 lợi hại vậy sao?, có lẻ mình đã cầm đèn chạy trước oto rồi." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://kanetu.is-a.dev/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-07-04T10:15:40+00:00" />
 <meta property="article:modified_time" content="2018-07-04T10:15:40+00:00" />
 
@@ -30,7 +30,7 @@
     
   
   
-  <link rel="stylesheet" href="https://blog.tuminhhieu.com/css/styles.71e2eff5c628056e7a2a91a7ce29d1aa95088e5bc1952ffd315c12a370886838642b76f1e90164982dac424321102e695bd1a9115b7dbc980f7f0bb08c90783e.css" integrity="sha512-ceLv9cYoBW56KpGnzinRqpUIjlvBlS/9MVwSo3CIaDhkK3bx6QFkmC2sQkMhEC5pW9GpEVt9vJgPfwuwjJB4Pg=="> 
+  <link rel="stylesheet" href="https://kanetu.is-a.dev/css/styles.71e2eff5c628056e7a2a91a7ce29d1aa95088e5bc1952ffd315c12a370886838642b76f1e90164982dac424321102e695bd1a9115b7dbc980f7f0bb08c90783e.css" integrity="sha512-ceLv9cYoBW56KpGnzinRqpUIjlvBlS/9MVwSo3CIaDhkK3bx6QFkmC2sQkMhEC5pW9GpEVt9vJgPfwuwjJB4Pg=="> 
 
   
   
@@ -41,12 +41,12 @@
     <![endif]-->
   
 
-  <link rel="apple-touch-icon" sizes="180x180" href="https://blog.tuminhhieu.com/favicon/apple-touch-icon.png"/>
-<link rel="icon" type="image/png" sizes="32x32" href="https://blog.tuminhhieu.com/favicon/favicon-32x32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="https://blog.tuminhhieu.com/favicon/favicon-16x16.png"/>
-<link rel="manifest" href="https://blog.tuminhhieu.com/favicon/site.webmanifest" />
-<link rel="mask-icon" href="https://blog.tuminhhieu.com/favicon/safari-pinned-tab.svg" color="#5bbad5" />
-<link rel="icon" type="image/png" href="https://blog.tuminhhieu.com/favicon/favicon.ico" />   
+  <link rel="apple-touch-icon" sizes="180x180" href="https://kanetu.is-a.dev/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="https://kanetu.is-a.dev/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="https://kanetu.is-a.dev/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="https://kanetu.is-a.dev/favicon/site.webmanifest" />
+<link rel="mask-icon" href="https://kanetu.is-a.dev/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="icon" type="image/png" href="https://kanetu.is-a.dev/favicon/favicon.ico" />   
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
@@ -80,14 +80,14 @@
       <ul>
         
         <li>
-          <a class="icon" href=" https://blog.tuminhhieu.com/posts/mot-tuan-tai-be-solution/" aria-label="Previous">
+          <a class="icon" href=" https://kanetu.is-a.dev/posts/mot-tuan-tai-be-solution/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://blog.tuminhhieu.com/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/" aria-label="Next">
+          <a class="icon" href="https://kanetu.is-a.dev/posts/diem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-2/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -118,47 +118,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&text=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&text=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&is_video=false&description=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&is_video=false&description=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201&body=Check out this article: https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201&body=Check out this article: https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&name=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201&description=Sau%20m%e1%bb%99t%20th%e1%bb%9di%20gian%20nghi%c3%aan%20c%e1%bb%a9u%20v%e1%bb%81%20ReactJS%20t%c3%b4i%20nh%e1%ba%adn%20ra%20m%c3%acnh%20c%c3%b2n%20ch%c6%b0a%20%e1%bb%95n%20v%e1%bb%81%20javascript%20v%c3%a0%20tham%20kh%e1%ba%a3o%20tr%c3%aan%20m%e1%ba%a1ng%20th%c3%ac%20c%c3%b3%20m%e1%bb%99t%20th%c3%a0nh%20vi%c3%aan%20trong%20nh%c3%b3m%20n%c3%b3i%20r%e1%ba%b1ng%3a%20%26ldquo%3bCh%c6%b0a%20nghi%c3%aam%20c%e1%bb%a9u%20v%e1%bb%81%20ES6%20m%c3%a0%20%c4%91%c3%a3%20v%e1%bb%99i%20h%e1%bb%8dc%20ReactJS%20l%c3%a0%20m%e1%bb%99t%20sai%20l%e1%ba%a7m%26rdquo%3b%2c%20ai%20c%c5%a9ng%20th%e1%ba%bf%20khi%20nghe%20n%c3%b3i%20nh%c6%b0%20v%e1%ba%ady%20th%c3%ac%20ch%e1%ba%afc%20h%e1%ba%b5n%20s%e1%ba%bd%20ngh%c4%a9%20l%c3%a0%20ES6%20l%e1%bb%a3i%20h%e1%ba%a1i%20v%e1%ba%ady%20sao%3f%2c%20c%c3%b3%20l%e1%ba%bb%20m%c3%acnh%20%c4%91%c3%a3%20c%e1%ba%a7m%20%c4%91%c3%a8n%20ch%e1%ba%a1y%20tr%c6%b0%e1%bb%9bc%20oto%20r%e1%bb%93i." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&name=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201&description=Sau%20m%e1%bb%99t%20th%e1%bb%9di%20gian%20nghi%c3%aan%20c%e1%bb%a9u%20v%e1%bb%81%20ReactJS%20t%c3%b4i%20nh%e1%ba%adn%20ra%20m%c3%acnh%20c%c3%b2n%20ch%c6%b0a%20%e1%bb%95n%20v%e1%bb%81%20javascript%20v%c3%a0%20tham%20kh%e1%ba%a3o%20tr%c3%aan%20m%e1%ba%a1ng%20th%c3%ac%20c%c3%b3%20m%e1%bb%99t%20th%c3%a0nh%20vi%c3%aan%20trong%20nh%c3%b3m%20n%c3%b3i%20r%e1%ba%b1ng%3a%20%26ldquo%3bCh%c6%b0a%20nghi%c3%aam%20c%e1%bb%a9u%20v%e1%bb%81%20ES6%20m%c3%a0%20%c4%91%c3%a3%20v%e1%bb%99i%20h%e1%bb%8dc%20ReactJS%20l%c3%a0%20m%e1%bb%99t%20sai%20l%e1%ba%a7m%26rdquo%3b%2c%20ai%20c%c5%a9ng%20th%e1%ba%bf%20khi%20nghe%20n%c3%b3i%20nh%c6%b0%20v%e1%ba%ady%20th%c3%ac%20ch%e1%ba%afc%20h%e1%ba%b5n%20s%e1%ba%bd%20ngh%c4%a9%20l%c3%a0%20ES6%20l%e1%bb%a3i%20h%e1%ba%a1i%20v%e1%ba%ady%20sao%3f%2c%20c%c3%b3%20l%e1%ba%bb%20m%c3%acnh%20%c4%91%c3%a3%20c%e1%ba%a7m%20%c4%91%c3%a8n%20ch%e1%ba%a1y%20tr%c6%b0%e1%bb%9bc%20oto%20r%e1%bb%93i." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&t=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&t=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -352,47 +352,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&text=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&text=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&is_video=false&description=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&is_video=false&description=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201&body=Check out this article: https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201&body=Check out this article: https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&title=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&name=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201&description=Sau%20m%e1%bb%99t%20th%e1%bb%9di%20gian%20nghi%c3%aan%20c%e1%bb%a9u%20v%e1%bb%81%20ReactJS%20t%c3%b4i%20nh%e1%ba%adn%20ra%20m%c3%acnh%20c%c3%b2n%20ch%c6%b0a%20%e1%bb%95n%20v%e1%bb%81%20javascript%20v%c3%a0%20tham%20kh%e1%ba%a3o%20tr%c3%aan%20m%e1%ba%a1ng%20th%c3%ac%20c%c3%b3%20m%e1%bb%99t%20th%c3%a0nh%20vi%c3%aan%20trong%20nh%c3%b3m%20n%c3%b3i%20r%e1%ba%b1ng%3a%20%26ldquo%3bCh%c6%b0a%20nghi%c3%aam%20c%e1%bb%a9u%20v%e1%bb%81%20ES6%20m%c3%a0%20%c4%91%c3%a3%20v%e1%bb%99i%20h%e1%bb%8dc%20ReactJS%20l%c3%a0%20m%e1%bb%99t%20sai%20l%e1%ba%a7m%26rdquo%3b%2c%20ai%20c%c5%a9ng%20th%e1%ba%bf%20khi%20nghe%20n%c3%b3i%20nh%c6%b0%20v%e1%ba%ady%20th%c3%ac%20ch%e1%ba%afc%20h%e1%ba%b5n%20s%e1%ba%bd%20ngh%c4%a9%20l%c3%a0%20ES6%20l%e1%bb%a3i%20h%e1%ba%a1i%20v%e1%ba%ady%20sao%3f%2c%20c%c3%b3%20l%e1%ba%bb%20m%c3%acnh%20%c4%91%c3%a3%20c%e1%ba%a7m%20%c4%91%c3%a8n%20ch%e1%ba%a1y%20tr%c6%b0%e1%bb%9bc%20oto%20r%e1%bb%93i." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&name=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201&description=Sau%20m%e1%bb%99t%20th%e1%bb%9di%20gian%20nghi%c3%aan%20c%e1%bb%a9u%20v%e1%bb%81%20ReactJS%20t%c3%b4i%20nh%e1%ba%adn%20ra%20m%c3%acnh%20c%c3%b2n%20ch%c6%b0a%20%e1%bb%95n%20v%e1%bb%81%20javascript%20v%c3%a0%20tham%20kh%e1%ba%a3o%20tr%c3%aan%20m%e1%ba%a1ng%20th%c3%ac%20c%c3%b3%20m%e1%bb%99t%20th%c3%a0nh%20vi%c3%aan%20trong%20nh%c3%b3m%20n%c3%b3i%20r%e1%ba%b1ng%3a%20%26ldquo%3bCh%c6%b0a%20nghi%c3%aam%20c%e1%bb%a9u%20v%e1%bb%81%20ES6%20m%c3%a0%20%c4%91%c3%a3%20v%e1%bb%99i%20h%e1%bb%8dc%20ReactJS%20l%c3%a0%20m%e1%bb%99t%20sai%20l%e1%ba%a7m%26rdquo%3b%2c%20ai%20c%c5%a9ng%20th%e1%ba%bf%20khi%20nghe%20n%c3%b3i%20nh%c6%b0%20v%e1%ba%ady%20th%c3%ac%20ch%e1%ba%afc%20h%e1%ba%b5n%20s%e1%ba%bd%20ngh%c4%a9%20l%c3%a0%20ES6%20l%e1%bb%a3i%20h%e1%ba%a1i%20v%e1%ba%ady%20sao%3f%2c%20c%c3%b3%20l%e1%ba%bb%20m%c3%acnh%20%c4%91%c3%a3%20c%e1%ba%a7m%20%c4%91%c3%a8n%20ch%e1%ba%a1y%20tr%c6%b0%e1%bb%9bc%20oto%20r%e1%bb%93i." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fblog.tuminhhieu.com%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&t=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fkanetu.is-a.dev%2fposts%2fdiem-qua-nhung-tinh-nang-hap-dan-trong-es6-phan-1%2f&t=%c4%90i%e1%bb%83m%20qua%20nh%e1%bb%afng%20t%c3%adnh%20n%c4%83ng%20h%e1%ba%a5p%20d%e1%ba%abn%20trong%20ES6%20-%20Ph%e1%ba%a7n%201" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

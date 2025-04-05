@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>diary on Kane&#39;s Blog</title>
-    <link>https://blog.tuminhhieu.com/tags/diary/</link>
+    <link>https://kanetu.is-a.dev/tags/diary/</link>
     <description>Recent content in diary on Kane&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi_vn</language>
     <copyright>Kane Tu</copyright>
-    <lastBuildDate>Fri, 13 Jul 2018 14:32:40 +0000</lastBuildDate><atom:link href="https://blog.tuminhhieu.com/tags/diary/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Jul 2018 14:32:40 +0000</lastBuildDate><atom:link href="https://kanetu.is-a.dev/tags/diary/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Suy nghĩa của một thằng Intern</title>
-      <link>https://blog.tuminhhieu.com/posts/suy-nghi-cua-mot-thang-intern/</link>
+      <link>https://kanetu.is-a.dev/posts/suy-nghi-cua-mot-thang-intern/</link>
       <pubDate>Fri, 13 Jul 2018 14:32:40 +0000</pubDate>
       
-      <guid>https://blog.tuminhhieu.com/posts/suy-nghi-cua-mot-thang-intern/</guid>
+      <guid>https://kanetu.is-a.dev/posts/suy-nghi-cua-mot-thang-intern/</guid>
       <description>Hôm này là một ngày buồn chán, tôi đã hoàn thành xong khóa trainning của mình và giờ khá là rãnh để ngồi viết những dòng này. Người ta nói &amp;ldquo;Ngựa non háu đá&amp;rdquo; và đó chính là tôi bây giờ.
 Ở {Be} cũng rất vui mọi người hòa đồng với nhau, nhưng ở đây tôi không thực sự yêu thích công việc này hoặc có lẻ tôi đang dành trọn tình yêu của mình cho javascript vì nó rất powerful, nhất là nó rất có nhiều framework: ReactJS, AngularJS, VueJS.</description>
     </item>
     
     <item>
       <title>Một tháng tại {Be} Solution</title>
-      <link>https://blog.tuminhhieu.com/posts/mot-thang-tai-be-solution/</link>
+      <link>https://kanetu.is-a.dev/posts/mot-thang-tai-be-solution/</link>
       <pubDate>Wed, 11 Jul 2018 12:32:40 +0000</pubDate>
       
-      <guid>https://blog.tuminhhieu.com/posts/mot-thang-tai-be-solution/</guid>
+      <guid>https://kanetu.is-a.dev/posts/mot-thang-tai-be-solution/</guid>
       <description>Sau hơn một tháng thực tập tại đây thì tôi và Eric đã hoàn thành phần trainer của mình và anh leader đã chuyển chúng tôi cho anh Mark - người đang quản lí một vài dự án.
 Chúng tôi lại được anh Mark phân công support tìm bug cho một website khách hàng, cụ thể là chúng tôi đang làm việc của một tester - tìm lỗi, tôi không chắc công việc của một tester là như thế nào nhưng tôi chắc là tôi đang làm việc trên website của khách hàng như là một người dùng  và vừa là admin.</description>
     </item>
     
     <item>
       <title>Một tuần tại {Be} Solution</title>
-      <link>https://blog.tuminhhieu.com/posts/mot-tuan-tai-be-solution/</link>
+      <link>https://kanetu.is-a.dev/posts/mot-tuan-tai-be-solution/</link>
       <pubDate>Mon, 11 Jun 2018 14:00:40 +0000</pubDate>
       
-      <guid>https://blog.tuminhhieu.com/posts/mot-tuan-tai-be-solution/</guid>
+      <guid>https://kanetu.is-a.dev/posts/mot-tuan-tai-be-solution/</guid>
       <description>Hello !!! Sau một tuần chúng tôi đã hoàn thành giao diện được giao, phải nói là gặp rất nhiều khó khăn trong phần javascript, tôi cảm thấy nghi ngơ về câu &amp;ldquo;Javascript is easy to learn&amp;rdquo; trên http://w3schools.com, có lẻ nó chỉ dễ cho học còn làm thì chưa chắc tới đâu.
 Tôi gặp một trở ngại khi phải làm việc với Javascript như là làm sao áp dụng script cho một phần tử html chưa được render ra, và thật may là đàn anh của tôi hướng dẫn một tips này:</description>
     </item>
     
     <item>
       <title>Ngày đầu thực tập tại {Be} Solution</title>
-      <link>https://blog.tuminhhieu.com/posts/ngay-dau-thuc-tap-tai-be-solution/</link>
+      <link>https://kanetu.is-a.dev/posts/ngay-dau-thuc-tap-tai-be-solution/</link>
       <pubDate>Mon, 04 Jun 2018 12:32:40 +0000</pubDate>
       
-      <guid>https://blog.tuminhhieu.com/posts/ngay-dau-thuc-tap-tai-be-solution/</guid>
+      <guid>https://kanetu.is-a.dev/posts/ngay-dau-thuc-tap-tai-be-solution/</guid>
       <description>Xin chào, tôi là Hiếu nickname là Kane hiện đang là sinh viên năm 3 trường đại học Trà Vinh, năm 3 này tôi được đi thực tập tại một cty outsource ở TP HCM là Be Solutions, ở đây tôi được rất nhiều người hướng dẫn tùy vào từng giai đoạn thực tập, người hướng dẫn tôi anh Yang Nguyễn đặt ra 3 yêu cầu phải làm trong khóa thực tập này bao gồm:</description>
     </item>
     
